@@ -1,0 +1,32 @@
+{
+  "name": "starlight-theme-galaxy-docs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "A customized Astro Starlight theme for publishing docs and educational content.",
+  "author": "frostybee",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.34.3",
+    "astro": "^5.7.13",
+    "sharp": "^0.34.1",
+    "starlight-theme-galaxy": "workspace:*"
+  },
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  },
+  "private": true,
+  "homepage": "https://github.com/frostybee/starlight-theme-galaxy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frostybee/starlight-theme-galaxy.git",
+    "directory": "docs"
+  },
+  "bugs": "https://github.com/frostybee/starlight-theme-galaxy/issues"
+}

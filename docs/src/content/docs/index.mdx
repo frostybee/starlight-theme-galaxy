@@ -1,0 +1,48 @@
+---
+title: starlight-theme-galaxy
+description: A customized Astro Starlight theme for publishing docs and educational content.
+head:
+  - tag: title
+    content: starlight-theme-galaxy
+  - tag: style
+    content: |
+      .hero-html {
+        --size: 12rem;
+        font-size: var(--size);
+        justify-content: center;
+        line-height: var(--size);
+      }
+template: splash
+editUrl: false
+hero:
+  tagline: A customized Astro Starlight theme for publishing docs and educational content.
+  image:
+    html: '🎨'
+  actions:
+    - text: Get Started
+      link: /getting-started/
+      icon: right-arrow
+    - text: Examples
+      link: /examples/kitchen-sink/
+      icon: right-arrow
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+## Next steps
+
+<CardGrid stagger>
+  <Card title="Install the theme" icon="puzzle">
+    Check the [getting started guide](/getting-started/) for installation instructions.
+  </Card>
+  <Card title="Configure the theme" icon="setting">
+    Edit your config in the `astro.config.mjs` file.
+  </Card>
+  <Card title="Preview the theme" icon="seti:image">
+    Check out the [example pages](/examples/kitchen-sink/) to see the theme in action.
+  </Card>
+  <Card title="Read the docs" icon="open-book">
+    Learn more in the [`starlight-theme-galaxy` documentation](/getting-started/).
+  </Card>
+</CardGrid>

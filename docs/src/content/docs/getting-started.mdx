@@ -1,0 +1,68 @@
+---
+title: Getting Started
+---
+
+A customized Astro Starlight theme for publishing docs and educational content.
+
+## Prerequisites
+
+You will need to have a Starlight website set up.
+If you don't have one yet, you can follow the ["Getting Started"](https://starlight.astro.build/getting-started) guide in the Starlight docs to create one.
+
+## Installation
+
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+
+<Steps>
+
+1. `starlight-theme-galaxy` is a Starlight [plugin](https://starlight.astro.build/reference/plugins/). Install it by running the following command in your terminal:
+
+   <Tabs syncKey="pkg">
+
+   <TabItem label="npm">
+
+   ```sh
+   npm install starlight-theme-galaxy
+   ```
+
+   </TabItem>
+
+   <TabItem label="pnpm">
+
+   ```sh
+   pnpm add starlight-theme-galaxy
+   ```
+
+   </TabItem>
+
+   <TabItem label="Yarn">
+
+   ```sh
+   yarn add starlight-theme-galaxy
+   ```
+
+   </TabItem>
+
+   </Tabs>
+
+2. Configure the plugin in your Starlight [configuration](https://starlight.astro.build/reference/configuration/#plugins) in the `astro.config.mjs` file.
+
+   ```diff lang="js"
+   // astro.config.mjs
+   import starlight from '@astrojs/starlight'
+   import { defineConfig } from 'astro/config'
+   +import starlightThemeGalaxy from 'starlight-theme-galaxy'
+
+   export default defineConfig({
+     integrations: [
+       starlight({
+   +      plugins: [starlightThemeGalaxy()],
+         title: 'My Docs',
+       }),
+     ],
+   })
+   ```
+
+3. [Start the development server](https://starlight.astro.build/getting-started/#start-the-development-server) to preview the theme in action.
+
+</Steps>
