@@ -13,6 +13,12 @@ importers:
       '@astrojs/starlight':
         specifier: ^0.34.3
         version: 0.34.3(astro@5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3))
+      '@expressive-code/core':
+        specifier: ^0.41.2
+        version: 0.41.2
+      '@expressive-code/plugin-line-numbers':
+        specifier: ^0.41.1
+        version: 0.41.2
       astro:
         specifier: ^5.7.13
         version: 5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3)

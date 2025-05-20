@@ -112,6 +112,9 @@ export default {
       shadowColor: "var(--sl-shadow-sm)"
     },
     codeBackground: "var(--fb-code-block-bg-color)",
+    fontFamily: "'Fira Code', monospace",
+    fontSize: "0.9em",
+    lineHeight: "1.5",
   },
   frames: {
     extractFileNameFromCode: false,

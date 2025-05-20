@@ -1,0 +1,61 @@
+/* Styles for the expressive code block component */
+/* Note: sg = short for starlight-galaxy */
+
+/* Import Fira Code font */
+:root {
+  --sg-ec-font-family: 'Fira Code', monospace;
+  /* --ec-font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
+}
+
+.expressive-code {
+  border-radius: var(--border-radius);
+  box-shadow: var(--sl-shadow-sm);
+}
+
+/* CodeBlock overrides */
+.sl-markdown-content .expressive-code .ec-line {
+  margin-block-start: initial;
+}
+
+.codeblock .expressive-code figure.frame {
+  margin-block-start: initial;
+}
+
+pre.astro-code {
+  border: 0;
+}
+
+@media screen and (min-width: 80rem) {
+  .expressive-code {
+    max-width: 48rem;
+  }
+}
+
+/* Code caption container */
+.expressive-code figcaption {
+  border-bottom: 1px solid var(--fb-ec-caption-bb-color) !important;
+  background: var(--fb-ec-caption-bg-color) !important;  
+}
+
+/* Code block title */
+.expressive-code .frame.has-title:not(.is-terminal) .title {
+  position: relative;
+  color: var(--sl-color-text) !important;
+  background: none !important;
+  font-size: 90%;
+  padding: .70rem 1rem !important;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.expressive-code .frame.has-title:not(.is-terminal) .language-label,
+.expressive-code .frame.has-title:not(.is-terminal) .copy {
+  margin-top: 0.4rem;
+}
+
+/* Enable font ligatures */
+.expressive-code code {
+  font-family: var(--sg-ec-font-family);
+  font-weight: 400;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
