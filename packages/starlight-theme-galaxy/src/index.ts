@@ -1,10 +1,14 @@
 import type { StarlightPlugin } from '@astrojs/starlight/types'
 
+const componentOverrides = {
+  Header: 'starlight-theme-galaxy/components/Header.astro',
+} as const
+
 export default function starlightThemeGalaxyPlugin(): StarlightPlugin {
   return {
     name: 'starlight-theme-galaxy',
     hooks: {
-      'config:setup'({ config, logger, updateConfig }) {
+      'config:setup'({ config, updateConfig, logger }) {
 
         logger.info('Hello from the starlight-theme-galaxy plugin!')
 
@@ -20,6 +24,10 @@ export default function starlightThemeGalaxyPlugin(): StarlightPlugin {
             'starlight-theme-galaxy/styles/index.css',
             ...(config.customCss ?? []),
           ],
+          components: {
+            ...componentOverrides,
+            ...config.components,
+          },
         })
       },
     },

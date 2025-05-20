@@ -19,7 +19,7 @@ export default defineConfig({
       social: [
         { href: 'https://github.com/frostybee/starlight-theme-galaxy', icon: 'github', label: 'GitHub' },
       ],
-      title: 'starlight-theme-galaxy',
+      title: 'Starlight Theme Galaxy',
     }),
   ],
 })

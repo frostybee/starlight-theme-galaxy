@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+export type Props = HTMLAttributes<'button'>
+---
+
+<button type="button">
+  <slot />
+</button>
+
+<style>
+  :where(html) {
+    --color-white: hsl(0 0% 98%);
+    --color-text-highlight: var(--color-white);
+  }
+  button {
+
+    align-items: center;
+    border: none;
+    border-radius: var(--rounded-full);
+    cursor: pointer;
+    display: flex;
+    height: var(--header-button-size);
+    justify-content: center;
+    outline: none;
+    padding: 0;
+    position: relative;
+    right: calc(var(--size-1) * -0.5);
+    top: var(--size-npx);
+    touch-action: manipulation;
+    width: var(--header-button-size);
+    background: none !important;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:is(:hover, :focus-visible) {
+      color: var(--color-text-highlight);
+    }
+
+    &:focus-visible {
+      box-shadow: inset 0 0 0 var(--outline-width) var(--color-text-highlight);
+    }
+  }
+</style>

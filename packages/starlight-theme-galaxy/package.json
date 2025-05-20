@@ -9,7 +9,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./styles/index.css": "./styles/index.css",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./components/*.astro": "./src/components/*.astro"
   },
   "scripts": {    
     "lint": "eslint . --cache --max-warnings=0"
