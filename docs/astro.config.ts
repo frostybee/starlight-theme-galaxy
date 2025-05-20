@@ -15,7 +15,8 @@ export default defineConfig({
           items: ['getting-started', 'customization'],
         },
         { label: 'Examples', autogenerate: { directory: 'examples' } },
-      ],
+        { label: 'Custom Components', autogenerate: { directory: 'components' } },
+      ],  
       social: [
         { href: 'https://github.com/frostybee/starlight-theme-galaxy', icon: 'github', label: 'GitHub' },
       ],

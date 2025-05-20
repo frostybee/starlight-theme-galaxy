@@ -179,34 +179,7 @@ h6 {
   }
 }
 
-/* Table of contents:
-Style overrides: Right sidebar, items of the table of content */
-.right-sidebar-panel starlight-toc ul li[class^=astro-] a {
-  border-radius: 0%;
-  display: inline-block;
-  padding-top: .5rem;
-  padding-bottom: .3rem;
-  text-decoration: none;
-  width: fit-content;
-  border-left: 2px solid var(--sl-color-gray-5);
-  font-weight: 400;
 
-  /* Current selected item in the TOC */
-  &:where([aria-current='true']) {
-    border-left: 3px solid var(--fb-toc-color-border);
-    color: var(--sl-color-white);
-    background-color: var(--fb-toc-color-current-bg);
-    width: fit-content;
-    font-weight: 600;
-    border-bottom-right-radius: .25rem !important;
-    border-top-right-radius: .25rem !important;
-  }
-
-  &:hover {
-    font-weight: 600;
-    border-left: 2px solid var(--fb-toc-color-border);
-  }
-}
 
 /* Pagination override styles */
 .pagination-links {
@@ -336,7 +309,7 @@ Style overrides: Right sidebar, items of the table of content */
 
 .right-sidebar {
   /* Remove the  left-side border from the TOC */
-  border-inline-start: 0;
+  /* border-inline-start: 0; */
   /* border-inline-start: 1px solid var(--sl-color-gray-6); */
 }
 

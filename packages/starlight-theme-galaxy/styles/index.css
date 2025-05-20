@@ -5,3 +5,4 @@
 @import "./sidebar-topics.css" layer(galaxy);
 @import "./asides.css" layer(galaxy);
 @import "./code-font.css" layer(galaxy);
+@import "./toc.css" layer(galaxy);

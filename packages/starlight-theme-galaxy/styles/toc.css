@@ -1,0 +1,49 @@
+/* Table of contents:
+ Style for the items in the right sidebar.  */
+.right-sidebar-panel starlight-toc ul li[class^=astro-] a {
+    border-radius: 0%;
+    display: inline-block;
+    padding-top: .5rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
+    text-decoration: none;
+    width: fit-content;
+    /* border-left: 2px solid var(--sl-color-gray-5); */
+    font-weight: 400;
+    position: relative;
+    transition: all 0.3s ease;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 0;
+      width: 4px;
+      background-color: var(--fb-toc-color-border);
+      border-radius: 8px;
+      transition: height 0.3s ease-in-out;
+    }
+  
+    /* Current selected item in the TOC */
+    &:where([aria-current='true']) {
+      /* border-left: 3px solid var(--fb-toc-color-border); */
+      color: var(--sl-color-white);
+      background-color: var(--fb-toc-color-current-bg);
+      width: fit-content;
+      font-weight: 600;
+      border-bottom-right-radius: .25rem !important;
+      border-top-right-radius: .25rem !important;
+  
+      &::before {
+        height: 100%;
+      }
+    }
+  
+    &:hover {
+      font-weight: 600;
+      border-left: 2px solid var(--fb-toc-color-border);
+      /* background-color: var(--fb-toc-color-current-bg); */
+      
+    }
+  }
