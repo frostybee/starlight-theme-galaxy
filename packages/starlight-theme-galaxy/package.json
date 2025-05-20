@@ -5,13 +5,24 @@
   "description": "A customized Astro Starlight theme for publishing docs and educational content.",
   "author": "frostybee",
   "type": "module",
+  "main": "./src/index.ts",
   "exports": {
-    ".": "./index.ts",
-    "./styles": "./styles.css"
+    ".": "./src/index.ts",
+    "./styles/index.css": "./styles/index.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {    
+    "lint": "eslint . --cache --max-warnings=0"
+  },
+  "dependencies": {
+    "@expressive-code/plugin-line-numbers": "^0.41.1",
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.5",
+    "@fontsource-variable/roboto-flex": "^5.2.5"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.34.3",
-    "astro": "^5.7.13"
+    "astro": "^5.7.13",
+    "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.34"
@@ -19,9 +30,20 @@
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
   },
+  "packageManager": "pnpm@9.6.0",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
+  "sideEffects": false,
+  "keywords": [
+    "starlight",
+    "theme",
+    "galaxy",
+    "plugin",
+    "documentation",
+    "astro"
+  ],
   "homepage": "https://github.com/frostybee/starlight-theme-galaxy",
   "repository": {
     "type": "git",

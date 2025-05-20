@@ -1,0 +1,84 @@
+:root,
+::backdrop {
+  --fb-global-radius: 0.4rem;
+  --fb-alert-border-radius: var(--fb-global-radius);
+  --fb-global-shadow-lw: 0 2px 2px 0 #0000001a;
+  --fb-alert-shadow: var(--fb-global-shadow-lw);
+  --fb-alert-border-width: 0px;
+  --fb-alert-border-left-width: 5px;
+  --fb-alert-border-color: inherit;
+  --fb-code-font-size: 1rem;
+
+  --fb-color-info-dark: #4cb3d4;
+  --fb-color-info-contrast-background: #eef9fd;
+  --fb-color-info-contrast-foreground: #193c47;
+  --fb-color-alert-link: var(--fb-color-info-dark);
+
+  --fb-color-danger-dark: #e13238;
+  --fb-color-danger-darker: #d53035;
+  --fb-color-danger-darkest: #af272b;
+  --fb-color-danger-light: #fb565b;
+  --fb-color-danger-lighter: #fb7478;
+  --fb-color-danger-lightest: #fd9c9f;
+  --fb-color-danger-contrast-background: #ffebec;
+  --fb-color-danger-contrast-foreground: #4b1113;
+}
+
+:root[data-theme='dark'] {
+
+    --fb-color-info-contrast-background: #193c47;
+    --fb-color-info-contrast-foreground: #eef9fd;
+    --fb-color-warning-contrast-background: #4d3800;
+    --fb-color-warning-contrast-foreground: #fff8e6;
+    --fb-color-danger-contrast-background: #4b1113;
+    --fb-color-danger-contrast-foreground: #ffebec;
+}
+
+/* Aside style overrides */
+.starlight-aside code {
+  border-radius: var(--fb-global-radius);
+  font-family: var(--font-mono);
+  font-size: var(--fb-code-font-size);
+  padding: .1rem .3rem;
+  border: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.starlight-aside--note {
+  --sl-color-asides-text-accent: var(--fb-color-info-contrast-foreground);
+  --sl-color-asides-border: var(--fb-color-info-dark);
+  background-color: var(--fb-color-info-contrast-background);
+  --fb-alert-foreground-color: var(--fb-color-info-contrast-foreground);
+  --fb-color-alert-link: var(--fb-color-info-dark);
+}
+
+.starlight-aside--danger {
+  --sl-color-asides-text-accent: var(--fb-color-danger-contrast-foreground);
+  --sl-color-asides-border: var(--fb-color-danger-dark);
+  background-color: var(--fb-color-danger-contrast-background);
+  --fb-alert-foreground-color: var(--fb-color-danger-contrast-foreground);
+  --fb-color-alert-link: var(--fb-color-danger-dark);
+}
+
+.starlight-aside {
+  padding: 1rem;
+  border-inline-start: 0.25rem solid var(--sl-color-asides-border) !important;
+  /* color: var(--sl-color-white); */
+  color: var(--fb-alert-foreground-color);
+  border-radius: var(--fb-global-radius);
+  box-shadow: var(--fb-alert-shadow);
+}
+.starlight-aside__title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: var(--sl-text-h5);
+  font-weight: 600;
+  line-height: var(--sl-line-height-headings);
+  color: var(--sl-color-asides-text-accent) !important;
+  text-transform: uppercase;
+}
+
+.starlight-aside__content a {
+  color: var(--fb-alert-foreground-color);
+  text-decoration-color: var(--fb-color-alert-link);
+}

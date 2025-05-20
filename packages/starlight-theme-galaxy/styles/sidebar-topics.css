@@ -1,0 +1,85 @@
+/* Styles for the custom tab switcher. */
+.sidebar-content {
+  /* Layout variables */
+  --tab-switcher-border-width: 1px;
+  --tab-switcher-padding: calc(0.25rem - var(--tab-switcher-border-width));
+  --tab-item-border-radius: 0.5rem;
+  --tab-switcher-border-radius: calc(var(--tab-item-border-radius) + var(--tab-switcher-padding) + var(--tab-switcher-border-width));
+  /* Color variables */
+  --tab-switcher-border-color: var(--sl-color-hairline-light);
+  --tab-switcher-background-color: var(--sl-color-gray-7, var(--sl-color-gray-6));
+  --tab-switcher-text-color: var(--sl-color-gray-2);
+  --tab-switcher-text-color-active: var(--sl-color-white);
+  --tab-switcher-icon-color: var(--sl-color-gray-4);
+  --tab-switcher-icon-color-active: var(--sl-color-text-accent);
+  --tab-item-background-color-hover: var(--sl-color-gray-6);
+  --tab-item-background-color-active: var(--sl-color-black);
+}
+
+/* Dark theme variations */
+[data-theme='dark'] .sidebar-content {
+  --tab-switcher-text-color: var(--sl-color-gray-2);
+  /* --tab-switcher-text-color: blue; */
+  --tab-switcher-icon-color: var(--sl-color-gray-3);
+  --tab-item-background-color-hover: var(--sl-color-gray-6);
+  --tab-item-background-color-active: var(--sl-color-gray-5);
+  --tab-switcher-background-color: var(--sl-color-black);
+
+}
+
+.sidebar-content ul:first-child {
+  border: var(--tab-switcher-border-width) solid var(--tab-switcher-border-color);
+  border-radius: var(--tab-switcher-border-radius);
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.25rem; */
+  padding: var(--tab-switcher-padding);
+  background-color: var(--tab-switcher-background-color);
+  margin-bottom: .3rem;
+  padding-left: 0.4rem;
+  padding-top: 0.7rem;
+  /* margin-bottom: 1.5rem; */
+  /* margin-top: 1rem; */
+  box-shadow: var(--sl-shadow-sm);
+}
+
+.sidebar-content ul:first-child::after {
+  border-top: none;
+}
+
+/* Style for an item the topics list */
+.sidebar-content ul:first-child li a {
+  border: var(--tab-switcher-border-width) solid transparent;
+  border-radius: var(--tab-item-border-radius);
+  display: flex;
+  align-items: center;
+  /* gap: 0.5rem; */
+  padding: calc(0.5rem - var(--tab-switcher-border-width));
+  background-clip: padding-box;
+  line-height: var(--sl-line-height-headings);
+  text-decoration: none;
+  color: var(--tab-switcher-text-color);
+  font-weight: 600;
+}
+
+/* Style a selected item in the topics list */
+.sidebar-content ul:first-child li a:is(.starlight-sidebar-topics-current, :hover, :focus-visible) {
+  /* color: var(--sl-color-accent-high); */
+  border-color: var(--tab-switcher-border-color);
+  /* color: var(--tab-switcher-text-color-active); */
+  color: var(--sl-color-accent-high);
+  background-color: var(--tab-item-background-color-active);
+}
+
+.sidebar-content div.starlight-sidebar-topics-icon {
+  border: none;
+  font-size: 1.4rem;
+  /* margin: 0.25rem; */
+  /* color: var(--tab-switcher-icon-color); */
+  /* color: black; */
+}
+
+.sidebar-content ul.top-level{
+  border-top: 1px solid var(--tab-switcher-border-color);
+  padding-top: 1rem;
+}

@@ -13,7 +13,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
+logs
+.cache
+.idea
+*.log
+*.tgz
+coverage
 
 # environment variables
 .env

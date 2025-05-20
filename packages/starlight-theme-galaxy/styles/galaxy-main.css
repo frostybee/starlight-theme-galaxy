@@ -1,0 +1,564 @@
+@custom-media --motionSafe (prefers-reduced-motion: no-preference);
+
+/* NOTE: fb short for frostybee: */
+/* Colors (dark mode) */
+:root {
+  color-scheme: dark;
+
+  --fb-blacks: 255, 255, 255;
+  --sl-hue-blue: 222;
+  --sl-text-h3: var(--sl-text-2xl);
+  --sl-text-h4: 1.2rem;
+  --sl-content-width: 55rem;
+  /* --sl-color-bg: #0d1117; */
+  /* --sl-color-bg: #1b1b1f; */
+  --sl-color-bg: hsl(224, 10%, 10%);
+  /* SL's main text color  */
+  /* --sl-color-text: #e3e3e3; */
+  /* --sl-color-text: #f0f6fc; */
+  /* --sl-color-bg: #1b1b1f; */
+  --sl-color-white: hsl(0, 0%, 100%);
+  --sl-color-gray-7: hsl(224, 10%, 10%);
+  --sl-color-gray-7: #060606;
+  --sl-color-black: hsl(224, 10%, 10%);
+
+  --sl-color-hairline: #212929;
+  --sl-color-hairline-shade: var(--sl-color-hairline);
+  --badge-border-color: --sl-color-hairline;
+  --sl-color-accent-low: hsl(228, 70%, 30%);
+  --sl-color-accent: hsl(228, 100%, 70%);
+  --sl-color-accent-high: #b6c4fb;
+  --sl-scrollbar-color: var(--sl-color-accent-high);
+  --sl-color-bg-sidebar: #0d1117;
+  --sl-color-bg-nav: var(--sl-color-bg-sidebar);
+  --fb-sidebar-color-current-bg: var(--sl-color-gray-5);
+
+  /* Custom variables */
+  --fb-ec-caption-bg-color: #020000;
+  /* --fb-code-block-bg-color: #151517; */
+  /* --fb-code-block-bg-color: #151b23; */
+  /* --fb-code-block-bg-color: #23262f; */
+  --fb-code-block-bg-color: #020110;
+  /* EC border bottom color */
+  --fb-ec-caption-bb-color: #464747;
+  --fb-ec-language-color: #c1c2c9;
+  --fb-steps-bg-color: var(--sl-color-accent-high);
+  /* --fb-steps-bg-color: var(--sl-color-accent-high); */
+  --fb-steps-text-color: #010319;
+  /* Custom backdrop background color in dark mode. */
+  --starlight-image-zoom-backdrop-bg: oklch(0 0 0);
+  --fb-table-header-bg-color: hsl(240, 91%, 5%);
+  --fb-toc-color-border: var(--sl-color-accent-high);
+  --fb-toc-color-current-bg: #0085f230;
+  --list-marker-color: var(--sl-color-gray-2);
+  --divider-color: var(--sl-color-gray-3);
+  --fb-table-border-color: var(--sl-color-gray-4);
+  --fb-sidebar-color-text-current: rgba(255, 255, 255, 1);
+  --fb-level-2-bg: #2c3139;
+  --fb-sidebar-color-current-bg: hsl(220, 12%, 20%);
+  --fb-sidebar-color-current-hover: hsl(220, 12%, 17%);
+}
+
+body {
+  font-weight: 400;
+}
+
+/* Light mode colors. */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --fb-blacks: 0, 0, 0;
+  --sl-text-h3: var(--sl-text-2xl);
+  --sl-content-width: 55rem;
+  --sl-color-bg: #ffffff;
+  --badge-border-color: lightgrey;
+  --sl-color-hairline: #edeef3;
+  --sl-color-accent-high: hsl(222, 80%, 35%);
+  --sl-color-accent: hsl(222, 89%, 55%);
+  --sl-color-accent-low: hsl(222, 89%, 85%);
+  --sl-color-white: hsl(224, 10%, 10%);
+  --sl-color-gray-1: hsl(224, 14%, 16%);
+  --sl-color-gray-2: hsl(224, 10%, 23%);
+  --sl-color-gray-3: hsl(224, 7%, 36%);
+  --sl-color-gray-4: hsl(224, 6%, 56%);
+  --sl-color-gray-5: hsl(224, 6%, 77%);
+  --sl-color-gray-6: hsl(224, 20%, 94%);
+  --sl-color-gray-7: hsl(224, 19%, 97%);
+  --sl-color-black: hsl(0, 0%, 100%);
+
+  --purple-hsl: 255, 85%, 65%;
+  /* --sl-color-text: #1C1E21; */
+  --sl-color-text: black;
+
+  /* Custom variables f4f6f8 */
+  --fb-ec-caption-bg-color: #eff2f3;
+  /* EC border bottom color */
+  --fb-ec-caption-bb-color: #dadde1;
+  --fb-code-block-bg-color: #f6f7f9;
+  --fb-ec-language-color: #636467;
+  --sl-scrollbar-color: var(--sl-color-accent);
+  /* --fb-steps-bg-color: var(--sl-color-accent); */
+  --fb-steps-bg-color: #0069c2;
+  --fb-steps-text-color: #f6f6f4f9;
+  --fb-table-header-bg-color: #e8e7e7;
+  /* Custom backdrop background color in light mode. */
+  --starlight-image-zoom-backdrop-bg: oklch(95% 0 0);
+  --fb-toc-color-border: #0069c2;
+  --list-marker-color: var(--sl-color-gray-3);
+  --divider-color: var(--sl-color-gray-3);
+  --fb-table-border-color: rgba(0, 0, 0, .1);
+
+  --border-xlight: rgb(0 0 0/5%);
+  --border-light: rgba(0, 0, 0, .1);
+  --border-medium: rgba(0, 0, 0, .15);
+  --border-heavy: rgba(0, 0, 0, .2);
+  --border-xheavy: rgba(0, 0, 0, .25);
+  --fb-level-2-bg: #ffffff;
+  --fb-level-0-bg: #f5f7f8;
+  --sl-color-bg-sidebar: #fcfcfc;
+  --sl-color-bg-nav: #eff1f1;
+  --fb-sidebar-color-text-current: rgba(38, 50, 56, 1);
+  --fb-toc-color-current-bg: #0085f230;
+  --fb-sidebar-color-current-bg: #ececf2;
+  --fb-sidebar-color-current-hover: var(--sl-color-gray-7);
+}
+
+:root {
+  /* Customize the font style here */
+
+  --sl-font: "Roboto Flex Variable", sans-serif;
+  --font-mono: Noto Mono, Menlo, Monaco, Consolas, monospace;
+  font-weight: 400;
+  --fb-scrollbar-height: 0.250rem;
+  --purple-hsl: 205, 60%, 60%;
+  --overlay-blurple: hsla(var(--purple-hsl), 0.4);
+  text-underline-offset: .25em;
+  --border-radius: 8px;
+  --space-xs: clamp(1rem, 0.75rem + 0vi, 0.75rem);
+  /* Style for theme toggle switch */
+  --duration-300: 300ms;
+  --duration-400: 400ms;
+  --duration-1200: 1200ms;
+  --duration-3000: 3000ms;
+  --ease: cubic-bezier(0.25, 0, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  --ease-out: cubic-bezier(0, 0, 0, 1);
+  --outline-offset: 2px;
+  --outline-offset-lg: 4px;
+  --outline-width: 2px;
+  --color-text-highlight: var(--sl-color-accent);
+  /* --color-text-highlight: var(--color-white); */
+  --fb-theme-btn-color-text: var(--sl-color-accent-high);
+  --outline-width: 2px;
+  --rounded-full: 1e5px;
+  --header-button-size: 2rem;
+  --size-1: 0.25rem;
+  --size-npx: -1px;
+  --fb-toc-current-text-color: var(--sl-color-accent-high);
+  --fb-font-weight-semibold: 500;
+  --fb-h5-font-size: .875rem;
+  /* Steps component: */
+  --steps-hairline-color: var(--sl-color-accent-high);
+  --paragraph-spacing: 1.5rem;
+  --fb-table-border-radius: .375rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Plus Jakarta Sans Variable', sans-serif;
+}
+
+
+/* date page title onl 2.5rem on mobile devices */
+@media (max-width: 768px) {
+  [data-page-title] {
+    font-size: 2.5rem;
+  }
+}
+
+/* --------------------- */
+/* - Code block style  - */
+/* --------------------- */
+.expressive-code {
+  border-radius: var(--border-radius);
+  box-shadow: var(--sl-shadow-sm);
+}
+
+/* CodeBlock overrides */
+.sl-markdown-content .expressive-code .ec-line {
+  margin-block-start: initial;
+}
+
+.codeblock .expressive-code figure.frame {
+  margin-block-start: initial;
+}
+
+pre.astro-code {
+  border: 0;
+}
+
+@media screen and (min-width: 80rem) {
+  .expressive-code {
+    max-width: 48rem;
+  }
+}
+
+/* Style for the expressive code block component */
+/* Code markers */
+.expressive-code figcaption {
+  border-bottom: 1px solid var(--fb-ec-caption-bb-color) !important;
+  background: var(--fb-ec-caption-bg-color) !important;
+}
+
+.expressive-code .frame.has-title:not(.is-terminal) .title {
+  position: relative;
+  /* color: var(--sl-color-text) !important; */
+  background: none !important;
+  /* border-bottom: 1px solid #dadde1 !important; */
+  /* border-bottom: none; */
+  font-size: 85%;
+  padding: .55rem 1rem !important;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.expressive-code .frame.has-title:not(.is-terminal) .language-label,
+.expressive-code .frame.has-title:not(.is-terminal) .copy {
+  margin-top: 0.4rem;
+}
+
+/* Table of contents:
+Style overrides: Right sidebar, items of the table of content */
+.right-sidebar-panel starlight-toc ul li[class^=astro-] a {
+  border-radius: 0%;
+  display: inline-block;
+  padding-top: .5rem;
+  padding-bottom: .3rem;
+  text-decoration: none;
+  width: fit-content;
+  border-left: 2px solid var(--sl-color-gray-5);
+  font-weight: 400;
+
+  /* Current selected item in the TOC */
+  &:where([aria-current='true']) {
+    border-left: 3px solid var(--fb-toc-color-border);
+    color: var(--sl-color-white);
+    background-color: var(--fb-toc-color-current-bg);
+    width: fit-content;
+    font-weight: 600;
+    border-bottom-right-radius: .25rem !important;
+    border-top-right-radius: .25rem !important;
+  }
+
+  &:hover {
+    font-weight: 600;
+    border-left: 2px solid var(--fb-toc-color-border);
+  }
+}
+
+/* Pagination override styles */
+.pagination-links {
+
+  /* border-block-start: 2px solid var(--sl-color-gray-6); */
+  a {
+    /* border: 0; */
+    box-shadow: initial;
+  }
+
+  :hover {
+    box-shadow: initial;
+    border-color: var(--sl-color-accent-high);
+    box-shadow: var(--sl-shadow-sm);
+  }
+
+  a>span {
+    font-size: var(--fb-h5-font-size);
+    font-weight: 600;
+  }
+
+  a .link-title {
+    color: var(--sl-color-text-accent);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 300ms ease-out;
+  }
+}
+
+/* Steps starlight component */
+.sl-steps {
+  /* --sl-color-hairline-light: var(--steps-hairline-color); */
+  --bullet-size: calc(var(--sl-line-height) * 1rem);
+  --bullet-margin: .2rem !important;
+
+  li {
+    padding-left: 45px;
+  }
+
+  >li:before {
+    --fb-steps-dimension: 30px;
+    background-color: var(--fb-steps-bg-color);
+    /* background-color: var(--sl-color-gray-6); */
+    color: var(--fb-steps-text-color) !important;
+    box-shadow: none !important;
+    font-size: .8rem;
+    width: var(--fb-steps-dimension);
+    height: var(--fb-steps-dimension);
+    text-align: center;
+    line-height: var(--fb-steps-dimension);
+    /* box-shadow: inset 0 0 0 1px var(--sl-color-gray-5) !important; */
+  }
+}
+
+/**
+* TABLES:
+* Table style overrides
+*/
+.sl-markdown-content table {
+  width: 100%;
+  table-layout: auto;
+  --tw-border-spacing-x: 0px;
+  --tw-border-spacing-y: 0px;
+  border-collapse: separate;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+  line-height: 1.6;
+
+  table code {
+    word-break: break-all;
+  }
+
+  thead th {
+    background-color: var(--fb-table-header-bg-color);
+    text-align: center !important;
+  }
+
+
+  :is(th, td):not(:where(.not-content *)) {
+    --space-2xs: clamp(0.5rem, 0.5rem + 0vi, 0.5rem);
+    padding-block: var(--space-2xs);
+    border: 1px solid var(--fb-table-border-color);
+  }
+
+  thead+tbody tr:nth-child(2n):not(:where(.not-content *)) {
+    /* Apply alt stripes. */
+    background-color: var(--sl-color-gray-7);
+  }
+
+  :is(th:first-child, td:first-child):not(:where(.not-content *)) {
+    padding-inline-start: var(--space-xs);
+  }
+
+  :is(th:last-child, td:last-child):not(:where(.not-content *)) {
+    padding-inline-end: var(--space-xs);
+  }
+
+  /* Apply rounded corners to the four sides of the table. */
+  thead tr:last-of-type:not(:where(.naot-content *)) th:first-child {
+    border-top-left-radius: var(--fb-table-border-radius);
+  }
+
+  thead tr:last-of-type:not(:where(.not-content *)) th:last-child {
+    border-top-right-radius: var(--fb-table-border-radius);
+  }
+
+  tbody tr:last-of-type:not(:where(.not-content *)) th:last-child {
+    border-top-right-radius: var(--fb-table-border-radius);
+  }
+
+  tbody tr:last-of-type:not(:where(.not-content *)) td:last-child {
+    border-bottom-right-radius: var(--fb-table-border-radius);
+  }
+
+  tbody tr:last-of-type:not(:where(.not-content *)) td:first-child {
+    border-bottom-left-radius: var(--fb-table-border-radius);
+  }
+
+}
+
+.sl-markdown-content:not(h1, h2, h3, h4, h5, h6)+ :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+  margin-top: 1.2em;
+}
+
+.main-pane {
+  padding: 0 1rem;
+}
+
+.right-sidebar {
+  /* Remove the  left-side border from the TOC */
+  border-inline-start: 0;
+  /* border-inline-start: 1px solid var(--sl-color-gray-6); */
+}
+
+
+/**
+* Lists
+*/
+.sl-markdown-content ol:not(:where(.not-content *)),
+.sl-markdown-content ul:not(:where(.not-content *)) {
+  list-style-type: none;
+  padding-left: 0;
+  /* margin-bottom: 2rem; */
+}
+
+.sl-markdown-content ol:not(:where(.not-content *)) {
+  counter-reset: listitem;
+}
+
+.sl-markdown-content ol:not(:where(.sl-steps, .not-content *))>li,
+.sl-markdown-content ul:not( :where(.sl-steps, .not-content *))>li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.sl-markdown-content li:not(:where(.not-content *))>ol,
+.sl-markdown-content li:not(:where(.not-content *))>ul,
+.sl-markdown-content li+li:not(:where(.not-content *)) .sl-markdown-content li:not(:where(.sl-steps))>ol {
+  margin-top: 0.625rem;
+}
+
+.sl-markdown-content li> :last-child:not(li, ul, ol):not(a, strong, em, del, span, input, :where(.not-content *)) {
+  /* margin-bottom: calc(var(--paragraph-spacing) + 0.5rem); */
+}
+
+.sl-markdown-content ul:not(:where(.sl-steps, .not-content *))>li:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 13px;
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--list-marker-color);
+}
+
+.sl-markdown-content ol:not(:where(.sl-steps, .not-content *))>li:before {
+  counter-increment: listitem;
+  content: counter(listitem);
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3rem;
+  text-align: center;
+  height: 22px;
+  width: 22px;
+  min-width: 22px;
+  padding-inline: 4px;
+  left: 0;
+  top: 3px;
+  border-radius: 4px;
+  color: var(--sl-color-text);
+  font-family: var(--sl-font-mono);
+  border: 1px solid var(--divider-color);
+  box-shadow: var(--sl-shadow-sm);
+}
+
+/* Sidebars */
+.sidebar-content {
+
+  [aria-current='page'],
+  [aria-current='page']:hover,
+  [aria-current='page']:focus {
+    color: var(--fb-sidebar-color-text-current);
+    background-color: var(--fb-sidebar-color-current-bg);
+    box-shadow: 2px 1px 2px 1px rgba(var(--fb-blacks), .03);
+    position: relative;
+    /* border-bottom-right-radius: .25rem !important; */
+    /* border-top-right-radius: .25rem !important; */
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: 5px;
+      height: 33px;
+      content: "";
+      background-color: var(--sl-color-text-accent);
+      border-bottom-right-radius: .25rem !important;
+      border-top-right-radius: .25rem !important;
+    }
+  }
+
+  li a {
+    padding: .4em var(--sl-sidebar-item-padding-inline) .5em 1em;
+    color: var(--fb-body-color);
+
+    &:hover {
+      color: var(--fb-sidebar-color-text-current);
+      background-color: var(--fb-sidebar-color-current-hover);
+      font-weight: 600;
+      /* border-bottom-right-radius: .25rem !important;
+      border-top-right-radius: .25rem !important; */
+    }
+  }
+
+  summary+ul {
+    margin: .25rem 0;
+  }
+
+  details {
+    margin-bottom: .5rem;
+  }
+}
+
+/* Clean up */
+[data-has-hero] .page {
+  background: linear-gradient(215deg, var(--overlay-blurple), transparent 40%),
+    radial-gradient(var(--overlay-blurple), transparent 40%) no-repeat -60vw -40vh / 105vw 200vh,
+    radial-gradient(var(--overlay-blurple), transparent 65%) no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
+}
+
+[data-has-hero] header {
+  border-bottom: 1px solid transparent;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+[data-has-hero] .hero>img {
+  filter: drop-shadow(0 0 3rem var(--overlay-blurple));
+}
+
+[data-page-title] {
+  font-size: 3rem;
+}
+
+.sl-markdown-content code:not(:where(.not-content *)) {
+  background-color: var(--sl-color-bg-inline-code);
+  margin-block: -0.125rem;
+  padding: 0.145rem 0.375rem;
+  font-size: var(--sl-text-code-sm);
+  border-radius: 6px;
+  /* color: var(--sl-color-text-accent); */
+  /* font-family: var(--font-mono); */
+  /* font-weight: 400; */
+  /* line-height: var(--sl-line-height-code); */
+  /* box-shadow: var(--sl-shadow-sm); */
+}
+
+
+/* Styles for markdown content headings  */
+/* .sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+color: var(--sl-color-white);
+line-height: var(--sl-line-height-headings);
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-weight: 600;
+} */
+
+
+/*
+@media (min-width: 330rem) {
+  :global([data-has-sidebar]) .header {
+    padding-inline-end: var(--sl-nav-pad-x);
+  }
+
+  .sidebar-pane {
+    --sl-sidebar-visibility: visible !important;
+    visibility: var(--sl-sidebar-visibility, hidden);
+    width: var(--sl-sidebar-width);
+    background-color: var(--sl-color-bg-sidebar);
+    border-inline-end: 1px solid var(--sl-color-hairline-shade);
+  }
+} */
+

@@ -24,6 +24,16 @@ importers:
         version: link:../packages/starlight-theme-galaxy
 
   packages/starlight-theme-galaxy:
+    dependencies:
+      '@expressive-code/plugin-line-numbers':
+        specifier: ^0.41.1
+        version: 0.41.2
+      '@fontsource-variable/plus-jakarta-sans':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/roboto-flex':
+        specifier: ^5.2.5
+        version: 5.2.5
     devDependencies:
       '@astrojs/starlight':
         specifier: ^0.34.3
@@ -31,6 +41,9 @@ importers:
       astro:
         specifier: ^5.7.13
         version: 5.7.13(@types/node@22.15.18)(rollup@4.40.2)(typescript@5.8.3)
+      typescript:
+        specifier: ^5.0.0
+        version: 5.8.3
 
 packages:
 
@@ -252,11 +265,20 @@ packages:
   '@expressive-code/plugin-frames@0.41.2':
     resolution: {integrity: sha512-pfy0hkJI4nbaONjmksFDcuHmIuyPTFmi1JpABe4q2ajskiJtfBf+WDAL2pg595R9JNoPrrH5+aT9lbkx2noicw==}
 
+  '@expressive-code/plugin-line-numbers@0.41.2':
+    resolution: {integrity: sha512-xdRoScuFWQbYEpWTh6G7kJ0VK46kcUPHPMjRo3CG2ynZ1rqiJCC9FnZQQWQ7U8aGd/n7EnU3vJBkBeVqhZyEWg==}
+
   '@expressive-code/plugin-shiki@0.41.2':
     resolution: {integrity: sha512-xD4zwqAkDccXqye+235BH5bN038jYiSMLfUrCOmMlzxPDGWdxJDk5z4uUB/aLfivEF2tXyO2zyaarL3Oqht0fQ==}
 
   '@expressive-code/plugin-text-markers@0.41.2':
     resolution: {integrity: sha512-JFWBz2qYxxJOJkkWf96LpeolbnOqJY95TvwYc0hXIHf9oSWV0h0SY268w/5N3EtQaD9KktzDE+VIVwb9jdb3nw==}
+
+  '@fontsource-variable/plus-jakarta-sans@5.2.5':
+    resolution: {integrity: sha512-nkAWzq+QWBSK+52HIlNCyoh5YXrZ/AwV1OqzxZz6VnPmsIpU68B1bf1YT8heRAJKY1kXNtWIJ9jJMYVaStgf+w==}
+
+  '@fontsource-variable/roboto-flex@5.2.5':
+    resolution: {integrity: sha512-yrZ9rWNvfM4IBqJSpoFV4wC1GaKNwpzhihyBke+N3WiA0Y7LYxwj6kvvHgecabVIHFL3ZZJTwj3KcKOCyASFPg==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2127,6 +2149,10 @@ snapshots:
     dependencies:
       '@expressive-code/core': 0.41.2
 
+  '@expressive-code/plugin-line-numbers@0.41.2':
+    dependencies:
+      '@expressive-code/core': 0.41.2
+
   '@expressive-code/plugin-shiki@0.41.2':
     dependencies:
       '@expressive-code/core': 0.41.2
@@ -2135,6 +2161,10 @@ snapshots:
   '@expressive-code/plugin-text-markers@0.41.2':
     dependencies:
       '@expressive-code/core': 0.41.2
+
+  '@fontsource-variable/plus-jakarta-sans@5.2.5': {}
+
+  '@fontsource-variable/roboto-flex@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
