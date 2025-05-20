@@ -25,6 +25,9 @@ importers:
 
   packages/starlight-theme-galaxy:
     dependencies:
+      '@expressive-code/core':
+        specifier: ^0.41.2
+        version: 0.41.2
       '@expressive-code/plugin-line-numbers':
         specifier: ^0.41.1
         version: 0.41.2

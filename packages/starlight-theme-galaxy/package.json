@@ -10,7 +10,9 @@
     ".": "./src/index.ts",
     "./styles/index.css": "./styles/index.css",
     "./package.json": "./package.json",
-    "./components/*.astro": "./src/components/*.astro"
+    "./components/*.astro": "./src/components/*.astro",
+    "./ec.config.mjs": "./ec.config.mjs"
+    
   },
   "scripts": {    
     "lint": "eslint . --cache --max-warnings=0"
@@ -18,7 +20,8 @@
   "dependencies": {
     "@expressive-code/plugin-line-numbers": "^0.41.1",
     "@fontsource-variable/plus-jakarta-sans": "^5.2.5",
-    "@fontsource-variable/roboto-flex": "^5.2.5"
+    "@fontsource-variable/roboto-flex": "^5.2.5",
+    "@expressive-code/core": "^0.41.2"    
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.34.3",

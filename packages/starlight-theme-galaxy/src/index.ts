@@ -1,4 +1,9 @@
-import type { StarlightPlugin } from '@astrojs/starlight/types'
+/**
+ * 
+ */import type { StarlightPlugin } from '@astrojs/starlight/types'
+// Import with type assertion to avoid TypeScript error
+// @ts-ignore
+// import expressiveCodeConfig from '../ec.config.mjs';
 
 const componentOverrides = {
   Header: 'starlight-theme-galaxy/components/Header.astro',
@@ -9,16 +14,9 @@ export default function starlightThemeGalaxyPlugin(): StarlightPlugin {
     name: 'starlight-theme-galaxy',
     hooks: {
       'config:setup'({ config, updateConfig, logger }) {
+        const userExpressiveCodeConfig =
+          !config.expressiveCode || config.expressiveCode === true ? {} : config.expressiveCode
 
-        logger.info('Hello from the starlight-theme-galaxy plugin!')
-
-        /**
-         * Update the provided Starlight user configuration by appending the theme CSS file to the `customCss` array.
-         * To start customizing your theme, edit the `packages/starlight-theme-galaxy/styles.css` file.
-         *
-         * @see https://starlight.astro.build/reference/plugins/#updateconfig
-         * @see https://starlight.astro.build/reference/configuration/#customcss
-         */
         updateConfig({
           customCss: [
             'starlight-theme-galaxy/styles/index.css',
@@ -28,6 +26,13 @@ export default function starlightThemeGalaxyPlugin(): StarlightPlugin {
             ...componentOverrides,
             ...config.components,
           },
+          // expressiveCode:
+          //   config.expressiveCode === false
+          //     ? false
+          //     : {
+          //       ...expressiveCodeConfig,
+          //       ...userExpressiveCodeConfig
+          //     }
         })
       },
     },
