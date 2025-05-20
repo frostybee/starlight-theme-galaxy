@@ -1,8 +1,9 @@
 @layer starlight, galaxy;
 
 @import "./galaxy-main.css" layer(galaxy);
-@import "./Linkable-headings.css" layer(galaxy);
+@import "./linkable-headings.css" layer(galaxy);
 @import "./sidebar-topics.css" layer(galaxy);
 @import "./asides.css" layer(galaxy);
-@import "./code-font.css" layer(galaxy);
+@import "./expressive-code.css" layer(galaxy);
 @import "./toc.css" layer(galaxy);
+@import "./sidebar.css" layer(galaxy);

@@ -1,5 +1,6 @@
 /* Table of contents:
- Style for the items in the right sidebar.  */
+ Style for the items in the right sidebar.  */ 
+
 .right-sidebar-panel starlight-toc ul li[class^=astro-] a {
     border-radius: 0%;
     display: inline-block;
@@ -8,7 +9,8 @@
     padding-left: 1rem;
     text-decoration: none;
     width: fit-content;
-    /* border-left: 2px solid var(--sl-color-gray-5); */
+ /* border-left: 3px solid var(--fb-toc-color-border); */
+ border-left: 1px solid var(--sl-color-gray-5);
     font-weight: 400;
     position: relative;
     transition: all 0.3s ease;
@@ -21,7 +23,9 @@
       height: 0;
       width: 4px;
       background-color: var(--fb-toc-color-border);
-      border-radius: 8px;
+      /* border-radius: 8px; */
+      border-bottom-right-radius: 1.25rem !important;
+      border-top-right-radius: 1.25rem !important;     
       transition: height 0.3s ease-in-out;
     }
   
@@ -30,19 +34,21 @@
       /* border-left: 3px solid var(--fb-toc-color-border); */
       color: var(--sl-color-white);
       background-color: var(--fb-toc-color-current-bg);
-      width: fit-content;
+      /* width: fit-content; */
       font-weight: 600;
-      border-bottom-right-radius: .25rem !important;
-      border-top-right-radius: .25rem !important;
-  
+      border-bottom-right-radius: .45rem !important;
+      border-top-right-radius: .45rem !important;     
+      padding-right: 0.7rem;
       &::before {
         height: 100%;
       }
     }
   
-    &:hover {
+    &:hover {      
       font-weight: 600;
       border-left: 2px solid var(--fb-toc-color-border);
+         border-radius: 0;
+      transition: none;
       /* background-color: var(--fb-toc-color-current-bg); */
       
     }

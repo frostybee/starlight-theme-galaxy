@@ -1,0 +1,46 @@
+/* Left Sidebar */
+.sidebar-content {
+    [aria-current='page'],
+    [aria-current='page']:hover,
+    [aria-current='page']:focus {
+      color: var(--fb-sidebar-color-text-current);
+      background-color: var(--fb-sidebar-color-current-bg);
+      box-shadow: 2px 1px 2px 1px rgba(var(--fb-blacks), .03);
+      position: relative;
+      /* border-bottom-right-radius: .25rem !important; */
+      /* border-top-right-radius: .25rem !important; */
+  
+      &::before {
+        position: absolute;
+        top: 0;
+        left: -10px;
+        width: 5px;
+        height: 33px;
+        content: "";
+        background-color: var(--sl-color-text-accent);
+        border-bottom-right-radius: .25rem !important;
+        border-top-right-radius: .25rem !important;
+      }
+    }
+  
+    li a {
+      padding: .4em var(--sl-sidebar-item-padding-inline) .5em 1em;
+      color: var(--fb-body-color);
+  
+      &:hover {
+        color: var(--fb-sidebar-color-text-current);
+        background-color: var(--fb-sidebar-color-current-hover);
+        font-weight: 600;
+        /* border-bottom-right-radius: .25rem !important;
+        border-top-right-radius: .25rem !important; */
+      }
+    }
+  
+    summary+ul {
+      margin: .25rem 0;
+    }
+  
+    details {
+      margin-bottom: .5rem;
+    }
+  }
