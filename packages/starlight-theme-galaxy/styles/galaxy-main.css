@@ -413,6 +413,16 @@ h6 {
 }
 
 
+.sl-badge {
+
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  /* line-height: 1.1rem; */
+}
+
+
 /* Styles for markdown content headings  */
 /* .sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
 color: var(--sl-color-white);

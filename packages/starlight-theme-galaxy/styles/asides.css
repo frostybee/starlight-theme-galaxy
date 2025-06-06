@@ -98,7 +98,7 @@
     min-height: 3.5rem !important;
   }
 
-  & .expressive-code code {    
+  & .expressive-code code {
     border-color: var(--fb-alert-border-color) !important;
     padding-top: 0.75rem;
     border: none !important;
@@ -111,10 +111,26 @@
     color: var(--fb-alert-foreground-color) !important;
     width: 100%;
   }
-  & .expressive-code .frame.has-title:not(.is-terminal)  code,
+
+  & .expressive-code .frame.has-title:not(.is-terminal) code,
   & .expressive-code .frame code {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
+  }
+
+  /* Table header styling within asides */
+  & table thead th {
+    background-color: var(--fb-alert-background-color) !important;
+  }
+
+  /* Table alternating row styling within asides */
+  & table tbody tr:nth-child(2n) {
+    background-color: var(--fb-alert-background-color-highlight) !important;
+  }
+
+  /* Table border styling within asides */
+  & table :is(th, td) {
+    /* border-color: var(--fb-alert-border-color) !important; */
   }
 }
 
