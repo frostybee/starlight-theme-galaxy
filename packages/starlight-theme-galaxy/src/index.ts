@@ -15,8 +15,10 @@ export default function starlightThemeGalaxyPlugin(): StarlightPlugin {
     name: 'starlight-theme-galaxy',
     hooks: {
       'config:setup': async ({ config, updateConfig, logger }) => {
+        // The path the theme's CSS main file.
         const galaxyCss = 'starlight-theme-galaxy/styles/index.css';
-        
+
+        // We need to copy the ec.config.mjs file to the consuming project's root.
         // Get the source path of ec.config.mjs from our plugin
         const sourcePath = path.join(__dirname, 'ec.config.mjs');
         // Get the destination path in the consuming project's root
@@ -30,6 +32,7 @@ export default function starlightThemeGalaxyPlugin(): StarlightPlugin {
 
         updateConfig({
           customCss: [
+            // Add our theme's CSS before the consuming project's custom styles.
             galaxyCss,
             ...(config.customCss ?? []),
           ],

@@ -90,7 +90,7 @@ body {
   --sl-color-text: black;
 
   /* Custom variables f4f6f8 */
-  --fb-ec-caption-bg-color: #eff2f3;
+  --fb-ec-caption-bg-color: #f6f8fa;
   /* EC border bottom color */
   --fb-ec-caption-bb-color: #dadde1;
   --fb-code-block-bg-color: #f6f7f9;
@@ -178,8 +178,6 @@ h6 {
     font-size: 2.5rem;
   }
 }
-
-
 
 /* Pagination override styles */
 .pagination-links {
