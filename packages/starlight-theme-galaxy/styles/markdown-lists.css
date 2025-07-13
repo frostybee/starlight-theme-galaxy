@@ -1,0 +1,63 @@
+
+
+/**
+* Lists
+*/
+.sl-markdown-content ol:not(:where(.not-content *)),
+.sl-markdown-content ul:not(:where(.not-content *)) {
+  list-style-type: none;
+  padding-left: 0;
+  /* margin-bottom: 2rem; */
+}
+
+.sl-markdown-content ol:not(:where(.not-content *)) {
+  counter-reset: listitem;
+}
+
+.sl-markdown-content ol:not(:where(.sl-steps, .not-content *))>li,
+.sl-markdown-content ul:not( :where(.sl-steps, .not-content *))>li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.sl-markdown-content li:not(:where(.not-content *))>ol,
+.sl-markdown-content li:not(:where(.not-content *))>ul,
+.sl-markdown-content li+li:not(:where(.not-content *)) .sl-markdown-content li:not(:where(.sl-steps))>ol {
+  margin-top: 0.625rem;
+}
+
+.sl-markdown-content li> :last-child:not(li, ul, ol):not(a, strong, em, del, span, input, :where(.not-content *)) {
+  /* margin-bottom: calc(var(--paragraph-spacing) + 0.5rem); */
+}
+
+.sl-markdown-content ul:not(:where(.sl-steps, .not-content *))>li:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 13px;
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--list-marker-color);
+}
+
+.sl-markdown-content ol:not(:where(.sl-steps, .not-content *))>li:before {
+  counter-increment: listitem;
+  content: counter(listitem);
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3rem;
+  text-align: center;
+  height: 22px;
+  width: 22px;
+  min-width: 22px;
+  padding-inline: 4px;
+  left: 0;
+  top: 3px;
+  border-radius: 4px;
+  color: var(--sl-color-text);
+  font-family: var(--sl-font-mono);
+  border: 1px solid var(--divider-color);
+  box-shadow: var(--sl-shadow-sm);
+}

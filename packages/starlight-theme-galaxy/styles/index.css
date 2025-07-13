@@ -7,3 +7,5 @@
 @import "./expressive-code.css" layer(galaxy);
 @import "./toc.css" layer(galaxy);
 @import "./sidebar.css" layer(galaxy);
+@import "./markdown-lists.css" layer(galaxy);
+
