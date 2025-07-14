@@ -260,6 +260,12 @@ body {
   border-radius: var(--sl-border-radius);
 }
 
+.sl-markdown-content
+		:not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper)
+		+ :is(.sl-heading-wrapper) {
+    margin-top: 1em;
+}
+
 .sl-markdown-content h3 {
   font-size: var(--sl-text-2xl);
   font-weight: 600;

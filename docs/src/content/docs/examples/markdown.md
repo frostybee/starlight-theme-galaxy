@@ -7,11 +7,11 @@ pagefind: false
 
 Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 
-### Heading 3
+## Heading 3
 
 Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 
-#### Heading 4
+## Heading 4
 
 Some text content used as a placeholder for the purpose of this example page. The content is not meant to be meaningful or relevant, but rather to preview how the page will look with actual content.
 

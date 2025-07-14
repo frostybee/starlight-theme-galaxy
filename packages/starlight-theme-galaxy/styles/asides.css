@@ -91,7 +91,7 @@
     line-height: 1.8 !important;
     vertical-align: middle !important;
     color: var(--fb-alert-foreground-color) !important;
-  }
+  }  
 
   & a {
     color: var(--fb-alert-foreground-color);
@@ -122,12 +122,16 @@
     background-color: var(--fb-alert-background-color) !important;
     color: var(--fb-alert-foreground-color) !important;
     width: 100% !important;
+    background-color: color-mix(in srgb, var(--fb-alert-border-color) 30%, black 2%) !important;    
   }
 
   & .expressive-code .frame.has-title:not(.is-terminal) code,
   & .expressive-code .frame code {
     border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important; 
+    border-top-right-radius: 0 !important;     
+  }
+  & .expressive-code figcaption {
+    border-bottom: 1px solid var(--fb-alert-border-color) !important;   
   }
 
   /* Table header styling within asides */
