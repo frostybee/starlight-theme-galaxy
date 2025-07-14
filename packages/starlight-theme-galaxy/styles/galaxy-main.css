@@ -1,14 +1,20 @@
 @custom-media --motionSafe (prefers-reduced-motion: no-preference);
 
-/* NOTE: fb short for frostybee: */
-/* Colors (dark mode) */
+/* Dark mode theme variables */
 :root {
   color-scheme: dark;
 
-  --sl-color-accent: hsl(220, 90%, 70%);
-  --sl-color-accent-low: hsl(220, 60%, 8%);
-  --sl-color-accent-high: hsl(220, 90%, 85%);
+  /* Base colors */
+  --sl-color-white: hsl(0, 0%, 100%);
+  --sl-color-black: hsl(224, 10%, 10%);
+  --sl-color-bg: hsl(224, 10%, 10%);
 
+  /* Accent colors */
+  --sl-color-accent: hsl(228, 100%, 70%);
+  --sl-color-accent-low: hsl(228, 70%, 30%);
+  --sl-color-accent-high: #b6c4fb;
+
+  /* Gray scale */
   --sl-color-gray-1: hsl(220, 20%, 98%);
   --sl-color-gray-2: hsl(220, 15%, 95%);
   --sl-color-gray-3: hsl(220, 10%, 88%);
@@ -16,54 +22,36 @@
   --sl-color-gray-5: hsl(220, 6%, 45%);
   --sl-color-gray-6: hsl(220, 8%, 25%);
   --sl-color-gray-7: hsl(220, 10%, 15%);
+  --sl-color-gray-8: hsl(220, 10%, 5%);
 
+  /* Shadows */
   --sl-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --sl-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --sl-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   --sl-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
 
-  --fb-blacks: 255, 255, 255;
+  /* Layout colors */
+  --sl-color-hairline: #212929;
+  --sl-color-hairline-shade: var(--sl-color-hairline);
+  --sl-color-bg-sidebar: #0d1117;
+  --sl-color-bg-nav: var(--sl-color-bg-sidebar);
+  --sl-scrollbar-color: var(--sl-color-accent-high);
+
+  /* Typography */
   --sl-hue-blue: 222;
   --sl-text-h3: var(--sl-text-2xl);
   --sl-text-h4: 1.2rem;
   --sl-content-width: 55rem;
-  /* --sl-color-bg: #0d1117; */
-  /* --sl-color-bg: #1b1b1f; */
-  --sl-color-bg: hsl(224, 10%, 10%);
-  /* SL's main text color  */
-  /* --sl-color-text: #e3e3e3; */
-  /* --sl-color-text: #f0f6fc; */
-  /* --sl-color-bg: #1b1b1f; */
 
-  --sl-color-white: hsl(0, 0%, 100%);
-  --sl-color-gray-7: hsl(224, 10%, 10%);
-  --sl-color-gray-7: #060606;
-  --sl-color-black: hsl(224, 10%, 10%);
-
-  --sl-color-hairline: #212929;
-  --sl-color-hairline-shade: var(--sl-color-hairline);
+  /* Component colors */
   --badge-border-color: --sl-color-hairline;
-  --sl-color-accent-low: hsl(228, 70%, 30%);
-  --sl-color-accent: hsl(228, 100%, 70%);
-  --sl-color-accent-high: #b6c4fb;
-  --sl-scrollbar-color: var(--sl-color-accent-high);
-  --sl-color-bg-sidebar: #0d1117;
-  --sl-color-bg-nav: var(--sl-color-bg-sidebar);
-  --fb-sidebar-color-current-bg: var(--sl-color-gray-5);
-
-  /* Custom variables */
+  --fb-blacks: 255, 255, 255;
   --fb-ec-caption-bg-color: #020000;
-  /* --fb-code-block-bg-color: #151517; */
-  /* --fb-code-block-bg-color: #151b23; */
-  /* --fb-code-block-bg-color: #23262f; */
   --fb-code-block-bg-color: #020110;
-  /* EC border bottom color */
   --fb-ec-caption-bb-color: #464747;
   --fb-ec-language-color: #c1c2c9;
   --fb-steps-bg-color: var(--sl-color-accent-high);
-  /* --fb-steps-bg-color: var(--sl-color-accent-high); */
   --fb-steps-text-color: #010319;
-  /* Custom backdrop background color in dark mode. */
   --starlight-image-zoom-backdrop-bg: oklch(0 0 0);
   --fb-table-header-bg-color: hsl(240, 91%, 5%);
   --fb-toc-color-border: var(--sl-color-accent-high);
@@ -81,25 +69,23 @@ body {
   font-weight: 400;
 }
 
-/* Light mode colors. */
+/* Light mode theme variables */
 :root[data-theme='light'] {
   color-scheme: light;
-  --sl-color-accent: hsl(220, 90%, 60%);
-  --sl-color-accent-low: hsl(220, 90%, 95%);
-  --sl-color-accent-high: hsl(220, 90%, 40%);
 
-  --fb-blacks: 0, 0, 0;
-  --sl-text-h3: var(--sl-text-2xl);
-  --sl-content-width: 55rem;
+  /* Base colors */
+  --sl-color-white: hsl(224, 10%, 10%);
+  --sl-color-black: hsl(0, 0%, 100%);
   --sl-color-bg: #ffffff;
-  --badge-border-color: lightgrey;
-  --sl-color-hairline: #edeef3;
+  --sl-color-text: black;
 
+  /* Accent colors */
   --sl-color-accent: hsl(222, 89%, 55%);
   --sl-color-accent-low: hsl(222, 89%, 85%);
   --sl-color-accent-high: hsl(222, 80%, 35%);
-  --sl-color-white: hsl(224, 10%, 10%);
 
+  
+  /* Gray scale */
   --sl-color-gray-1: hsl(220, 15%, 8%);
   --sl-color-gray-2: hsl(220, 13%, 12%);
   --sl-color-gray-3: hsl(220, 10%, 18%);
@@ -107,63 +93,95 @@ body {
   --sl-color-gray-5: hsl(220, 6%, 55%);
   --sl-color-gray-6: hsl(220, 8%, 75%);
   --sl-color-gray-7: hsl(220, 10%, 85%);
+  --sl-color-gray-8: hsl(220, 10%, 95%);
 
-  --sl-color-black: hsl(0, 0%, 100%);
+  /* Layout colors */
+  --sl-color-hairline: #edeef3;
+  --sl-color-bg-sidebar: #fcfcfc;
+  --sl-color-bg-nav: #eff1f1;
+  --sl-scrollbar-color: var(--sl-color-accent);
 
+  /* Typography */
+  --sl-text-h3: var(--sl-text-2xl);
+  --sl-content-width: 55rem;
+
+  /* Component colors */
+  --badge-border-color: lightgrey;
+  --fb-blacks: 0, 0, 0;
   --purple-hsl: 255, 85%, 65%;
-  /* --sl-color-text: #1C1E21; */
-  --sl-color-text: black;
-
-  /* Custom variables f4f6f8 */
   --fb-ec-caption-bg-color: #f6f8fa;
-  /* EC border bottom color */
   --fb-ec-caption-bb-color: #dadde1;
   --fb-code-block-bg-color: #f6f7f9;
   --fb-ec-language-color: #636467;
-  --sl-scrollbar-color: var(--sl-color-accent);
-  /* --fb-steps-bg-color: var(--sl-color-accent); */
   --fb-steps-bg-color: #0069c2;
   --fb-steps-text-color: #f6f6f4f9;
   --fb-table-header-bg-color: #e8e7e7;
-  /* Custom backdrop background color in light mode. */
   --starlight-image-zoom-backdrop-bg: oklch(95% 0 0);
   --fb-toc-color-border: #0069c2;
   --list-marker-color: var(--sl-color-gray-3);
   --divider-color: var(--sl-color-gray-3);
   --fb-table-border-color: rgba(0, 0, 0, .1);
 
+  /* Border utilities */
   --border-xlight: rgb(0 0 0/5%);
   --border-light: rgba(0, 0, 0, .1);
   --border-medium: rgba(0, 0, 0, .15);
   --border-heavy: rgba(0, 0, 0, .2);
   --border-xheavy: rgba(0, 0, 0, .25);
+
+  /* Sidebar colors */
   --fb-level-2-bg: #ffffff;
   --fb-level-0-bg: #f5f7f8;
-  --sl-color-bg-sidebar: #fcfcfc;
-  --sl-color-bg-nav: #eff1f1;
   --fb-sidebar-color-text-current: rgba(38, 50, 56, 1);
   --fb-toc-color-current-bg: #0085f230;
   --fb-sidebar-color-current-bg: #ececf2;
   --fb-sidebar-color-current-hover: var(--sl-color-gray-7);
 }
 
+/* Global design tokens and utilities */
 :root {
-  /* Customize the font style here */
-
-  /* --sl-font: "Roboto Flex Variable", sans-serif;
-  --font-mono: Noto Mono, Menlo, Monaco, Consolas, monospace; */
-
+  /* Typography */
   --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --sl-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
-
   font-weight: 400;
-  --fb-scrollbar-height: 0.250rem;
-  --purple-hsl: 205, 60%, 60%;
-  --overlay-blurple: hsla(var(--purple-hsl), 0.4);
-  text-underline-offset: .25em;
+
+  /* Typography Scale */
+  --sl-text-xs: 0.75rem;
+  --sl-text-sm: 0.875rem;
+  --sl-text-base: 1rem;
+  --sl-text-lg: 1.125rem;
+  --sl-text-xl: 1.25rem;
+  --sl-text-2xl: 1.5rem;
+  --sl-text-3xl: 1.875rem;
+  --sl-text-4xl: 2.25rem;
+  --sl-text-5xl: 2.25rem;
+  --sl-text-6xl: 3rem;
+  --sl-text-7xl: 3.5rem;
+  --sl-text-8xl: 4rem;
+
+  /* Spacing System */
+  --sl-spacing-xs: 0.25rem;
+  --sl-spacing-sm: 0.5rem;
+  --sl-spacing-md: 1rem;
+  --sl-spacing-lg: 1.5rem;
+  --sl-spacing-xl: 2rem;
+  --sl-spacing-2xl: 3rem;
+  --sl-spacing-3xl: 4rem;
+
+  /* Border Radius System */
   --border-radius: 8px;
+  --sl-border-radius-sm: 0.25rem;
+  --sl-border-radius: 0.5rem;
+  --sl-border-radius-lg: 0.75rem;
+  --sl-border-radius-xl: 1rem;
+
+  /* Layout */
+  --sl-content-width: 60rem;
+  --sl-sidebar-width: 20rem;
+  --sl-nav-height: 4rem;
   --space-xs: clamp(1rem, 0.75rem + 0vi, 0.75rem);
-  /* Style for theme toggle switch */
+
+  /* Animation & Timing */
   --duration-300: 300ms;
   --duration-400: 400ms;
   --duration-1200: 1200ms;
@@ -171,13 +189,17 @@ body {
   --ease: cubic-bezier(0.25, 0, 0.3, 1);
   --ease-elastic: cubic-bezier(0.5, 1.25, 0.75, 1.25);
   --ease-out: cubic-bezier(0, 0, 0, 1);
+
+  /* UI utilities */
+  --purple-hsl: 205, 60%, 60%;
+  --overlay-blurple: hsla(var(--purple-hsl), 0.4);
+  --fb-scrollbar-height: 0.250rem;
+  text-underline-offset: .25em;
   --outline-offset: 2px;
   --outline-offset-lg: 4px;
   --outline-width: 2px;
   --color-text-highlight: var(--sl-color-accent);
-  /* --color-text-highlight: var(--color-white); */
   --fb-theme-btn-color-text: var(--sl-color-accent-high);
-  --outline-width: 2px;
   --rounded-full: 1e5px;
   --header-button-size: 2rem;
   --size-1: 0.25rem;
@@ -185,63 +207,9 @@ body {
   --fb-toc-current-text-color: var(--sl-color-accent-high);
   --fb-font-weight-semibold: 500;
   --fb-h5-font-size: .875rem;
-  /* Steps component: */
   --steps-hairline-color: var(--sl-color-accent-high);
   --paragraph-spacing: 1.5rem;
   --fb-table-border-radius: .375rem;
-
-  /* Modern Typography Scale */
-  /* 12px */
-  --sl-text-xs: 0.75rem;
-  /* 14px */
-  --sl-text-sm: 0.875rem;
-  /* 16px */
-  --sl-text-base: 1rem;
-  /* 18px */
-  --sl-text-lg: 1.125rem;
-  /* 20px */
-  --sl-text-xl: 1.25rem;
-  /* 24px */
-  --sl-text-2xl: 1.5rem;
-  /* 30px */
-  --sl-text-3xl: 1.875rem;
-  --sl-text-4xl: 2.25rem;
-  /* 36px */
-  --sl-text-5xl: 2.25rem;
-  /* 48px */
-  --sl-text-6xl: 3rem;
-  /* 56px */
-  --sl-text-7xl: 3.5rem;
-  /* 64px */
-  --sl-text-8xl: 4rem;
-
-  /* Enhanced Spacing System */
-  /* 4px */
-  --sl-spacing-xs: 0.25rem;
-  /* 8px */
-  --sl-spacing-sm: 0.5rem;
-  /* 16px */
-  --sl-spacing-md: 1rem;
-  /* 24px */
-  --sl-spacing-lg: 1.5rem;
-  /* 32px */
-  --sl-spacing-xl: 2rem;
-  /* 48px */
-  --sl-spacing-2xl: 3rem;
-  /* 64px */
-  --sl-spacing-3xl: 4rem;
-
-
-  /* Layout Variables */
-  --sl-content-width: 60rem;
-  --sl-sidebar-width: 20rem;
-  --sl-nav-height: 4rem;
-
-  /* Border Radius System */
-  --sl-border-radius-sm: 0.25rem;
-  --sl-border-radius: 0.5rem;
-  --sl-border-radius-lg: 0.75rem;
-  --sl-border-radius-xl: 1rem;
 }
 
 /* Markdown content */
@@ -308,16 +276,12 @@ body {
   margin-block: var(--sl-spacing-lg) var(--sl-spacing-sm);
 }
 
-.sl-markdown-content p {
-  margin-block: var(--sl-spacing-md);
-  max-width: 65ch;
-}
 
 .sl-markdown-content blockquote {
   margin-inline: 0;
   padding-inline-start: var(--sl-spacing-lg);
   border-inline-start: 4px solid var(--sl-color-accent);
-  background: var(--sl-color-gray-7);
+  background: var(--sl-color-gray-8);
   padding-block: var(--sl-spacing-md);
   padding-inline-end: var(--sl-spacing-lg);
   border-radius: 0 var(--sl-border-radius) var(--sl-border-radius) 0;
@@ -327,16 +291,16 @@ body {
 
 /* Enhanced code styling */
 .sl-markdown-content code:not(pre code) {
-  background: var(--sl-color-gray-6);
+  background: var(--sl-color-gray-7);
   color: var(--sl-color-accent-high);
   padding: 0.2em 0.4em;
   border-radius: var(--sl-border-radius-sm);
-  font-size: 0.9em;
+  font-size: 0.775em;
   font-weight: 500;
-  border: 1px solid var(--sl-color-gray-5);
+  border: 1px solid var(--sl-color-gray-6);
 }
 
-.sl-markdown-content pre {
+/* .sl-markdown-content pre {
   background: var(--sl-color-gray-7);
   border: 1px solid var(--sl-color-gray-5);
   border-radius: var(--sl-border-radius-lg);
@@ -345,15 +309,15 @@ body {
   overflow-x: auto;
   position: relative;
   box-shadow: var(--sl-shadow);
-}
+}  */
 
-.sl-markdown-content pre code {
+/* .sl-markdown-content pre code {
   background: none;
   border: none;
   padding: 0;
   font-size: var(--sl-text-sm);
   line-height: 1.6;
-}
+} */
 
 /* Copy button styling */
 .sl-markdown-content pre:hover .copy-button {
@@ -382,20 +346,16 @@ body {
 
 /* Pagination override styles */
 .pagination-links {
-
-  /* border-block-start: 2px solid var(--sl-color-gray-6); */
   a {
-    /* border: 0; */
     box-shadow: initial;
   }
 
   :hover {
-    box-shadow: initial;
-    border-color: var(--sl-color-accent-high);
     box-shadow: var(--sl-shadow-sm);
+    border-color: var(--sl-color-accent-high);
   }
 
-  a>span {
+  a > span {
     font-size: var(--fb-h5-font-size);
     font-weight: 600;
   }
@@ -404,13 +364,12 @@ body {
     color: var(--sl-color-text-accent);
     font-size: 1rem;
     font-weight: 600;
-    transition: color 300ms ease-out;
+    transition: color var(--duration-300) ease-out;
   }
 }
 
 /* Steps starlight component */
 .sl-steps {
-  /* --sl-color-hairline-light: var(--steps-hairline-color); */
   --bullet-size: calc(var(--sl-line-height) * 1rem);
   --bullet-margin: .2rem !important;
 
@@ -418,10 +377,9 @@ body {
     padding-left: 45px;
   }
 
-  >li:before {
+  > li:before {
     --fb-steps-dimension: 30px;
     background-color: var(--fb-steps-bg-color);
-    /* background-color: var(--sl-color-gray-6); */
     color: var(--fb-steps-text-color) !important;
     box-shadow: none !important;
     font-size: .8rem;
@@ -429,7 +387,6 @@ body {
     height: var(--fb-steps-dimension);
     text-align: center;
     line-height: var(--fb-steps-dimension);
-    /* box-shadow: inset 0 0 0 1px var(--sl-color-gray-5) !important; */
   }
 }
 
@@ -465,8 +422,7 @@ body {
     border: 1px solid var(--fb-table-border-color);
   }
 
-  thead+tbody tr:nth-child(2n):not(:where(.not-content *)) {
-    /* Apply alt stripes. */
+  thead + tbody tr:nth-child(2n):not(:where(.not-content *)) {
     background-color: var(--sl-color-gray-7);
   }
 
@@ -478,8 +434,8 @@ body {
     padding-inline-end: var(--space-xs);
   }
 
-  /* Apply rounded corners to the four sides of the table. */
-  thead tr:last-of-type:not(:where(.naot-content *)) th:first-child {
+  /* Table border radius */
+  thead tr:last-of-type:not(:where(.not-content *)) th:first-child {
     border-top-left-radius: var(--fb-table-border-radius);
   }
 
@@ -487,16 +443,12 @@ body {
     border-top-right-radius: var(--fb-table-border-radius);
   }
 
-  tbody tr:last-of-type:not(:where(.not-content *)) th:last-child {
-    border-top-right-radius: var(--fb-table-border-radius);
+  tbody tr:last-of-type:not(:where(.not-content *)) td:first-child {
+    border-bottom-left-radius: var(--fb-table-border-radius);
   }
 
   tbody tr:last-of-type:not(:where(.not-content *)) td:last-child {
     border-bottom-right-radius: var(--fb-table-border-radius);
-  }
-
-  tbody tr:last-of-type:not(:where(.not-content *)) td:first-child {
-    border-bottom-left-radius: var(--fb-table-border-radius);
   }
 }
 
@@ -505,14 +457,13 @@ body {
 }
 
 .right-sidebar {
-  /* Remove the  left-side border from the TOC */
   border-inline-start: 0;
-  /* border-inline-start: 1px solid var(--sl-color-gray-6); */
 }
 
-/* Clean up */
+/* Hero page styling */
 [data-has-hero] .page {
-  background: linear-gradient(215deg, var(--overlay-blurple), transparent 40%),
+  background: 
+    linear-gradient(215deg, var(--overlay-blurple), transparent 40%),
     radial-gradient(var(--overlay-blurple), transparent 40%) no-repeat -60vw -40vh / 105vw 200vh,
     radial-gradient(var(--overlay-blurple), transparent 65%) no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
 }
@@ -524,7 +475,7 @@ body {
   backdrop-filter: blur(16px);
 }
 
-[data-has-hero] .hero>img {
+[data-has-hero] .hero > img {
   filter: drop-shadow(0 0 3rem var(--overlay-blurple));
 }
 
@@ -533,28 +484,14 @@ body {
 }
 
 .sl-badge {
-
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
-  /* line-height: 1.1rem; */
 }
 
 
-/* Styles for markdown content headings  */
-/* .sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
-color: var(--sl-color-white);
-line-height: var(--sl-line-height-headings);
-font-family: 'Plus Jakarta Sans Variable', sans-serif;
-font-weight: 600;
-} */
-
-/* .sl-heading-wrapper {
-} */
-
-
-/* date page title onl 2.5rem on mobile devices */
+/* Responsive design */
 @media (max-width: 768px) {
   [data-page-title] {
     font-size: 2.5rem;
