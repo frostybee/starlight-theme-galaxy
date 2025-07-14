@@ -40,8 +40,7 @@
   /* Typography */
   --sl-hue-blue: 222;
   --sl-text-h3: var(--sl-text-2xl);
-  --sl-text-h4: 1.2rem;
-  --sl-content-width: 55rem;
+  --sl-text-h4: 1.2rem;  
 
   /* Component colors */
   --badge-border-color: --sl-color-hairline;
@@ -103,7 +102,7 @@ body {
 
   /* Typography */
   --sl-text-h3: var(--sl-text-2xl);
-  --sl-content-width: 55rem;
+
 
   /* Component colors */
   --badge-border-color: lightgrey;
@@ -144,7 +143,7 @@ body {
   --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --sl-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
   font-weight: 400;
-
+  
   /* Typography Scale */
   --sl-text-xs: 0.75rem;
   --sl-text-sm: 0.875rem;
@@ -176,7 +175,7 @@ body {
   --sl-border-radius-xl: 1rem;
 
   /* Layout */
-  --sl-content-width: 60rem;
+  --sl-content-width: 50rem;  
   --sl-sidebar-width: 20rem;
   --sl-nav-height: 4rem;
   --space-xs: clamp(1rem, 0.75rem + 0vi, 0.75rem);
