@@ -1,7 +1,12 @@
+/* Font Imports */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
 @custom-media --motionSafe (prefers-reduced-motion: no-preference);
 
 /* Dark mode theme variables */
-:root {
+:root,
+::backdrop {
   color-scheme: dark;
 
   /* Base colors */
@@ -23,6 +28,7 @@
   --sl-color-gray-6: hsl(220, 8%, 25%);
   --sl-color-gray-7: hsl(220, 10%, 15%);
   --sl-color-gray-8: hsl(220, 10%, 5%);
+  --sl-color-gray-9: hsl(220, 10%, 1%);
 
   /* Shadows */
   --sl-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -40,7 +46,7 @@
   /* Typography */
   --sl-hue-blue: 222;
   --sl-text-h3: var(--sl-text-2xl);
-  --sl-text-h4: 1.2rem;  
+  --sl-text-h4: 1.2rem;
 
   /* Component colors */
   --badge-border-color: --sl-color-hairline;
@@ -83,7 +89,7 @@ body {
   --sl-color-accent-low: hsl(222, 89%, 85%);
   --sl-color-accent-high: hsl(222, 80%, 35%);
 
-  
+
   /* Gray scale */
   --sl-color-gray-1: hsl(220, 15%, 8%);
   --sl-color-gray-2: hsl(220, 13%, 12%);
@@ -93,6 +99,7 @@ body {
   --sl-color-gray-6: hsl(220, 8%, 75%);
   --sl-color-gray-7: hsl(220, 10%, 85%);
   --sl-color-gray-8: hsl(220, 10%, 95%);
+  --sl-color-gray-9: hsl(220, 10%, 98%);
 
   /* Layout colors */
   --sl-color-hairline: #edeef3;
@@ -138,12 +145,13 @@ body {
 }
 
 /* Global design tokens and utilities */
-:root {
+:root,
+::backdrop {
   /* Typography */
-  --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --sl-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
+  --sl-font: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --sl-font-mono: 'JetBrains Mono Variable', 'Fira Code', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
   font-weight: 400;
-  
+
   /* Typography Scale */
   --sl-text-xs: 0.75rem;
   --sl-text-sm: 0.875rem;
@@ -175,7 +183,7 @@ body {
   --sl-border-radius-xl: 1rem;
 
   /* Layout */
-  --sl-content-width: 50rem;  
+  --sl-content-width: 50rem;
   --sl-sidebar-width: 20rem;
   --sl-nav-height: 4rem;
   --space-xs: clamp(1rem, 0.75rem + 0vi, 0.75rem);
@@ -193,7 +201,7 @@ body {
   --purple-hsl: 205, 60%, 60%;
   --overlay-blurple: hsla(var(--purple-hsl), 0.4);
   --fb-scrollbar-height: 0.250rem;
-  text-underline-offset: .25em;
+  --text-underline-offset: .25em;
   --outline-offset: 2px;
   --outline-offset-lg: 4px;
   --outline-width: 2px;
@@ -259,10 +267,8 @@ body {
   border-radius: var(--sl-border-radius);
 }
 
-.sl-markdown-content
-		:not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper)
-		+ :is(.sl-heading-wrapper) {
-    margin-top: 1em;
+.sl-markdown-content:not(h1, h2, h3, h4, h5, h6, .sl-heading-wrapper)+ :is(.sl-heading-wrapper) {
+  margin-top: 1em;
 }
 
 .sl-markdown-content h3 {
@@ -360,7 +366,7 @@ body {
     border-color: var(--sl-color-accent-high);
   }
 
-  a > span {
+  a>span {
     font-size: var(--fb-h5-font-size);
     font-weight: 600;
   }
@@ -382,7 +388,7 @@ body {
     padding-left: 45px;
   }
 
-  > li:before {
+  >li:before {
     --fb-steps-dimension: 30px;
     background-color: var(--fb-steps-bg-color);
     color: var(--fb-steps-text-color) !important;
@@ -416,7 +422,7 @@ body {
   }
 
   thead th {
-    background-color: var(--fb-table-header-bg-color);
+    background-color: var(--sl-color-gray-8);
     text-align: center !important;
   }
 
@@ -427,8 +433,8 @@ body {
     border: 1px solid var(--fb-table-border-color);
   }
 
-  thead + tbody tr:nth-child(2n):not(:where(.not-content *)) {
-    background-color: var(--sl-color-gray-7);
+  thead+tbody tr:nth-child(2n):not(:where(.not-content *)) {
+    background-color: var(--sl-color-gray-9);
   }
 
   :is(th:first-child, td:first-child):not(:where(.not-content *)) {
@@ -467,7 +473,7 @@ body {
 
 /* Hero page styling */
 [data-has-hero] .page {
-  background: 
+  background:
     linear-gradient(215deg, var(--overlay-blurple), transparent 40%),
     radial-gradient(var(--overlay-blurple), transparent 40%) no-repeat -60vw -40vh / 105vw 200vh,
     radial-gradient(var(--overlay-blurple), transparent 65%) no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
@@ -480,7 +486,7 @@ body {
   backdrop-filter: blur(16px);
 }
 
-[data-has-hero] .hero > img {
+[data-has-hero] .hero>img {
   filter: drop-shadow(0 0 3rem var(--overlay-blurple));
 }
 
@@ -493,6 +499,21 @@ body {
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
+}
+
+/* .header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sl-color-gray-3);
+  box-shadow: var(--sl-shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+} */
+
+.site-title {  
+  font-size: var(--sl-text-xl);  
 }
 
 

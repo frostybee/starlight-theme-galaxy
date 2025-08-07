@@ -4,7 +4,7 @@
     [aria-current='page']:hover,
     [aria-current='page']:focus {
       color: var(--fb-sidebar-color-text-current);
-      background-color: var(--fb-sidebar-color-current-bg);
+      background-color: var(--sl-color-gray-7);
       box-shadow: 2px 1px 2px 1px rgba(var(--fb-blacks), .03);
       position: relative;
       /* border-bottom-right-radius: .25rem !important; */
@@ -27,15 +27,15 @@
       padding: .4em var(--sl-sidebar-item-padding-inline) .5em 1em;
       color: var(--fb-body-color);
   
-      &:hover {
-        color: var(--fb-sidebar-color-text-current);
-        background-color: var(--fb-sidebar-color-current-hover);
+      &:hover {        
+        background: var(--sl-color-gray-7);
+        color: var(--sl-color-gray-3);
         font-weight: 600;
+        transform: translateX(3px);
         /* border-bottom-right-radius: .25rem !important;
         border-top-right-radius: .25rem !important; */
       }
-    }
-  
+    }  
     summary+ul {
       margin: .25rem 0;
     }
@@ -44,3 +44,14 @@
       margin-bottom: .5rem;
     }
   }
+  
+  /* Group headings */
+  .sidebar .group-label {
+    font-size: var(--sl-text-sm);
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.03em;
+    color: var(--sl-color-gray-7);
+  }
+  
+  

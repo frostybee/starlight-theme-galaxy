@@ -4,8 +4,6 @@ import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
 import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 import ThemeSelect from "./ThemeSelect.astro";
 import ProgressScroll from './ProgressScroll.astro';
-
-
 const displayProgressScroll = true;
 	// Astro.props.slug.startsWith('guides') ||
 	// (Astro.props.slug.startsWith('articles/') &&
@@ -29,7 +27,7 @@ const displayProgressScroll = true;
        <SocialIcons  />
 	</div>
 </div>
-{displayProgressScroll && <ProgressScroll />}
+{displayProgressScroll && <ProgressScroll  />}
 
 <style>
 	.header {
