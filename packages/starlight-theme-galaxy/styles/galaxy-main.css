@@ -494,11 +494,221 @@ body {
   font-size: 3rem;
 }
 
+/* ============================
+ * BADGE STYLING  
+ * ============================ */
+
 .sl-badge {
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-family: var(--sl-font);
+  line-height: 1;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Badge size variants */
+.sl-badge.small {
   padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+}
+
+.sl-badge.medium {
+  padding: 0.375rem 0.75rem;
   font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+.sl-badge.large {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.025em;
+}
+
+/* Default badge (neutral) */
+.sl-badge.default,
+.sl-badge:not([class*="note"]):not([class*="danger"]):not([class*="success"]):not([class*="tip"]):not([class*="caution"]) {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.12) 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--sl-color-gray-1);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Success badge (green theme) */
+.sl-badge.success {
+  background: linear-gradient(135deg,
+      rgba(34, 197, 94, 0.25) 0%,
+      rgba(34, 197, 94, 0.15) 100%);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #10b981;
+  box-shadow:
+    0 1px 3px rgba(34, 197, 94, 0.2),
+    inset 0 1px 0 rgba(34, 197, 94, 0.15);
+}
+
+/* Danger badge (red theme) */
+.sl-badge.danger {
+  background: linear-gradient(135deg,
+      rgba(239, 68, 68, 0.25) 0%,
+      rgba(239, 68, 68, 0.15) 100%);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #f87171;
+  box-shadow:
+    0 1px 3px rgba(239, 68, 68, 0.2),
+    inset 0 1px 0 rgba(239, 68, 68, 0.15);
+}
+
+/* Note badge (blue theme) */
+.sl-badge.note {
+  background: linear-gradient(135deg,
+      rgba(59, 130, 246, 0.25) 0%,
+      rgba(59, 130, 246, 0.15) 100%);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
+  box-shadow:
+    0 1px 3px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(59, 130, 246, 0.15);
+}
+
+/* Tip badge (purple theme) */
+.sl-badge.tip {
+  background: linear-gradient(135deg,
+      rgba(168, 85, 247, 0.25) 0%,
+      rgba(168, 85, 247, 0.15) 100%);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #a78bfa;
+  box-shadow:
+    0 1px 3px rgba(168, 85, 247, 0.2),
+    inset 0 1px 0 rgba(168, 85, 247, 0.15);
+}
+
+/* Caution badge (yellow theme) */
+.sl-badge.caution {
+  background: linear-gradient(135deg,
+      rgba(245, 158, 11, 0.25) 0%,
+      rgba(245, 158, 11, 0.15) 100%);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  box-shadow:
+    0 1px 3px rgba(245, 158, 11, 0.2),
+    inset 0 1px 0 rgba(245, 158, 11, 0.15);
+}
+
+/* Light theme adjustments */
+:root[data-theme='light'] .sl-badge.default,
+:root[data-theme='light'] .sl-badge:not([class*="note"]):not([class*="danger"]):not([class*="success"]):not([class*="tip"]):not([class*="caution"]) {
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.05) 100%);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: var(--sl-color-gray-3);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+:root[data-theme='light'] .sl-badge.success {
+  color: #059669;
+  background: linear-gradient(135deg,
+      rgba(34, 197, 94, 0.2) 0%,
+      rgba(34, 197, 94, 0.12) 100%);
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+:root[data-theme='light'] .sl-badge.danger {
+  color: #dc2626;
+  background: linear-gradient(135deg,
+      rgba(239, 68, 68, 0.2) 0%,
+      rgba(239, 68, 68, 0.12) 100%);
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+:root[data-theme='light'] .sl-badge.note {
+  color: #2563eb;
+  background: linear-gradient(135deg,
+      rgba(59, 130, 246, 0.2) 0%,
+      rgba(59, 130, 246, 0.12) 100%);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+:root[data-theme='light'] .sl-badge.tip {
+  color: #7c3aed;
+  background: linear-gradient(135deg,
+      rgba(168, 85, 247, 0.2) 0%,
+      rgba(168, 85, 247, 0.12) 100%);
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
+:root[data-theme='light'] .sl-badge.caution {
+  color: #d97706;
+  background: linear-gradient(135deg,
+      rgba(245, 158, 11, 0.2) 0%,
+      rgba(245, 158, 11, 0.12) 100%);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .sl-badge {
+    border-width: 2px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .sl-badge.default,
+  .sl-badge:not([class*="note"]):not([class*="danger"]):not([class*="success"]):not([class*="tip"]):not([class*="caution"]) {
+    background: var(--sl-color-bg);
+    border-color: var(--sl-color-gray-4);
+    color: var(--sl-color-white);
+  }
+
+  .sl-badge.success {
+    background: #065f46;
+    border-color: #10b981;
+    color: #ffffff;
+  }
+
+  .sl-badge.danger {
+    background: #7f1d1d;
+    border-color: #ef4444;
+    color: #ffffff;
+  }
+
+  .sl-badge.note {
+    background: #1e3a8a;
+    border-color: #3b82f6;
+    color: #ffffff;
+  }
+
+  .sl-badge.tip {
+    background: #581c87;
+    border-color: #a855f7;
+    color: #ffffff;
+  }
+
+  .sl-badge.caution {
+    background: #92400e;
+    border-color: #f59e0b;
+    color: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .sl-badge {
+    transition: none;
+  }
 }
 
 /* .header {
@@ -512,8 +722,8 @@ body {
   z-index: 100;
 } */
 
-.site-title {  
-  font-size: var(--sl-text-xl);  
+.site-title {
+  font-size: var(--sl-text-xl);
 }
 
 
@@ -525,22 +735,21 @@ body {
 }
 
 /* ============================
- * MODERN CARD STYLING
- * Professional cards with latest design trends
+ * CARD STYLING  
  * ============================ */
 
 /* Card component styling */
 .card {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.08) 0%, 
-    rgba(255, 255, 255, 0.03) 100%);
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -556,10 +765,10 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(var(--sl-color-accent), 0.3), 
-    transparent);
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(var(--sl-color-accent), 0.3),
+      transparent);
   border-radius: 1rem 1rem 0 0;
 }
 
@@ -569,7 +778,7 @@ body {
 .card:focus-within {
   outline: 2px solid var(--sl-color-accent);
   outline-offset: 3px;
-  box-shadow: 
+  box-shadow:
     0 0 0 4px rgba(var(--sl-color-accent), 0.2),
     0 24px 64px rgba(0, 0, 0, 0.18),
     0 8px 24px rgba(0, 0, 0, 0.12);
@@ -579,9 +788,9 @@ body {
 .card .title {
   font-weight: 600;
   font-size: 1.1rem;
-  background: linear-gradient(135deg, 
-    var(--sl-color-white), 
-    var(--sl-color-accent-high));
+  background: linear-gradient(135deg,
+      var(--sl-color-white),
+      var(--sl-color-accent-high));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -609,14 +818,14 @@ body {
 .sl-link-card {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.08) 0%, 
-    rgba(255, 255, 255, 0.03) 100%);
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 1rem;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -636,10 +845,10 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(var(--sl-color-accent), 0.3), 
-    transparent);
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(var(--sl-color-accent), 0.3),
+      transparent);
   border-radius: 1rem 1rem 0 0;
 }
 
@@ -653,9 +862,9 @@ body {
 .sl-link-card .title {
   font-weight: 600;
   font-size: 1.1rem;
-  background: linear-gradient(135deg, 
-    var(--sl-color-white), 
-    var(--sl-color-accent-high));
+  background: linear-gradient(135deg,
+      var(--sl-color-white),
+      var(--sl-color-accent-high));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -683,7 +892,7 @@ body {
 /* LinkCard hover effects */
 .sl-link-card:hover {
   transform: translateY(-4px) translateZ(0);
-  box-shadow: 
+  box-shadow:
     0 20px 48px rgba(0, 0, 0, 0.15),
     0 6px 16px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
@@ -691,10 +900,10 @@ body {
 }
 
 .sl-link-card:hover::before {
-  background: linear-gradient(90deg, 
-    transparent, 
-    var(--sl-color-accent), 
-    transparent);
+  background: linear-gradient(90deg,
+      transparent,
+      var(--sl-color-accent),
+      transparent);
   height: 2px;
   box-shadow: 0 0 8px rgba(var(--sl-color-accent), 0.4);
 }
@@ -709,7 +918,7 @@ body {
 .sl-link-card:focus-within {
   outline: 2px solid var(--sl-color-accent);
   outline-offset: 3px;
-  box-shadow: 
+  box-shadow:
     0 0 0 4px rgba(var(--sl-color-accent), 0.2),
     0 8px 32px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.08);
@@ -745,12 +954,29 @@ body {
 }
 
 /* Staggered animation delays */
-.card-grid.stagger .card:nth-child(1) { animation-delay: 0.1s; }
-.card-grid.stagger .card:nth-child(2) { animation-delay: 0.2s; }
-.card-grid.stagger .card:nth-child(3) { animation-delay: 0.3s; }
-.card-grid.stagger .card:nth-child(4) { animation-delay: 0.4s; }
-.card-grid.stagger .card:nth-child(5) { animation-delay: 0.5s; }
-.card-grid.stagger .card:nth-child(6) { animation-delay: 0.6s; }
+.card-grid.stagger .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card-grid.stagger .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card-grid.stagger .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card-grid.stagger .card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card-grid.stagger .card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.card-grid.stagger .card:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 /* Enhanced staggered positioning */
 .card-grid.stagger .card:nth-child(2n) {
@@ -771,7 +997,7 @@ body {
     gap: 1rem;
     margin: 1.5rem 0;
   }
-  
+
   .card {
     margin: 0;
   }
@@ -783,11 +1009,11 @@ body {
 
 /* Light theme adjustments */
 :root[data-theme='light'] .card {
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.9) 0%, 
-    rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.7) 100%);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.06),
     0 2px 8px rgba(0, 0, 0, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -800,11 +1026,11 @@ body {
 
 /* Light theme LinkCard adjustments */
 :root[data-theme='light'] .sl-link-card {
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.9) 0%, 
-    rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.7) 100%);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.06),
     0 2px 8px rgba(0, 0, 0, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -816,7 +1042,7 @@ body {
 
 /* Light theme LinkCard hover effects */
 :root[data-theme='light'] .sl-link-card:hover {
-  box-shadow: 
+  box-shadow:
     0 20px 48px rgba(0, 0, 0, 0.12),
     0 6px 16px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
@@ -829,7 +1055,7 @@ body {
     border: 2px solid var(--sl-color-gray-4);
     background: var(--sl-color-bg);
   }
-  
+
 
   .card .title {
     background: none;
@@ -852,6 +1078,7 @@ body {
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
   .card,
   .card .icon,
   .card a,
@@ -867,7 +1094,7 @@ body {
   .sl-link-card:hover .icon {
     transform: none;
   }
-  
+
   .card-grid.stagger .card {
     animation: none;
     opacity: 1;
