@@ -610,25 +610,220 @@ body {
   }
 }
 
-/* Steps starlight component */
+/* ============================
+ * STEPS STYLING   
+ * ============================ */
+
+/* Steps container */
 .sl-steps {
   --bullet-size: calc(var(--sl-line-height) * 1rem);
   --bullet-margin: .2rem !important;
+  
+  /* Hide any original starlight connecting lines */
+  &::before,
+  &::after {
+    display: none !important;
+  }
+  
+  position: relative;
+  padding: 1rem 0;
+  margin: 2rem 0;
+  
+  /* Reset counter for each steps container */
+  counter-reset: step-counter !important;
 
   li {
-    padding-left: 45px;
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 
-  >li:before {
-    --fb-steps-dimension: 30px;
-    background-color: var(--fb-steps-bg-color);
-    color: var(--fb-steps-text-color) !important;
-    box-shadow: none !important;
-    font-size: .8rem;
+  /* Clean step bullets */
+  > li:before {
+    --fb-steps-dimension: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    
+    /* Slightly lighter accent color */
+    /* background: color-mix(in srgb, var(--sl-color-accent-high) 85%, white 15%); */
+    background: color-mix(in srgb, var(--sl-color-accent-high) 85%, #17025e41 25%);
+    color: var(--sl-color-black);
+    
+    /* Clean styling */
     width: var(--fb-steps-dimension);
     height: var(--fb-steps-dimension);
+    border-radius: 50%;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    
+    /* Typography */
+    font-size: 0.875rem;
+    font-weight: 700;
     text-align: center;
+    line-height: var(--fb-steps-dimension); /* Perfect centering without border */
+    
+    /* Simple transition */
+    transition: all 0.2s ease;
+  }
+
+  /* Step content styling */
+  > li {
+    color: var(--sl-color-gray-2);
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* Simple connecting lines between steps */
+  > li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 32px;
+    bottom: -24px;
+    width: 1px;
+    /* background: var(--sl-color-gray-8); */
+    background: var(--sl-color-gray-6) !important;
+    border-radius: 1px;
+    z-index: -1;
+  }
+
+  /* Step titles */
+  > li > :first-child {
+    font-weight: 600;
+    color: var(--sl-color-gray-1);
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+}
+
+/* ============================
+ * BANNER STYLING    
+ * ============================ */
+
+/* Banner container */
+.sl-banner {
+  position: relative;
+  margin: 2rem auto 0 auto;
+  padding: 1rem 1.5rem;
+  max-width: var(--sl-content-width);
+  background: linear-gradient(135deg,
+    var(--sl-color-accent) 0%,
+    var(--sl-color-accent-high) 100%);
+  color: var(--sl-color-black);
+  text-align: center;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(var(--sl-color-accent), 0.2);
+  font-weight: 500;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  text-wrap: unset;
+}
+
+/* Right alignment when sidebar is present */
+[data-has-sidebar] .sl-banner {
+  justify-self: end;
+  margin-inline: var(--sl-content-pad-x);
+  text-align: left;
+}
+
+/* Banner links styling */
+.sl-banner :global(a) {
+  color: var(--sl-color-black) !important;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.sl-banner :global(a:hover) {
+  text-decoration-color: rgba(var(--sl-color-black), 0.7);
+  transform: translateY(-1px);
+}
+
+/* Banner typography */
+.sl-banner :global(p) {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.sl-banner :global(strong) {
+  font-weight: 700;
+}
+
+/* Light theme adjustments */
+:root[data-theme='light'] .sl-banner {
+  color: var(--sl-color-black);
+  box-shadow: 0 2px 8px rgba(var(--sl-color-accent), 0.15);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 50rem) {
+  .sl-banner {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .sl-banner :global(p) {
+    font-size: 0.875rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .sl-banner {
+    animation: none !important;
+    transition: none;
+  }
+  
+  .sl-banner:hover {
+    transform: none;
+  }
+  
+  .sl-banner :global(a) {
+    transition: none;
+  }
+  
+  .sl-banner :global(a:hover) {
+    transform: none;
+  }
+}
+
+/* Counter initialization - moved above */
+
+/* Light theme adjustments */
+:root[data-theme='light'] .sl-steps > li:not(:last-child)::after {
+  background: var(--sl-color-gray-5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 50rem) {
+  .sl-steps {
+    margin: 1.5rem 0;
+    padding: 0.75rem 0;
+  }
+  
+  .sl-steps li {
+    padding-left: 45px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .sl-steps > li:before {
+    --fb-steps-dimension: 28px;
+    font-size: 0.8rem;
     line-height: var(--fb-steps-dimension);
+  }
+  
+  .sl-steps > li:not(:last-child)::after {
+    left: 13px;
+    top: 28px;
   }
 }
 
