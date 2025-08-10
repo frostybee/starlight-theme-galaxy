@@ -21,6 +21,11 @@
     position: relative;
     padding-left: 2rem;
   }
+  
+  /* Adjust text alignment for unordered lists */
+  & ul:not(:where(.sl-steps, .not-content *)) > li {
+    /* margin-top: -0.1em; */
+  }
 
   /* Nested list spacing */
   & li:not(:where(.not-content *)) > ol,
@@ -31,14 +36,25 @@
 
   /* Unordered list markers */
   & ul:not(:where(.sl-steps, .not-content *)) > li::before {
-    content: "";
+    content: "■";
     position: absolute;
-    left: 2px;
-    top: 13px;
-    width: 12px;
-    height: 2px;
-    border-radius: 1px;
-    background: var(--list-marker-color);
+    left: 6px;
+    top: 0.5em;
+    color: var(--sl-color-accent-high);
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+  
+  /* Nested unordered list markers */
+  & ul ul:not(:where(.sl-steps, .not-content *)) > li::before {
+    content: "❂";
+    font-size: 0.875rem;
+  }
+  
+  & ul ul ul:not(:where(.sl-steps, .not-content *)) > li::before {
+    content: "▸";
+    font-size: 1.125rem;
   }
 
   /* Ordered list markers */
@@ -47,19 +63,31 @@
     content: counter(listitem);
     position: absolute;
     font-size: 0.75rem;
-    font-weight: 600;
-    line-height: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
     text-align: center;
     height: 22px;
     width: 22px;
-    min-width: 22px;
-    padding-inline: 4px;
-    left: 0;
-    top: 3px;
+    min-width: 20px;
+    left: 1px;
+    top: 2px;
     border-radius: 4px;
-    color: var(--sl-color-text);
+    color: var(--sl-color-white);
     font-family: var(--sl-font-mono);
-    border: 1px solid var(--divider-color);
-    box-shadow: var(--sl-shadow-sm);
+    background: var(--sl-color-accent-low);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Nested ordered list styling */
+  & ol ol:not(:where(.sl-steps, .not-content *)) > li::before {
+    background: var(--sl-color-gray-4);
+    border-radius: 3px;
+  }
+  
+  & ol ol ol:not(:where(.sl-steps, .not-content *)) > li::before {
+    background: var(--sl-color-gray-5);
+    font-style: italic;
   }
 }
