@@ -42,99 +42,99 @@ starlight-tabs::before {
   background: rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.25rem;
-}
+  
+  /* Tab list */
+  & ul[role="tablist"] {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 0.125rem;
+    background: transparent;
+  }
 
-/* Tab list */
-.tablist-wrapper ul[role="tablist"] {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  gap: 0.125rem;
-  background: transparent;
-}
-
-/* Individual tab styling */
-.tablist-wrapper li.tab {
-  position: relative;
-  flex: 1;
-  margin: 0;
-}
-
-/* Tab button/link */
-.tablist-wrapper li.tab a[role="tab"] {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.625rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--sl-color-gray-3);
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent; /* Invisible border to maintain height */
-  border-radius: 0.25rem 0.25rem 0 0; /* Only round top corners */
-  text-decoration: none;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  outline: none !important; /* Force remove default outline */
-  margin-bottom: -2px; /* All tabs overlap container border */
-}
-
-/* Icon styling within tabs */
-.tablist-wrapper li.tab a[role="tab"] svg {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-  color: var(--sl-color-gray-3);
-  transition: color 0.2s ease;
-}
-
-/* Active tab styling */
-.tablist-wrapper li.tab a[role="tab"][aria-selected="true"] {
-  background: transparent;
-  color: var(--sl-color-accent-high);
-  font-weight: 700;
-  border-bottom-color: var(--sl-color-accent); /* Just change the color */
-}
-
-/* Active tab icon styling */
-.tablist-wrapper li.tab a[role="tab"][aria-selected="true"] svg {
-  color: var(--sl-color-accent);
-}
-
-/* Inactive tab hover effects */
-.tablist-wrapper li.tab a[role="tab"]:not([aria-selected="true"]):hover {
-  background: var(--sl-color-gray-6);
-  color: var(--sl-color-gray-1);
-}
-
-.tablist-wrapper li.tab a[role="tab"]:not([aria-selected="true"]):hover svg {
-  color: var(--sl-color-accent);
-}
-
-/* Focus states for accessibility */
-.tablist-wrapper li.tab a[role="tab"]:focus {
-  outline: none !important; /* Force remove all outlines */
-  box-shadow: 0 0 0 2px var(--sl-color-accent); /* Custom focus ring */
-}
-
-/* Focus visible (keyboard navigation only) */
-.tablist-wrapper li.tab a[role="tab"]:focus-visible {
-  outline: none !important; /* Remove default outline */
-  box-shadow: 0 0 0 2px var(--sl-color-accent); /* Use box-shadow instead */
-}
-
-/* Remove any webkit focus ring */
-.tablist-wrapper li.tab a[role="tab"]:focus:not(:focus-visible) {
-  outline: none !important;
-  box-shadow: none;
+  /* Individual tab styling */
+  & li.tab {
+    position: relative;
+    flex: 1;
+    margin: 0;
+    
+    /* Tab button/link */
+    & a[role="tab"] {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--sl-color-gray-3);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent; /* Invisible border to maintain height */
+      border-radius: 0.25rem 0.25rem 0 0; /* Only round top corners */
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      outline: none !important; /* Force remove default outline */
+      margin-bottom: -2px; /* All tabs overlap container border */
+      
+      /* Icon styling within tabs */
+      & svg {
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+        color: var(--sl-color-gray-3);
+        transition: color 0.2s ease;
+      }
+      
+      /* Active tab styling */
+      &[aria-selected="true"] {
+        background: transparent;
+        color: var(--sl-color-accent-high);
+        font-weight: 700;
+        border-bottom-color: var(--sl-color-accent); /* Just change the color */
+        
+        /* Active tab icon styling */
+        & svg {
+          color: var(--sl-color-accent);
+        }
+      }
+      
+      /* Inactive tab hover effects */
+      &:not([aria-selected="true"]):hover {
+        background: var(--sl-color-gray-6);
+        color: var(--sl-color-gray-1);
+        
+        & svg {
+          color: var(--sl-color-accent);
+        }
+      }
+      
+      /* Focus states for accessibility */
+      &:focus {
+        outline: none !important; /* Force remove all outlines */
+        box-shadow: 0 0 0 2px var(--sl-color-accent); /* Custom focus ring */
+      }
+      
+      /* Focus visible (keyboard navigation only) */
+      &:focus-visible {
+        outline: none !important; /* Remove default outline */
+        box-shadow: 0 0 0 2px var(--sl-color-accent); /* Use box-shadow instead */
+      }
+      
+      /* Remove any webkit focus ring */
+      &:focus:not(:focus-visible) {
+        outline: none !important;
+        box-shadow: none;
+      }
+    }
+  }
 }
 
 /* Tab panel content */
@@ -145,9 +145,11 @@ starlight-tabs > *:not(.tablist-wrapper) {
 
 /* Responsive design */
 @media (max-width: 50rem) {
-  .tablist-wrapper li.tab a[role="tab"] {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
+  .tablist-wrapper {
+    & li.tab a[role="tab"] {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+    }
   }
   
   starlight-tabs > *:not(.tablist-wrapper) {
@@ -170,16 +172,21 @@ starlight-tabs > *:not(.tablist-wrapper) {
 :root[data-theme='light'] .tablist-wrapper {
   background: rgba(0, 0, 0, 0.02);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-:root[data-theme='light'] .tablist-wrapper li.tab a[role="tab"]:not([aria-selected="true"]):hover {
-  background: rgba(0, 0, 0, 0.05);
+  
+  & li.tab a[role="tab"]:not([aria-selected="true"]):hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .tablist-wrapper li.tab a[role="tab"],
-  .tablist-wrapper li.tab a[role="tab"] svg {
-    transition: none;
+  .tablist-wrapper {
+    & li.tab a[role="tab"] {
+      transition: none;
+      
+      & svg {
+        transition: none;
+      }
+    }
   }
 }
