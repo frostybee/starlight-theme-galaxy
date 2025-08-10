@@ -42,14 +42,14 @@
     top: 0.5em;
     color: var(--sl-color-accent-high);
     font-weight: 700;
-    font-size: 0.875rem;
+    font-size: 0.775rem;
     line-height: 1;
   }
   
   /* Nested unordered list markers */
   & ul ul:not(:where(.sl-steps, .not-content *)) > li::before {
     content: "❂";
-    font-size: 0.875rem;
+    font-size: 0.775rem;
   }
   
   & ul ul ul:not(:where(.sl-steps, .not-content *)) > li::before {

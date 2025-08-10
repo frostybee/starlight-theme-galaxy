@@ -3,6 +3,12 @@
  * ============================ */
 
 .right-sidebar-panel starlight-toc {
+  /* Add left border to entire TOC */
+  & ul {
+    border-left: 1px solid var(--sl-color-gray-5);
+    padding-left: 0.5rem;
+  }
+  
   & ul li[class^=astro-] a {
     border-radius: 0%;
     display: inline-block;
@@ -12,7 +18,7 @@
     text-decoration: none;
     width: fit-content;
     color: var(--sl-color-text);
-    border-left: 1px solid var(--sl-color-gray-5);
+    /* border-left: 1px solid var(--sl-color-gray-5); */
     font-weight: 400;
     position: relative;
     transition: all 0.3s ease;
@@ -32,9 +38,13 @@
 
     /* Current selected item in the TOC */
     &[aria-current='true'] {
-      color: var(--sl-color-white);
-      background-color: var(--fb-toc-color-current-bg);
-      font-weight: 600;
+      color: var(--sl-color-accent-high);
+      background: linear-gradient(90deg, 
+        color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, 
+        transparent 100%);
+      border-left: 2px solid var(--sl-color-accent);
+      box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+      font-weight: 700;
       border-bottom-right-radius: 0.45rem;
       border-top-right-radius: 0.45rem;
       padding-right: 0.7rem;
@@ -50,5 +60,20 @@
       border-radius: 0;
       transition: none;
     }
+  }
+  
+  /* Heading level styling */
+  & ul ul li[class^=astro-] a {
+    padding-left: 1.5rem;
+  }
+  
+  & ul ul ul li[class^=astro-] a {
+    padding-left: 2rem;
+    font-size: 0.85rem;
+  }
+  
+  & ul ul ul ul li[class^=astro-] a {
+    padding-left: 2.5rem;
+    font-size: 0.8rem;
   }
 }
