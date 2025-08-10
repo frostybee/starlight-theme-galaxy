@@ -5,7 +5,7 @@
 :root {
   /* Modern spacing system */
   --galaxy-aside-radius: 0.75rem;
-  --galaxy-aside-padding: 1.5rem;
+  --galaxy-aside-padding: 0.875rem;
   --galaxy-aside-gap: 0.75rem;
   --galaxy-aside-border-width: 1px;
   --galaxy-aside-accent-width: 3px;
@@ -274,7 +274,7 @@
 
 @media (max-width: 768px) {
   .starlight-aside {
-    --galaxy-aside-padding: 1.25rem;
+    --galaxy-aside-padding: 0.875rem;
     margin: 1.25rem 0;
     
     &:hover {
