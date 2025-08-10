@@ -3,10 +3,10 @@
  * ============================ */
 
 .right-sidebar-panel starlight-toc {
-  /* Add left border to entire TOC */
+  /* Continuous left border for entire TOC */
   & ul {
-    border-left: 1px solid var(--sl-color-gray-5);
-    padding-left: 0.5rem;
+    border-left: 1px solid var(--sl-color-hairline-light);
+    margin-left: 0.5rem;
   }
   
   & ul li[class^=astro-] a {
@@ -18,7 +18,6 @@
     text-decoration: none;
     width: fit-content;
     color: var(--sl-color-text);
-    /* border-left: 1px solid var(--sl-color-gray-5); */
     font-weight: 400;
     position: relative;
     transition: all 0.3s ease;
@@ -42,7 +41,6 @@
       background: linear-gradient(90deg, 
         color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, 
         transparent 100%);
-      border-left: 2px solid var(--sl-color-accent);
       box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
       font-weight: 700;
       border-bottom-right-radius: 0.45rem;
@@ -56,9 +54,21 @@
 
     &:hover {
       font-weight: 600;
-      border-left: 2px solid var(--fb-toc-color-border);
       border-radius: 0;
       transition: none;
+    }
+  }
+  
+  /* Add special border styling for top-level items only */
+  & > ul > li[class^=astro-] a {
+    &[aria-current='true'] {
+      margin-left: -1px;
+      border-left: 2px solid var(--sl-color-accent);
+    }
+    
+    &:not([aria-current='true']):hover {
+      margin-left: -1px;
+      border-left: 2px solid var(--fb-toc-color-border);
     }
   }
   
