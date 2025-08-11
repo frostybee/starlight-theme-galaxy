@@ -1,6 +1,6 @@
 {
   "name": "starlight-theme-galaxy",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "A customized Astro Starlight theme for publishing docs and educational content.",
   "author": "frostybee",
@@ -10,12 +10,12 @@
     ".": "./src/index.ts",
     "./styles/index.css": "./src/styles/index.css",
     "./package.json": "./package.json",
-    "./components/*.astro": "./src/components/*.astro"    
+    "./components/*.astro": "./src/components/*.astro"
   },
-  "scripts": {    
+  "scripts": {
     "lint": "eslint . --cache --max-warnings=0"
   },
-  "dependencies": {    
+  "dependencies": {
     "@fontsource-variable/plus-jakarta-sans": "^5.2.5",
     "@fontsource-variable/roboto-flex": "^5.2.5",
     "@fontsource-variable/inter": "^5.2.5",
