@@ -8,6 +8,7 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/frostybee/starlight-theme-galaxy/edit/main/docs/',
       },
+      tableOfContents: {minHeadingLevel: 2, maxHeadingLevel: 4},
       plugins: [starlightThemeGalaxy()],
       sidebar: [
         {
@@ -15,11 +16,12 @@ export default defineConfig({
           items: ['getting-started', 'customization'],
         },
         { label: 'Examples', autogenerate: { directory: 'examples' } },
-      ],
+        { label: 'Custom Components', autogenerate: { directory: 'components' } },
+      ],  
       social: [
         { href: 'https://github.com/frostybee/starlight-theme-galaxy', icon: 'github', label: 'GitHub' },
       ],
-      title: 'starlight-theme-galaxy',
+      title: 'Starlight Galaxy',
     }),
   ],
 })

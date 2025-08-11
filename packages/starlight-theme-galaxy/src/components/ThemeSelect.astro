@@ -1,0 +1,142 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+import HeaderButton from './HeaderButton.astro';
+---
+<theme-toggle>
+  <HeaderButton aria-label="theme" id="theme-toggle" title="Toggle light & dark theme">
+    <svg aria-hidden="true" height="20" viewBox="0 0 24 24" width="20">
+      <mask class="moon" id="moon-mask">
+        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+        <circle cx="24" cy="10" r="6" fill="black"></circle>
+      </mask>
+      <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+      <g class="sun-beams" stroke="currentColor">
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </g>
+    </svg>
+  </HeaderButton>
+
+  <script>
+     class ThemeSwitcher extends HTMLElement {
+    constructor() {
+      super();
+      const storedTheme =
+        typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+      const theme =
+        storedTheme ||
+        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+      this.handleMouseDown = this.handleMouseDown.bind(this);
+    }
+    connectedCallback() {
+      this.addEventListener('click', this.handleMouseDown);
+    }
+    disconnectedCallback() {
+      this.removeEventListener('click', this.handleMouseDown);
+    }
+    private handleMouseDown() {
+      const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem('starlight-theme', theme);
+    }
+  }
+  customElements.define('theme-toggle', ThemeSwitcher);
+  </script>
+
+<style>
+  theme-toggle {
+    --animation-duration: var(--duration-400);
+    display: grid;
+    grid-area: theme-toggle;
+    place-items: center;
+  }
+
+  svg {
+    stroke-linecap: round;
+
+    & > :is(.moon, .sun, .sun-beams) {
+      transform-origin: center;
+    }
+
+    & > :is(.moon, .sun) {
+      fill: var(--fb-theme-btn-color-text);
+
+      :is(button:hover, button:focus-visible) & {
+        fill: var(--color-text-highlight);
+      }
+    }
+
+    & > .sun-beams {
+      stroke: var(--fb-theme-btn-color-text);
+      stroke-width: var(--outline-offset);
+
+      :is(button:hover, button:focus-visible) & {
+        stroke: var(--color-text-highlight);
+      }
+    }
+
+    :is(html[data-theme='dark']) & {
+      & > .sun {
+        transform: scale(1.75);
+      }
+
+      & > .sun-beams {
+        opacity: 0;
+      }
+
+      & > .moon > circle {
+        transform: translateX(-7px);
+
+        @supports (cx: 1) {
+          cx: 17;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      & > .sun {
+        transition: transform var(--animation-duration) var(--ease-elastic);
+      }
+
+      & > .sun-beams {
+        transition:
+          transform var(--animation-duration) var(--ease-elastic),
+          opacity var(--animation-duration) var(--ease);
+      }
+
+      & .moon > circle {
+        transition: transform calc(var(--animation-duration) / 2) var(--ease-out);
+
+        @supports (cx: 1) {
+          transition: cx calc(var(--animation-duration) / 2) var(--ease-out);
+        }
+      }
+
+      :is(html[data-theme='dark']) & {
+        & > .sun {
+          transform: scale(1.75);
+          transition-duration: calc(var(--animation-duration) / 2);
+          transition-timing-function: var(--ease);
+        }
+
+        & > .sun-beams {
+          transform: rotateZ(-25deg);
+          transition-duration: calc(var(--animation-duration) / 4);
+        }
+
+        & > .moon > circle {
+          transition-delay: calc(var(--animation-duration) / 4);
+          transition-duration: var(--animation-duration);
+        }
+      }
+    }
+  }
+  </style>

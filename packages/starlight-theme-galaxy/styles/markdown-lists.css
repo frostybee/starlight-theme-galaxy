@@ -1,0 +1,94 @@
+/* ============================
+ * Markdown Lists Styling
+ * ============================ */
+
+.sl-markdown-content {
+  /* Base list styling - remove default styles */
+  & ol:not(:where(.not-content *)),
+  & ul:not(:where(.not-content *)) {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  /* Ordered list counter setup */
+  & ol:not(:where(.not-content *)) {
+    counter-reset: listitem;
+  }
+
+  /* List item base styling */
+  & ol:not(:where(.sl-steps, .not-content *)) > li,
+  & ul:not(:where(.sl-steps, .not-content *)) > li {
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  /* Adjust text alignment for unordered lists */
+  & ul:not(:where(.sl-steps, .not-content *)) > li {
+    /* margin-top: -0.1em; */
+  }
+
+  /* Nested list spacing */
+  & li:not(:where(.not-content *)) > ol,
+  & li:not(:where(.not-content *)) > ul,
+  & li + li:not(:where(.not-content *)) .sl-markdown-content li:not(:where(.sl-steps)) > ol {
+    margin-top: 0.625rem;
+  }
+
+  /* Unordered list markers */
+  & ul:not(:where(.sl-steps, .not-content *)) > li::before {
+    content: "■";
+    position: absolute;
+    left: 10px;
+    top: 0.5em;
+    color: var(--sl-color-text);
+    font-weight: 700;
+    font-size: 0.775rem;
+    line-height: 1;
+  }
+  
+  /* Nested unordered list markers */
+  & ul ul:not(:where(.sl-steps, .not-content *)) > li::before {
+    content: "❂";
+    font-size: 0.775rem;
+  }
+  
+  & ul ul ul:not(:where(.sl-steps, .not-content *)) > li::before {
+    content: "▸";
+    font-size: 1.125rem;
+  }
+
+  /* Ordered list markers */
+  & ol:not(:where(.sl-steps, .not-content *)) > li::before {
+    counter-increment: listitem;
+    content: counter(listitem);
+    position: absolute;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    height: 22px;
+    width: 22px;
+    min-width: 20px;
+    left: 1px;
+    top: 2px;
+    border-radius: 4px;
+    color: var(--sl-color-white);
+    font-family: var(--sl-font-mono);
+    /* background: var(--sl-color-accent-low); */
+    border: 1px solid var(--sl-color-hairline-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Nested ordered list styling */
+  & ol ol:not(:where(.sl-steps, .not-content *)) > li::before {
+    background: var(--sl-color-gray-4);
+    border-radius: 3px;
+  }
+  
+  & ol ol ol:not(:where(.sl-steps, .not-content *)) > li::before {
+    background: var(--sl-color-gray-5);
+    font-style: italic;
+  }
+}

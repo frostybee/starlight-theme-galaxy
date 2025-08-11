@@ -1,17 +1,34 @@
 {
   "name": "starlight-theme-galaxy",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "license": "MIT",
   "description": "A customized Astro Starlight theme for publishing docs and educational content.",
   "author": "frostybee",
   "type": "module",
+  "main": "./src/index.ts",
   "exports": {
-    ".": "./index.ts",
-    "./styles": "./styles.css"
+    ".": "./src/index.ts",
+    "./styles/index.css": "./styles/index.css",
+    "./package.json": "./package.json",
+    "./components/*.astro": "./src/components/*.astro"    
+  },
+  "scripts": {    
+    "build": "tsc",
+    "lint": "eslint . --cache --max-warnings=0"
+  },
+  "dependencies": {    
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.5",
+    "@fontsource-variable/roboto-flex": "^5.2.5",
+    "@fontsource-variable/inter": "^5.2.5",
+    "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "@fontsource/fira-code": "^5.0.0",
+    "@expressive-code/core": "^0.41.2",
+    "@expressive-code/plugin-line-numbers": "^0.41.1"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.34.3",
-    "astro": "^5.7.13"
+    "astro": "^5.7.13",
+    "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.34"
@@ -19,9 +36,20 @@
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
   },
+  "packageManager": "pnpm@10.10.0",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
+  "sideEffects": false,
+  "keywords": [
+    "starlight",
+    "theme",
+    "galaxy",
+    "plugin",
+    "documentation",
+    "astro"
+  ],
   "homepage": "https://github.com/frostybee/starlight-theme-galaxy",
   "repository": {
     "type": "git",

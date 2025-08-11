@@ -1,0 +1,349 @@
+/* ============================
+ * Starlight Galaxy Theme: Neo Asides.
+ * ============================ */
+
+:root {
+  /* Modern spacing system */
+  --galaxy-aside-radius: 0.75rem;
+  --galaxy-aside-padding: 0.875rem;
+  --galaxy-aside-gap: 0.75rem;
+  --galaxy-aside-border-width: 1px;
+  --galaxy-aside-accent-width: 3px;
+  
+  /* Advanced shadow system */
+  --galaxy-aside-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --galaxy-aside-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --galaxy-aside-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+  /* Modern animation timing */
+  --galaxy-aside-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Typography scale */
+  --galaxy-aside-title-size: 0.95rem;
+  --galaxy-aside-content-size: 0.9rem;
+  --galaxy-aside-icon-size: 1.25rem;
+}
+
+/* Dark theme adjustments */
+:root[data-theme='dark'] {
+  --galaxy-aside-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --galaxy-aside-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --galaxy-aside-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================
+ * Base aside component
+ * ============================ */
+
+.starlight-aside {
+  position: relative;
+  background: var(--galaxy-aside-bg);
+  border: var(--galaxy-aside-border-width) solid var(--galaxy-aside-border);
+  border-radius: var(--galaxy-aside-radius);
+  padding: var(--galaxy-aside-padding);
+  margin: 1.5rem 0;
+  box-shadow: var(--galaxy-aside-shadow);
+  transition: var(--galaxy-aside-transition);
+  overflow: hidden;
+  
+  /* Modern backdrop blur effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Accent border on the left */
+  border-left: var(--galaxy-aside-accent-width) solid var(--galaxy-aside-accent);
+  
+  /* Subtle inner glow */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      var(--galaxy-aside-accent) 50%, 
+      transparent 100%);
+    opacity: 0.6;
+  }
+  
+  /* Hover effect for interactivity */
+  &:hover {
+    box-shadow: var(--galaxy-aside-shadow-hover);
+    transform: translateY(-2px);
+  }
+  
+  /* Content styling */
+  & > *:first-child {
+    margin-top: 0;
+  }
+  
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Links styling */
+  & a {
+    color: var(--galaxy-aside-accent);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.2em;
+    transition: var(--galaxy-aside-transition);
+    
+    &:hover {
+      text-decoration-color: var(--galaxy-aside-accent);
+      text-decoration-thickness: 2px;
+    }
+  }
+  
+  /* Code blocks */
+  & code {
+    background: var(--galaxy-aside-code-bg);
+    color: var(--galaxy-aside-text);
+    padding: 0.2em 0.4em;
+    border-radius: 0.375rem;
+    font-size: 0.85em;
+    border: 1px solid var(--galaxy-aside-border);
+  }
+  
+  /* Pre-formatted code */
+  & pre {
+    background: var(--galaxy-aside-code-bg);
+    border: 1px solid var(--galaxy-aside-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    
+    & code {
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: inherit;
+    }
+  }
+}
+
+/* ============================
+ * Aside title styling
+ * ============================ */
+
+.starlight-aside__title {
+  display: flex;
+  align-items: center;
+  gap: var(--galaxy-aside-gap);
+  font-size: var(--galaxy-aside-title-size);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--galaxy-aside-accent);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  
+  /* Title underline effect */
+  &::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      var(--galaxy-aside-accent) 0%, 
+      transparent 100%);
+    margin-left: 0.75rem;
+    opacity: 0.3;
+  }
+}
+
+.starlight-aside__icon {
+  font-size: var(--galaxy-aside-icon-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  color: var(--galaxy-aside-accent);
+}
+
+/* ============================
+ * Note variant (Blue - Information)
+ * ============================ */
+
+.starlight-aside--note {
+  --galaxy-aside-accent: #3b82f6;
+  --galaxy-aside-bg: rgba(59, 130, 246, 0.05);
+  --galaxy-aside-border: rgba(59, 130, 246, 0.2);
+  --galaxy-aside-text: var(--sl-color-text);
+  --galaxy-aside-code-bg: rgba(59, 130, 246, 0.08);
+  
+  /* Dark theme adjustments */
+  :root[data-theme='dark'] & {
+    --galaxy-aside-bg: rgba(59, 130, 246, 0.08);
+    --galaxy-aside-border: rgba(59, 130, 246, 0.25);
+    --galaxy-aside-code-bg: rgba(59, 130, 246, 0.12);
+  }
+}
+
+/* ============================
+ * Tip variant (Green - Success/Helpful)
+ * ============================ */
+
+.starlight-aside--tip {
+  --galaxy-aside-accent: #10b981;
+  --galaxy-aside-bg: rgba(16, 185, 129, 0.05);
+  --galaxy-aside-border: rgba(16, 185, 129, 0.2);
+  --galaxy-aside-text: var(--sl-color-text);
+  --galaxy-aside-code-bg: rgba(16, 185, 129, 0.08);
+  
+  /* Dark theme adjustments */
+  :root[data-theme='dark'] & {
+    --galaxy-aside-bg: rgba(16, 185, 129, 0.08);
+    --galaxy-aside-border: rgba(16, 185, 129, 0.25);
+    --galaxy-aside-code-bg: rgba(16, 185, 129, 0.12);
+  }
+}
+
+/* ============================
+ * Caution variant (Amber - Warning)
+ * ============================ */
+
+.starlight-aside--caution {
+  --galaxy-aside-accent: #f59e0b;
+  --galaxy-aside-bg: rgba(245, 158, 11, 0.05);
+  --galaxy-aside-border: rgba(245, 158, 11, 0.2);
+  --galaxy-aside-text: var(--sl-color-text);
+  --galaxy-aside-code-bg: rgba(245, 158, 11, 0.08);
+  
+  /* Dark theme adjustments */
+  :root[data-theme='dark'] & {
+    --galaxy-aside-bg: rgba(245, 158, 11, 0.08);
+    --galaxy-aside-border: rgba(245, 158, 11, 0.25);
+    --galaxy-aside-code-bg: rgba(245, 158, 11, 0.12);
+  }
+}
+
+/* ============================
+ * Danger variant (Red - Critical/Error)
+ * ============================ */
+
+.starlight-aside--danger {
+  --galaxy-aside-accent: #ef4444;
+  --galaxy-aside-bg: rgba(239, 68, 68, 0.05);
+  --galaxy-aside-border: rgba(239, 68, 68, 0.2);
+  --galaxy-aside-text: var(--sl-color-text);
+  --galaxy-aside-code-bg: rgba(239, 68, 68, 0.08);
+  
+  /* Dark theme adjustments */
+  :root[data-theme='dark'] & {
+    --galaxy-aside-bg: rgba(239, 68, 68, 0.08);
+    --galaxy-aside-border: rgba(239, 68, 68, 0.25);
+    --galaxy-aside-code-bg: rgba(239, 68, 68, 0.12);
+  }
+}
+
+/* ============================
+ * Premium variant (Purple - Premium/Pro)
+ * ============================ */
+
+.starlight-aside--premium {
+  --galaxy-aside-accent: #8b5cf6;
+  --galaxy-aside-bg: rgba(139, 92, 246, 0.05);
+  --galaxy-aside-border: rgba(139, 92, 246, 0.2);
+  --galaxy-aside-text: var(--sl-color-text);
+  --galaxy-aside-code-bg: rgba(139, 92, 246, 0.08);
+  
+  /* Gradient border for premium feel */
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.05) 0%, 
+    rgba(168, 85, 247, 0.03) 100%);
+  
+  /* Dark theme adjustments */
+  :root[data-theme='dark'] & {
+    --galaxy-aside-bg: rgba(139, 92, 246, 0.08);
+    --galaxy-aside-border: rgba(139, 92, 246, 0.25);
+    --galaxy-aside-code-bg: rgba(139, 92, 246, 0.12);
+    
+    background: linear-gradient(135deg, 
+      rgba(139, 92, 246, 0.08) 0%, 
+      rgba(168, 85, 247, 0.05) 100%);
+  }
+}
+
+/* ============================
+ * Responsive design
+ * ============================ */
+
+@media (max-width: 768px) {
+  .starlight-aside {
+    --galaxy-aside-padding: 0.875rem;
+    margin: 1.25rem 0;
+    
+    &:hover {
+      transform: none; /* Disable hover transform on mobile */
+    }
+  }
+  
+  .starlight-aside__title {
+    font-size: 0.9rem;
+    
+    &::after {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+/* ============================
+ * Accessibility features
+ * ============================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .starlight-aside {
+    transition: none;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+@media (prefers-contrast: high) {
+  .starlight-aside {
+    --galaxy-aside-border-width: 2px;
+    --galaxy-aside-accent-width: 4px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* ============================
+ * Dark mode enhancements
+ * ============================ */
+
+:root[data-theme='dark'] {
+  .starlight-aside {
+    /* Enhanced glassmorphism in dark mode */
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  }
+}
+
+/* ============================
+ * Print styles
+ * ============================ */
+
+@media print {
+  .starlight-aside {
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 2px solid var(--galaxy-aside-accent);
+    background: transparent;
+    
+    &:hover {
+      transform: none;
+    }
+    
+    &::before {
+      display: none;
+    }
+  }
+}

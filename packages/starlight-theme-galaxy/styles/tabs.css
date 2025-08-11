@@ -1,0 +1,218 @@
+/* ============================
+ * TAB COMPONENT STYLING  
+ * ============================ */
+
+/* Galaxy Tab Design Tokens */
+:root {
+  /* Tab container styling */
+  --galaxy-tabs-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  --galaxy-tabs-border: 1px solid rgba(255, 255, 255, 0.12);
+  --galaxy-tabs-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --galaxy-tabs-radius: 1rem;
+  --galaxy-tabs-blur: blur(16px);
+  
+  /* Tab list wrapper */
+  --galaxy-tablist-bg: rgba(255, 255, 255, 0.05);
+  --galaxy-tablist-border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Tab item styling */
+  --galaxy-tab-padding: 0.625rem 1rem;
+  --galaxy-tab-font-size: 0.875rem;
+  --galaxy-tab-radius: 0.25rem 0.25rem 0 0;
+  --galaxy-tab-transition: all 0.2s ease;
+  --galaxy-tab-gap: 0.5rem;
+  
+  /* Tab colors */
+  --galaxy-tab-text: var(--sl-color-gray-3);
+  --galaxy-tab-text-active: var(--sl-color-accent-high);
+  --galaxy-tab-text-hover: var(--sl-color-gray-1);
+  --galaxy-tab-bg-hover: var(--sl-color-gray-6);
+  --galaxy-tab-border-active: var(--sl-color-accent);
+  --galaxy-tab-icon: var(--sl-color-gray-3);
+  --galaxy-tab-icon-active: var(--sl-color-accent);
+  
+  /* Focus states */
+  --galaxy-tab-focus-shadow: 0 0 0 2px var(--sl-color-accent);
+  
+  /* Accent line */
+  --galaxy-tabs-accent-line: linear-gradient(90deg, transparent, rgba(var(--sl-color-accent), 0.3), transparent);
+}
+
+/* Light theme overrides */
+:root[data-theme='light'] {
+  --galaxy-tabs-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  --galaxy-tabs-border: 1px solid rgba(0, 0, 0, 0.08);
+  --galaxy-tabs-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --galaxy-tablist-bg: rgba(0, 0, 0, 0.02);
+  --galaxy-tablist-border: 1px solid rgba(0, 0, 0, 0.08);
+  --galaxy-tab-bg-hover: rgba(0, 0, 0, 0.05);
+}
+
+/* Tab container with card styling */
+starlight-tabs {
+  position: relative;
+  display: block;
+  margin: 1.5rem 0 2rem 0;
+  border-radius: var(--galaxy-tabs-radius);
+  overflow: hidden;
+  background: var(--galaxy-tabs-bg);
+  backdrop-filter: var(--galaxy-tabs-blur);
+  -webkit-backdrop-filter: var(--galaxy-tabs-blur);
+  border: var(--galaxy-tabs-border);
+  box-shadow: var(--galaxy-tabs-shadow);
+}
+
+/* Subtle top accent line */
+starlight-tabs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--galaxy-tabs-accent-line);
+  border-radius: var(--galaxy-tabs-radius) var(--galaxy-tabs-radius) 0 0;
+}
+
+/* Tab list container */
+.tablist-wrapper {
+  position: relative;
+  background: var(--galaxy-tablist-bg);
+  border-bottom: var(--galaxy-tablist-border);
+  padding: 0.25rem;
+  
+  /* Tab list */
+  & ul[role="tablist"] {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 0.125rem;
+    background: transparent;
+  }
+
+  /* Individual tab styling */
+  & li.tab {
+    position: relative;
+    flex: 1;
+    margin: 0;
+    
+    /* Tab button/link */
+    & a[role="tab"] {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--galaxy-tab-gap);
+      padding: var(--galaxy-tab-padding);
+      font-size: var(--galaxy-tab-font-size);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--galaxy-tab-text);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      border-radius: var(--galaxy-tab-radius);
+      text-decoration: none;
+      transition: var(--galaxy-tab-transition);
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      outline: none !important;
+      margin-bottom: -2px;
+      
+      /* Icon styling within tabs */
+      & svg {
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+        color: var(--galaxy-tab-icon);
+        transition: color 0.2s ease;
+      }
+      
+      /* Active tab styling */
+      &[aria-selected="true"] {
+        background: transparent;
+        color: var(--galaxy-tab-text-active);
+        font-weight: 700;
+        border-bottom-color: var(--galaxy-tab-border-active);
+        
+        /* Active tab icon styling */
+        & svg {
+          color: var(--galaxy-tab-icon-active);
+        }
+      }
+      
+      /* Inactive tab hover effects */
+      &:not([aria-selected="true"]):hover {
+        background: var(--galaxy-tab-bg-hover);
+        color: var(--galaxy-tab-text-hover);
+        
+        & svg {
+          color: var(--galaxy-tab-icon-active);
+        }
+      }
+      
+      /* Focus states for accessibility */
+      &:focus,
+      &:focus-visible {
+        outline: none !important;
+        box-shadow: var(--galaxy-tab-focus-shadow);
+      }
+      
+      /* Remove any webkit focus ring */
+      &:focus:not(:focus-visible) {
+        outline: none !important;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+/* Tab panel content */
+starlight-tabs > *:not(.tablist-wrapper) {
+  padding: 1.5rem;
+  border-radius: 0 0 var(--galaxy-tabs-radius) var(--galaxy-tabs-radius);
+}
+
+/* Responsive design */
+@media (max-width: 50rem) {
+  :root {
+    --galaxy-tab-padding: 0.5rem 0.75rem;
+    --galaxy-tab-font-size: 0.8rem;
+  }
+  
+  starlight-tabs > *:not(.tablist-wrapper) {
+    padding: 1rem;
+  }
+}
+
+/* Light theme component overrides (using variables defined above) */
+:root[data-theme='light'] starlight-tabs {
+  background: var(--galaxy-tabs-bg);
+  border: var(--galaxy-tabs-border);
+  box-shadow: var(--galaxy-tabs-shadow);
+}
+
+:root[data-theme='light'] .tablist-wrapper {
+  background: var(--galaxy-tablist-bg);
+  border-bottom: var(--galaxy-tablist-border);
+  
+  & li.tab a[role="tab"]:not([aria-selected="true"]):hover {
+    background: var(--galaxy-tab-bg-hover);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --galaxy-tab-transition: none;
+  }
+  
+  .tablist-wrapper {
+    & li.tab a[role="tab"] svg {
+      transition: none;
+    }
+  }
+}
