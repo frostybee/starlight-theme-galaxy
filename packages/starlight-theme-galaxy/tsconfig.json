@@ -8,8 +8,9 @@
     "skipLibCheck": true,
     "declaration": true,
     "outDir": "dist",
-    "noEmitOnError": false
+    "noEmitOnError": false,
+    "types": []
   },
-  "include": ["src/**/*", "styles/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*", "styles/**/*", "**/*.astro"],
+  "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.spec.*"]
 }
