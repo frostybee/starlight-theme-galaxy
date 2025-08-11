@@ -3,8 +3,11 @@ import { defineConfig } from 'astro/config'
 import starlightThemeGalaxy from 'starlight-theme-galaxy'
 
 export default defineConfig({
+  site: 'https://frostybee.github.io/starlight-theme-galaxy',
+  base: '/starlight-theme-galaxy',
   integrations: [
     starlight({
+      title: 'Starlight Galaxy',
       editLink: {
         baseUrl: 'https://github.com/frostybee/starlight-theme-galaxy/edit/main/docs/',
       },
@@ -20,8 +23,7 @@ export default defineConfig({
       ],  
       social: [
         { href: 'https://github.com/frostybee/starlight-theme-galaxy', icon: 'github', label: 'GitHub' },
-      ],
-      title: 'Starlight Galaxy',
+      ],      
     }),
   ],
 })
