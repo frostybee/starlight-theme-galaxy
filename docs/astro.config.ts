@@ -8,6 +8,7 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/frostybee/starlight-theme-galaxy/edit/main/docs/',
       },
+      tableOfContents: {minHeadingLevel: 2, maxHeadingLevel: 4},
       plugins: [starlightThemeGalaxy()],
       sidebar: [
         {

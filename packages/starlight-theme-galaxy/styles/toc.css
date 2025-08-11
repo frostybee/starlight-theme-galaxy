@@ -3,60 +3,65 @@
  * ============================ */
 
 .right-sidebar-panel starlight-toc {
-  /* Continuous left border for entire TOC */
+  /* Simple continuous left border */
   & ul {
     border-left: 1px solid var(--sl-color-hairline-light);
     margin-left: 0.5rem;
   }
   
+  /* Remove border from nested lists (H3, H4, H5, etc.) */
+  & ul ul {
+    border-left: none;
+  }
+  
   & ul li[class^=astro-] a {
-    border-radius: 0%;
-    display: inline-block;
-    padding-top: 0.5rem;
-    padding-bottom: 0.3rem;
-    padding-left: 1rem;
-    text-decoration: none;
-    width: fit-content;
-    color: var(--sl-color-text);
-    font-weight: 400;
-    position: relative;
-    transition: all 0.3s ease;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 0;
-      width: 4px;
-      background-color: var(--fb-toc-color-border);
-      border-bottom-right-radius: 1.25rem;
-      border-top-right-radius: 1.25rem;
-      transition: height 0.3s ease-in-out;
-    }
-
-    /* Current selected item in the TOC */
-    &[aria-current='true'] {
-      color: var(--sl-color-accent-high);
-      background: linear-gradient(90deg, 
-        color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, 
-        transparent 100%);
-      box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
-      font-weight: 700;
-      border-bottom-right-radius: 0.45rem;
-      border-top-right-radius: 0.45rem;
-      padding-right: 0.7rem;
+      border-radius: 0%;
+      display: inline-block;
+      padding-top: 0.5rem;
+      padding-bottom: 0.3rem;
+      padding-left: 1rem;
+      text-decoration: none;
+      width: fit-content;
+      color: var(--sl-color-text);
+      font-weight: 400;
+      position: relative;
+      transition: all 0.3s ease;
 
       &::before {
-        height: 100%;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 0;
+        width: 4px;
+        background-color: var(--fb-toc-color-border);
+        border-bottom-right-radius: 1.25rem;
+        border-top-right-radius: 1.25rem;
+        transition: height 0.3s ease-in-out;
       }
-    }
 
-    &:hover {
-      font-weight: 600;
-      border-radius: 0;
-      transition: none;
-    }
+      /* Current selected item in the TOC */
+      &[aria-current='true'] {
+        color: var(--sl-color-accent-high);
+        background: linear-gradient(90deg, 
+          color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, 
+          transparent 100%);
+        box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+        font-weight: 700;
+        border-bottom-right-radius: 0.45rem;
+        border-top-right-radius: 0.45rem;
+        padding-right: 0.7rem;
+
+        &::before {
+          height: 100%;
+        }
+      }
+
+      &:hover {
+        font-weight: 600;
+        border-radius: 0;
+        transition: none;
+      }
   }
   
   /* Add special border styling for top-level items only */
@@ -69,6 +74,44 @@
     &:not([aria-current='true']):hover {
       margin-left: -1px;
       border-left: 2px solid var(--fb-toc-color-border);
+    }
+  }
+  
+  /* Fix positioning for nested items (H3, H4, H5) */
+  & ul ul li[class^=astro-] a {
+    &::before {
+      left: -0.5rem; /* Adjust for the different indentation */
+    }
+  }
+  
+  /* Fix positioning for H4 items */
+  & ul ul ul li[class^=astro-] a {
+    &::before {
+      left: -1rem; /* Adjust for H4's deeper indentation */
+    }
+    
+    /* Fix glow positioning for H4 active items - use pseudo-element for background */
+    &[aria-current='true'] {
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -1rem; /* Align with the ::before border */
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, 
+          color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, 
+          transparent 100%);
+        box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+        border-radius: 0.45rem;
+        z-index: -1; /* Behind the text */
+      }
+      
+      /* Remove the original background and glow */
+      background: none;
+      box-shadow: none;
     }
   }
   

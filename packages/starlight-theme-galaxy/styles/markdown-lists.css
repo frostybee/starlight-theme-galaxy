@@ -38,9 +38,9 @@
   & ul:not(:where(.sl-steps, .not-content *)) > li::before {
     content: "■";
     position: absolute;
-    left: 6px;
+    left: 10px;
     top: 0.5em;
-    color: var(--sl-color-accent-high);
+    color: var(--sl-color-text);
     font-weight: 700;
     font-size: 0.775rem;
     line-height: 1;
@@ -74,7 +74,8 @@
     border-radius: 4px;
     color: var(--sl-color-white);
     font-family: var(--sl-font-mono);
-    background: var(--sl-color-accent-low);
+    /* background: var(--sl-color-accent-low); */
+    border: 1px solid var(--sl-color-hairline-light);
     display: flex;
     align-items: center;
     justify-content: center;
