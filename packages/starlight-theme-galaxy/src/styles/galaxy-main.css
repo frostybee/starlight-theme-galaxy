@@ -1232,6 +1232,34 @@ body {
   }
 }
 
+/* ============================
+ * FileTree styling  
+ * ============================ */
+
+/* FileTree component overrides */
+.directory,
+.sl-file-tree,
+starlight-file-tree {
+  background: var(--sl-color-gray-7) !important;
+  border-color: var(--sl-color-gray-5) !important;
+}
+
+.tree-entry {
+  background: var(--sl-color-gray-7) !important;
+}
+
+/* Light theme FileTree adjustments */
+:root[data-theme='light'] .directory,
+:root[data-theme='light'] .sl-file-tree,
+:root[data-theme='light'] starlight-file-tree {
+  background: var(--sl-color-gray-8) !important;
+  border-color: var(--sl-color-gray-6) !important;
+}
+
+:root[data-theme='light'] .tree-entry {
+  background: var(--sl-color-gray-8) !important;
+}
+
 
 /* Galaxy Header Styling */
 .header {
