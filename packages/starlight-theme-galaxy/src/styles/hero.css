@@ -217,12 +217,23 @@
   }
   
   /* Professional Animation System */
-  @keyframes heroFadeInUp {
+  @keyframes heroFadeInDown {
     0% {
       opacity: 0;
-      transform: translateY(2rem);
+      transform: translateY(-1rem);
     }
     100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
       opacity: 1;
       transform: translateY(0);
     }
@@ -258,27 +269,10 @@
     }
   }
   
-  /* Staggered Entrance Animations */
+  /* Title Animation Only */
   @media (prefers-reduced-motion: no-preference) {
-    .hero img {
-      animation: heroFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both,
-                 heroImageFloat 6s ease-in-out 2s infinite;
-    }
-    
     .hero [data-page-title] {
-      animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
-    }
-    
-    .hero .tagline {
-      animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
-    }
-    
-    .hero .actions {
-      animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
-    }
-    
-    .hero .actions .action[data-variant="primary"] {
-      animation: buttonPulse 2s ease-in-out 2s infinite;
+      animation: fadeInUp 1s ease-out;
     }
     
     /* Subtle parallax effect on scroll */
