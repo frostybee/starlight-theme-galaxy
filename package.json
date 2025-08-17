@@ -20,15 +20,16 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "lint": "astro check --noSync && pnpm -r lint",    
+    "start:docs": "pnpm -F starlight-theme-galaxy-docs dev",
+    "lint": "astro check --noSync && pnpm -r lint",
     "version": "pnpm changeset version && pnpm i --no-frozen-lockfile"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.29.5",
-    "astro": "^5.12.9",
     "@astrojs/check": "^0.9.4",
-    "@types/node": "^24.2.1",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.6",
+    "@types/node": "^24.3.0",
+    "astro": "^5.13.2",
     "eslint": "^9.33.0"
   },
   "homepage": "https://github.com/frostybee/starlight-theme-galaxy",

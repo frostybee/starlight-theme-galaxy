@@ -59,7 +59,7 @@ pre.astro-code {
 /* Enable font ligatures */
 /* TODO: fix the code block style when embedded in an aside. */
 .expressive-code code {
-  font-family: var(--sg-ec-font-family);
+  /* font-family: var(--sg-ec-font-family); */
   font-weight: 400;
   font-feature-settings: "liga" 1, "calt" 1;  
   box-sizing: border-box;

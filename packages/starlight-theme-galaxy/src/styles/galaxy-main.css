@@ -256,12 +256,13 @@ body {
   position: relative;
 }
 
+/* H2 accent underline */
 .sl-markdown-content h2::before {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -0.5rem;
-  width: 3rem;
+  bottom: -0.6rem;
+  width: 14rem;  
   height: 3px;
   background: linear-gradient(90deg, var(--sl-color-accent), transparent);
   border-radius: var(--sl-border-radius);
@@ -319,13 +320,14 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: var(--blockquote-border);
-  border-left: 4px solid var(--blockquote-border-accent);
-  border-radius: var(--sl-border-radius-lg);
+  border-left: 8px solid var(--blockquote-border-accent);
+  border-bottom-right-radius:  var(--sl-border-radius-lg);
+  border-top-right-radius:  var(--sl-border-radius-lg);
   box-shadow: var(--blockquote-shadow);
   font-style: normal;
   color: var(--blockquote-text-color);
   overflow: hidden;
-  
+
   /* Quote icon */
   &::before {
     content: '"';
@@ -339,16 +341,16 @@ body {
     line-height: 1;
     font-family: Georgia, serif;
   }
-  
+
   /* Content styling */
-  & > *:first-child {
+  &>*:first-child {
     margin-top: 0;
   }
-  
-  & > *:last-child {
+
+  &>*:last-child {
     margin-bottom: 0;
   }
-  
+
   /* Citation styling */
   & cite {
     display: block;
@@ -358,7 +360,7 @@ body {
     font-size: 0.9em;
     color: var(--blockquote-cite-color);
     opacity: 0.8;
-    
+
     &::before {
       content: '— ';
       color: var(--sl-color-accent);
@@ -925,9 +927,9 @@ body {
 
   /* Header styling */
   thead th {
-    background: linear-gradient(135deg, 
-      rgba(var(--sl-color-accent), 0.15) 0%, 
-      rgba(var(--sl-color-accent), 0.08) 100%);
+    background: linear-gradient(135deg,
+        rgba(var(--sl-color-accent), 0.15) 0%,
+        rgba(var(--sl-color-accent), 0.08) 100%);
     color: var(--sl-color-white);
     font-weight: 600;
     text-align: left;
@@ -970,7 +972,7 @@ body {
   /* Responsive table wrapper */
   @media (max-width: 50rem) {
     font-size: 0.875rem;
-    
+
     :is(th, td):not(:where(.not-content *)) {
       padding: 0.5rem 0.75rem;
     }
@@ -981,9 +983,9 @@ body {
 :root[data-theme='light'] .sl-markdown-content table {
 
   thead th {
-    background: linear-gradient(135deg, 
-      rgba(var(--sl-color-accent), 0.12) 0%, 
-      rgba(var(--sl-color-accent), 0.06) 100%);
+    background: linear-gradient(135deg,
+        rgba(var(--sl-color-accent), 0.12) 0%,
+        rgba(var(--sl-color-accent), 0.06) 100%);
     color: var(--sl-color-gray-1);
   }
 
