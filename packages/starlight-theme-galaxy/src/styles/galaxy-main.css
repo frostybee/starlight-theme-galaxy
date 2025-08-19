@@ -115,7 +115,7 @@ body {
   /* Component colors */
   --badge-border-color: lightgrey;
   --fb-blacks: 0, 0, 0;
-  --galaxy-header-bg-color: rgba(243, 249, 249, 0.9);
+  --galaxy-header-bg-color: rgba(248, 252, 252, 0.95);
   --purple-hsl: 255, 85%, 65%;
   --fb-ec-caption-bg-color: #f6f8fa;
   --fb-ec-caption-bb-color: #dadde1;

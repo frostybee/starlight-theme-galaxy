@@ -9,9 +9,9 @@
     padding-top: 0 !important;
     margin-top: 0 !important;
     background: linear-gradient(135deg, 
-      hsla(var(--purple-hsl), 0.1) 0%, 
+      var(--galaxy-header-bg-color) 0%, 
       transparent 50%, 
-      hsla(var(--purple-hsl), 0.05) 100%);
+      var(--galaxy-header-bg-color) 100%);
     background-attachment: fixed;
   }
   
