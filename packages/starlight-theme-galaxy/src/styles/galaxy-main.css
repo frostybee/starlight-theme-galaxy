@@ -12,10 +12,10 @@
   /* Base colors */
   --sl-color-white: hsl(0, 0%, 100%);
   --sl-color-black: hsl(224, 10%, 10%);
-  --sl-color-bg: hsl(224, 10%, 10%);
 
   /* SL's main background and text color  */
-  --sl-color-text: #c1c3c8;
+  /* --sl-color-text: #c1c3c8; */
+  --sl-color-text: #d0d0d5;
   --sl-color-bg: #17181c;
 
   /* Accent colors */
@@ -86,7 +86,8 @@ body {
   /* Base colors */
   --sl-color-white: hsl(224, 10%, 10%);
   --sl-color-black: hsl(0, 0%, 100%);
-  --sl-color-bg: #ffffff;
+  /* --sl-color-bg: #f8f9fa; */
+  --sl-color-bg: #fbfcfc;
   --sl-color-text: black;
 
   /* Accent colors */
@@ -108,7 +109,7 @@ body {
 
   /* Layout colors */
   --sl-color-hairline: #edeef3;
-  --sl-color-bg-sidebar: #fcfcfc;
+  --sl-color-bg-sidebar: ##f8f9fa;
   --sl-color-bg-nav: #eff1f1;
   --sl-scrollbar-color: var(--sl-color-accent);
 
@@ -121,7 +122,7 @@ body {
   --fb-blacks: 0, 0, 0;
   --galaxy-header-bg-color: rgba(248, 252, 252, 0.95);
   --purple-hsl: 255, 85%, 65%;
-  --fb-ec-caption-bg-color: #eff1f3;
+  --fb-ec-caption-bg-color: #eff2f1;
   --fb-ec-caption-bb-color: #dadde1;
   --fb-code-block-bg-color: #f6f7f9;
   --fb-ec-language-color: #636467;
