@@ -48,6 +48,16 @@ const displayProgressScroll = normalizedPath !== normalizedBase;
     gap: 1rem;
     align-items: center;
   }
+
+  /* Right-align the social/theme buttons */
+  .header > .right-group {
+    justify-content: flex-end;
+  }
+
+  /* Center the search box */
+  .header > .sl-flex:nth-child(2) {
+    justify-content: center;
+  }
   .social-icons::after {
     content: "";
     height: 2rem;
@@ -76,18 +86,12 @@ const displayProgressScroll = normalizedPath !== normalizedBase;
       );
       display: grid;
       grid-template-columns:
-        /* 1 (site title): runs up until the main content column’s left edge or the width of the title, whichever is the largest  */
-        minmax(
-          calc(
-            var(--__sidebar-width) +
-              max(0rem, var(--__main-column-fr) - var(--sl-nav-gap))
-          ),
-          auto
-        )
-        /* 2 (search box): all free space that is available. */
+        /* 1 (site title): fixed width for better centering */
         1fr
-        /* 3 (right items): use the space that these need. */
-        auto;
+        /* 2 (search box): fixed width, centered */
+        minmax(300px, 600px)
+        /* 3 (right items): same width as title for balance */
+        1fr;
       align-content: center;
     }
   }

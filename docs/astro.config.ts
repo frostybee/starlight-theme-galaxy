@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Starlight Galaxy',
+      favicon: '/favicon.svg',   
       editLink: {
         baseUrl: 'https://github.com/frostybee/starlight-theme-galaxy/edit/main/docs/',
       },
