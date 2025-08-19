@@ -2,14 +2,14 @@
 import Search from "@astrojs/starlight/components/Search.astro";
 import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
 import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
-import ThemeSelect from "./ThemeSelect.astro";
-import ProgressScroll from './ProgressScroll.astro';
-const displayProgressScroll = true;
-	// Astro.props.slug.startsWith('guides') ||
-	// (Astro.props.slug.startsWith('articles/') &&
-	// 	!Astro.props.slug.startsWith('articles/tags') &&
-	// 	!Astro.props.slug.startsWith('articles/authors') &&
-	// 	!Astro.props.slug.match('articles/[0-9]*$'));
+import ThemeSelect from "../components/ThemeSelect.astro";
+import ProgressScroll from '../components/ProgressScroll.astro';
+
+// Hide progress scroll on the home page only (works with any base URL)
+const baseUrl = import.meta.env.BASE_URL || '/';
+const normalizedPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+const displayProgressScroll = normalizedPath !== normalizedBase;	
 ---
 
 <div class="header sl-flex">

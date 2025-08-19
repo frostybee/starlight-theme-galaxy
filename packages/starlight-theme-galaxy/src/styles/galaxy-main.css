@@ -51,6 +51,7 @@
   /* Component colors */
   --badge-border-color: --sl-color-hairline;
   --fb-blacks: 255, 255, 255;
+  --galaxy-header-bg-color: transparent;
   --fb-ec-caption-bg-color: #020000;
   --fb-code-block-bg-color: #020110;
   --fb-ec-caption-bb-color: #464747;
@@ -114,6 +115,7 @@ body {
   /* Component colors */
   --badge-border-color: lightgrey;
   --fb-blacks: 0, 0, 0;
+  --galaxy-header-bg-color: rgba(243, 249, 249, 0.9);
   --purple-hsl: 255, 85%, 65%;
   --fb-ec-caption-bg-color: #f6f8fa;
   --fb-ec-caption-bb-color: #dadde1;
@@ -262,7 +264,7 @@ body {
   position: absolute;
   left: 0;
   bottom: -0.6rem;
-  width: 14rem;  
+  width: 14rem;
   height: 3px;
   background: linear-gradient(90deg, var(--sl-color-accent), transparent);
   border-radius: var(--sl-border-radius);
@@ -321,8 +323,8 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: var(--blockquote-border);
   border-left: 8px solid var(--blockquote-border-accent);
-  border-bottom-right-radius:  var(--sl-border-radius-lg);
-  border-top-right-radius:  var(--sl-border-radius-lg);
+  border-bottom-right-radius: var(--sl-border-radius-lg);
+  border-top-right-radius: var(--sl-border-radius-lg);
   box-shadow: var(--blockquote-shadow);
   font-style: normal;
   color: var(--blockquote-text-color);
@@ -1263,10 +1265,9 @@ starlight-file-tree {
 
 /* Galaxy Header Styling */
 .header {
-  /* background: var(--galaxy-card-glass-bg); */
-  /* backdrop-filter: var(--galaxy-card-backdrop-filter); */
-  /* -webkit-backdrop-filter: var(--galaxy-card-backdrop-filter); */
-  /* border-bottom: var(--galaxy-card-border); */
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+  background-color: var(--galaxy-header-bg-color);
   min-height: 3rem;
 }
 
@@ -1280,7 +1281,7 @@ starlight-file-tree {
 
 /* Light theme adjustments */
 :root[data-theme='light'] .header {
-  background: var(--galaxy-card-glass-bg-light);
+  background-color: var(--galaxy-header-bg-color);
   /* border-bottom: var(--galaxy-card-border-light); */
 }
 

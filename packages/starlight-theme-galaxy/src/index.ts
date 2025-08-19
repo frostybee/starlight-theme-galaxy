@@ -8,7 +8,7 @@ import { join, dirname } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const componentOverrides = {
-  Header: 'starlight-theme-galaxy/components/Header.astro',
+  Header: 'starlight-theme-galaxy/overrides/Header.astro',
 } as const
 
 function checkComponentOverrides(
@@ -18,7 +18,7 @@ function checkComponentOverrides(
 ): void {
   for (const override of overrides) {
     if (starlightConfig.components?.[override]) {
-      const fallback = `starlight-theme-galaxy/components/${override}.astro`
+      const fallback = `starlight-theme-galaxy/overrides/${override}.astro`
 
       logger.warn(`A \`<${override}>\` component override is already defined in your Starlight configuration.`)
       logger.warn(

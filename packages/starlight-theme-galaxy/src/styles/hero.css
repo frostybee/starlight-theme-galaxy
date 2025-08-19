@@ -2,20 +2,16 @@
  * Hero styling  
  * ============================ */
 
-/* Hero Page Background - Enhanced Mesh Gradient */
+/* Hero Page Background - Modern Gradient */
 [data-has-hero] .page {
     position: relative;
     overflow: hidden;
     padding-top: 0 !important;
     margin-top: 0 !important;
-    background:
-      /* Primary gradient overlay */
-      linear-gradient(135deg, var(--overlay-blurple) 0%, hsla(220, 70%, 50%, 0.3) 25%, transparent 50%),
-      /* Radial accent spots */
-      radial-gradient(ellipse 80vw 40vh at -50vw -20vh, var(--overlay-blurple) 0%, transparent 40%),
-      radial-gradient(ellipse 60rem 30rem at 50% calc(100% + 15rem), hsla(240, 80%, 60%, 0.2) 0%, transparent 60%),
-      /* Subtle mesh pattern */
-      radial-gradient(ellipse 120vw 60vh at 100vw 50%, hsla(200, 60%, 70%, 0.15) 0%, transparent 50%);
+    background: linear-gradient(135deg, 
+      hsla(var(--purple-hsl), 0.1) 0%, 
+      transparent 50%, 
+      hsla(var(--purple-hsl), 0.05) 100%);
     background-attachment: fixed;
   }
   
