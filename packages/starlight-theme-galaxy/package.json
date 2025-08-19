@@ -16,17 +16,17 @@
     "lint": "eslint . --cache --max-warnings=0"
   },
   "dependencies": {
-    "@fontsource-variable/plus-jakarta-sans": "^5.2.5",
-    "@fontsource-variable/roboto-flex": "^5.2.5",
-    "@fontsource-variable/inter": "^5.2.5",
-    "@fontsource-variable/jetbrains-mono": "^5.2.5",    
-    "@expressive-code/core": "^0.41.2",
-    "@expressive-code/plugin-line-numbers": "^0.41.1"
+    "@expressive-code/core": "^0.41.3",
+    "@expressive-code/plugin-line-numbers": "^0.41.3",
+    "@fontsource-variable/inter": "^5.2.6",
+    "@fontsource-variable/jetbrains-mono": "^5.2.6",
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.6",
+    "@fontsource-variable/roboto-flex": "^5.2.6"
   },
   "devDependencies": {
-    "@astrojs/starlight": "^0.34.3",
-    "astro": "^5.7.13",
-    "typescript": "^5.0.0"
+    "@astrojs/starlight": "^0.34.8",
+    "astro": "^5.13.2",
+    "typescript": "^5.9.2"
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.34"

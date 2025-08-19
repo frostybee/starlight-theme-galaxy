@@ -17,7 +17,7 @@
     "@astrojs/starlight": "^0.35.2",
     "@expressive-code/core": "^0.41.3",
     "@expressive-code/plugin-line-numbers": "^0.41.3",
-    "astro": "^5.12.9",
+    "astro": "^5.13.2",
     "sharp": "^0.34.3",
     "starlight-theme-galaxy": "workspace:*"
   },
