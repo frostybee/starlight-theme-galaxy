@@ -38,11 +38,11 @@
   & ul:not(:where(.sl-steps, .not-content *)) > li::before {
     content: "■";
     position: absolute;
-    left: 10px;
-    top: 0.5em;
+    left: 12px;
+    top: 1.5em;
     color: var(--sl-color-text);
     font-weight: 700;
-    font-size: 0.775rem;
+    font-size: 0.575rem;
     line-height: 1;
   }
   
@@ -50,11 +50,15 @@
   & ul ul:not(:where(.sl-steps, .not-content *)) > li::before {
     content: "❂";
     font-size: 0.775rem;
+    left: 10px;
+    top: 0.8em;
   }
   
   & ul ul ul:not(:where(.sl-steps, .not-content *)) > li::before {
     content: "▸";
     font-size: 1.125rem;
+    left: 10px;
+    top: 0.4em;
   }
 
   /* Ordered list markers */

@@ -52,6 +52,7 @@
   
   /* Accent border on the left */
   border-left: var(--galaxy-aside-accent-width) solid var(--galaxy-aside-accent);
+  padding-left: calc(var(--galaxy-aside-padding) + var(--galaxy-aside-accent-width));
   
   /* Subtle inner glow */
   &::before {

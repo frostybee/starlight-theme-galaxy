@@ -190,7 +190,7 @@ body {
   --sl-border-radius-xl: 1rem;
 
   /* Layout */
-  --sl-content-width: 50rem;
+  --sl-content-width: 47rem;
   --sl-sidebar-width: 20rem;
   --sl-nav-height: 4rem;
   --space-xs: clamp(1rem, 0.75rem + 0vi, 0.75rem);

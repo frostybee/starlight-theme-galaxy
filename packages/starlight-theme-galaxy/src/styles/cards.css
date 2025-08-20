@@ -6,7 +6,7 @@
 :root {
   /* Glass morphism effects */
   --galaxy-card-glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  --galaxy-card-glass-bg-light: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  --galaxy-card-glass-bg-light: linear-gradient(135deg, rgba(0, 0, 0, 0.025) 0%, rgba(0, 0, 0, 0.015) 100%);
   --galaxy-card-backdrop-filter: blur(16px);
   --galaxy-card-border: 1px solid rgba(255, 255, 255, 0.12);
   --galaxy-card-border-light: 1px solid rgba(0, 0, 0, 0.08);
@@ -17,9 +17,9 @@
   
   /* Box shadows */
   --galaxy-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  --galaxy-card-shadow-light: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --galaxy-card-shadow-light: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   --galaxy-card-shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.15), 0 6px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  --galaxy-card-shadow-hover-light: 0 20px 48px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --galaxy-card-shadow-hover-light: 0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   --galaxy-card-shadow-focus: 0 0 0 4px rgba(var(--sl-color-accent), 0.2), 0 24px 64px rgba(0, 0, 0, 0.18), 0 8px 24px rgba(0, 0, 0, 0.12);
   
   /* Button shadows */
@@ -67,7 +67,7 @@
     transition: var(--galaxy-card-transition-fast);
     transform: translateZ(0);
     display: block;
-    padding: 1rem;
+    padding: 1.7rem;
     text-decoration: none;
     color: var(--sl-color-gray-1);
 }
