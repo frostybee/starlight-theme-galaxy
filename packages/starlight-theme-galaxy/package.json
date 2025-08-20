@@ -1,6 +1,6 @@
 {
   "name": "starlight-theme-galaxy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "A customized Astro Starlight theme for publishing docs and educational content.",
   "author": "frostybee",
@@ -9,7 +9,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./styles/index.css": "./src/styles/index.css",
-    "./package.json": "./package.json",    
+    "./package.json": "./package.json",
     "./overrides/*.astro": "./src/overrides/Header.astro"
   },
   "scripts": {

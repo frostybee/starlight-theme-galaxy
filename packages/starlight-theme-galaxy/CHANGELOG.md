@@ -1,5 +1,11 @@
 # starlight-theme-galaxy
 
+## 0.2.0
+
+### Minor Changes
+
+- [`d95b45b`](https://github.com/frostybee/starlight-theme-galaxy/commit/d95b45ba35f404c16809bddba1b2d62623d51193) Thanks [@frostybee](https://github.com/frostybee)! - Add styling improvments to Starlight's user components
+
 ## 0.1.0
 
 ### Minor Changes
