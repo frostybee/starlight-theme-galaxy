@@ -30,7 +30,7 @@ pre.astro-code {
 
 @media screen and (min-width: 80rem) {
   .expressive-code {
-    max-width: 48rem;
+    max-width: none !important;
   }
 }
 

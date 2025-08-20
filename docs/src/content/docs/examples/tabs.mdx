@@ -5,7 +5,7 @@ pagefind: false
 
 import { Tabs, TabItem } from '@astrojs/starlight/components'
 
-## No icons
+## No Icons
 
 A tabbed interface rendered with the [`<Tabs>` and `<TabItem>` components](https://starlight.astro.build/components/tabs/).
 
@@ -18,7 +18,7 @@ A tabbed interface rendered with the [`<Tabs>` and `<TabItem>` components](https
   </TabItem>
 </Tabs>
 
-## With icons
+## With Icons
 
 A tabbed interface rendered with the [`<Tabs>` and `<TabItem>` components](https://starlight.astro.build/components/tabs/) and [icons](https://starlight.astro.build/components/tabs/#add-icons-to-tabs).
 
@@ -44,6 +44,120 @@ pnpm add starlight-theme-galaxy
 
 ```sh
 yarn add starlight-theme-galaxy
+```
+
+</TabItem>
+
+</Tabs>
+
+## With Code Blocks
+
+Here's an example with JavaScript code blocks:
+
+<Tabs>
+
+<TabItem label="Functions">
+
+```javascript
+// Higher-order function example
+const createCounter = (initialValue = 0) => {
+  let count = initialValue;
+  
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    getValue: () => count,
+    reset: () => { count = initialValue; }
+  };
+};
+
+const counter = createCounter(10);
+console.log(counter.getValue()); // 10
+counter.increment();
+console.log(counter.getValue()); // 11
+```
+
+</TabItem>
+
+<TabItem label="Async/Await">
+
+```javascript
+// Async data fetching with error handling
+const fetchUserData = async (userId) => {
+  try {
+    const response = await fetch(`https://api.example.com/users/${userId}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const userData = await response.json();
+    return userData;
+  } catch (error) {
+    console.error('Failed to fetch user data:', error);
+    return null;
+  }
+};
+
+// Usage with Promise chain
+fetchUserData(123)
+  .then(user => user ? console.log(user.name) : console.log('User not found'))
+  .catch(err => console.error('Unexpected error:', err));
+```
+
+</TabItem>
+
+<TabItem label="Classes">
+
+```javascript
+// ES6 Class with private methods and getters
+class TaskManager {
+  #tasks = [];
+  #nextId = 1;
+
+  constructor(name = 'Default') {
+    this.name = name;
+    this.createdAt = new Date();
+  }
+
+  addTask(description, priority = 'medium') {
+    const task = {
+      id: this.#nextId++,
+      description,
+      priority,
+      completed: false,
+      createdAt: new Date()
+    };
+    
+    this.#tasks.push(task);
+    return task;
+  }
+
+  completeTask(taskId) {
+    const task = this.#findTaskById(taskId);
+    if (task) {
+      task.completed = true;
+      task.completedAt = new Date();
+    }
+    return task;
+  }
+
+  #findTaskById(id) {
+    return this.#tasks.find(task => task.id === id);
+  }
+
+  get completedTasks() {
+    return this.#tasks.filter(task => task.completed);
+  }
+
+  get pendingTasks() {
+    return this.#tasks.filter(task => !task.completed);
+  }
+}
+
+const manager = new TaskManager('Project Alpha');
+manager.addTask('Setup development environment', 'high');
+manager.addTask('Write unit tests', 'medium');
 ```
 
 </TabItem>

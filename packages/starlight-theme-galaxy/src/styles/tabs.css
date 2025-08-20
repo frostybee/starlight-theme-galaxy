@@ -173,7 +173,42 @@ starlight-tabs::before {
 /* Tab panel content */
 starlight-tabs > *:not(.tablist-wrapper) {
   padding: 0;
+  margin: 0;
+  width: 100%;
   border-radius: 0 0 var(--galaxy-tabs-radius) var(--galaxy-tabs-radius);
+  overflow: hidden;
+}
+
+/* Force expressive-code blocks to fill tabs horizontally */
+starlight-tabs > *:not(.tablist-wrapper) .expressive-code {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  border-radius: 0 0 var(--galaxy-tabs-radius) var(--galaxy-tabs-radius) !important;
+  border: none !important;
+  display: block !important;
+}
+
+starlight-tabs > *:not(.tablist-wrapper) .expressive-code figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+starlight-tabs > *:not(.tablist-wrapper) .expressive-code pre {
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  border-radius: 0 0 var(--galaxy-tabs-radius) var(--galaxy-tabs-radius) !important;
+  box-sizing: border-box !important;
+}
+
+/* Force any divs or containers within tab panels to fill horizontally */
+starlight-tabs > *:not(.tablist-wrapper) > div {
+  margin: 0 !important;
+  width: 100% !important;
 }
 
 /* Responsive design */
@@ -185,6 +220,9 @@ starlight-tabs > *:not(.tablist-wrapper) {
   
   starlight-tabs > *:not(.tablist-wrapper) {
     padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
