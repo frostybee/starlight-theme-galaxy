@@ -172,18 +172,20 @@ starlight-tabs::before {
 
 /* Tab panel content */
 starlight-tabs > *:not(.tablist-wrapper) {
-  padding: 0;
+  padding: 0.4rem;
   margin: 0;
   width: 100%;
   border-radius: 0 0 var(--galaxy-tabs-radius) var(--galaxy-tabs-radius);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Force expressive-code blocks to fill tabs horizontally */
 starlight-tabs > *:not(.tablist-wrapper) .expressive-code {
-  margin: 0 !important;
+  margin: -0.25rem !important;
+  margin-top: 0 !important;
   padding: 0 !important;
-  width: 100% !important;
+  width: calc(100% + 0.5rem) !important;
   max-width: none !important;
   border-radius: 0 0 var(--galaxy-tabs-radius) var(--galaxy-tabs-radius) !important;
   border: none !important;
