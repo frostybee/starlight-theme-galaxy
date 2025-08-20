@@ -9,4 +9,5 @@
 @import "./tabs.css" layer(galaxy);
 @import "./cards.css" layer(galaxy);    
 @import "./hero.css" layer(galaxy);
+@import "./badges.css" layer(galaxy);
 

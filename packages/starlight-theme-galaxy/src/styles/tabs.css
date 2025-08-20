@@ -1,5 +1,5 @@
 /* ============================
- * TAB COMPONENT STYLING  
+ * Tab component styling  
  * ============================ */
 
 /* Galaxy Tab Design Tokens */
@@ -172,7 +172,7 @@ starlight-tabs::before {
 
 /* Tab panel content */
 starlight-tabs > *:not(.tablist-wrapper) {
-  padding: 0.75rem;
+  padding: 0;
   border-radius: 0 0 var(--galaxy-tabs-radius) var(--galaxy-tabs-radius);
 }
 
@@ -184,7 +184,7 @@ starlight-tabs > *:not(.tablist-wrapper) {
   }
   
   starlight-tabs > *:not(.tablist-wrapper) {
-    padding: 0.5rem;
+    padding: 0;
   }
 }
 
