@@ -64,9 +64,14 @@
     border: var(--galaxy-card-border);
     border-radius: var(--galaxy-card-border-radius);
     box-shadow: var(--galaxy-card-shadow);
-    transition: var(--galaxy-card-transition);
+    transition: var(--galaxy-card-transition-fast);
     transform: translateZ(0);
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--sl-color-gray-1);
 }
+
 
 /* Subtle top highlight */
 .card::before {
@@ -90,6 +95,16 @@
 }
 
 /* Card title styling */
+.card .title,
+.card h3 {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--sl-color-white);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.3;
+}
+
+/* Keep existing title styling for backward compatibility */
 .card .title {
     font-weight: 600;
     font-size: 1.1rem;
@@ -112,8 +127,15 @@
 
 
 /* Card body content */
-.card .body {
+.card .body,
+.card p {
     color: var(--sl-color-gray-2);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Keep existing body styling for backward compatibility */
+.card .body {
     line-height: 1.6;
 }
 
@@ -127,7 +149,7 @@
     border: var(--galaxy-card-border);
     border-radius: var(--galaxy-card-border-radius);
     box-shadow: var(--galaxy-card-shadow);
-    padding: 1.5rem;
+    padding: 1.2rem;
     transition: var(--galaxy-card-transition-fast);
     display: flex;
     align-items: center;
@@ -167,11 +189,10 @@
 
 /* LinkCard description styling */
 .sl-link-card .description {
-    color: var(--sl-color-gray-2);
-    font-size: 0.9rem;
+    color: var(--sl-color-text);
+    font-size: 1rem;
     line-height: 1.5;
     margin: 0;
-    opacity: 0.8;
 }
 
 /* LinkCard arrow icon */
@@ -186,7 +207,6 @@
 .sl-link-card:hover {
     transform: var(--galaxy-card-hover-transform);
     box-shadow: var(--galaxy-card-shadow-hover);
-    border-color: rgba(var(--sl-color-accent), 0.25);
 }
 
 .sl-link-card:hover::before {
@@ -242,7 +262,7 @@
 /* Staggered animation delays */
 .card-grid.stagger .card:nth-child(1) {
     animation-delay: 0.1s;
-}
+  }
 
 .card-grid.stagger .card:nth-child(2) {
     animation-delay: 0.2s;
@@ -298,6 +318,15 @@
     background: var(--galaxy-card-glass-bg-light);
     border: var(--galaxy-card-border-light);
     box-shadow: var(--galaxy-card-shadow-light);
+    color: var(--sl-color-gray-3);
+}
+
+:root[data-theme='light'] .card h3 {
+    color: var(--sl-color-black);
+}
+
+:root[data-theme='light'] .card p {
+    color: var(--sl-color-gray-3);
 }
 
 
@@ -312,14 +341,10 @@
     box-shadow: var(--galaxy-card-shadow-light);
 }
 
-:root[data-theme='light'] .sl-link-card .description {
-    color: var(--sl-color-gray-3);
-}
 
 /* Light theme LinkCard hover effects */
 :root[data-theme='light'] .sl-link-card:hover {
     box-shadow: var(--galaxy-card-shadow-hover-light);
-    border-color: rgba(var(--sl-color-accent), 0.2);
 }
 
 /* High contrast mode support */
@@ -329,6 +354,9 @@
         background: var(--sl-color-bg);
     }
 
+    .card h3 {
+        color: var(--sl-color-white);
+    }
 
     .card .title {
         background: none;
@@ -623,3 +651,4 @@
       transform: none;
     }
   }
+
