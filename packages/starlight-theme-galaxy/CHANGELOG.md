@@ -1,5 +1,11 @@
 # starlight-theme-galaxy
 
+## 0.3.0
+
+### Minor Changes
+
+- [`9550083`](https://github.com/frostybee/starlight-theme-galaxy/commit/9550083548be49ab9754d5a8fb2cc46073b08936) Thanks [@frostybee](https://github.com/frostybee)! - Updated the table of contents styling for a more compact layout.
+
 ## 0.2.0
 
 ### Minor Changes
