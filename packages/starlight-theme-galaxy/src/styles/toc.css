@@ -1,132 +1,87 @@
 /* ============================
  * Table of Contents Styling
  * ============================ */
+.right-sidebar {
+    border-inline-start: initial;
 
-.right-sidebar-panel starlight-toc {
-  /* Simple continuous left border */
-  & ul {
-    border-left: 1px solid var(--sl-color-hairline-light);
-    margin-left: 0.5rem;
-  }
-  
-  /* Remove border from nested lists (H3, H4, H5, etc.) */
-  & ul ul {
-    border-left: none;
-  }
-  
-  & ul li[class^=astro-] a {
-      border-radius: 0%;
-      display: inline-block;
-      padding-top: 0.5rem;
-      padding-bottom: 0.3rem;
-      padding-left: 1rem;
-      text-decoration: none;
-      width: fit-content;
-      color: var(--sl-color-text);
-      font-weight: 400;
-      position: relative;
-      transition: all 0.3s ease;
+    @media (min-width: 72rem) {
+        padding-top: calc(var(--sl-nav-height) + 1.75rem);
+    }
 
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 0;
-        width: 4px;
-        background-color: var(--fb-toc-color-border);
-        border-bottom-right-radius: 1.25rem;
-        border-top-right-radius: 1.25rem;
-        transition: height 0.3s ease-in-out;
-      }
+    starlight-toc li {
+        &>a {
+            border-inline-start: 1px solid var(--sl-color-hairline-light);
+            border-radius: 0;
+            margin-inline-start: 0.35rem;
+            padding-inline-start: calc(1rem * var(--depth) + var(--pad-inline) + 0.35rem);
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 0.8125rem;
 
-      /* Current selected item in the TOC */
-      &[aria-current='true'] {
-        color: var(--sl-color-accent-high);
-        background: linear-gradient(90deg, 
-          color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, 
-          transparent 100%);
-        box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
-        font-weight: 700;
-        border-bottom-right-radius: 0.45rem;
-        border-top-right-radius: 0.45rem;
-        padding-right: 0.7rem;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-top: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-left: 0 solid var(--sl-color-accent-high);
+                transition: border-width 0.3s ease-in-out;
+            }
 
-        &::before {
-          height: 100%;
+            &[aria-current='true'] {
+                border-color: var(--sl-color-accent-high);
+                color: var(--sl-color-accent-high);
+                font-weight: 700;
+                width: fit-content;
+                display: block;
+                position: relative;
+
+                &::before {
+                    border-top-width: 12px;
+                    border-bottom-width: 12px;
+                    border-left-width: 10px;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(90deg, color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, transparent 100%);
+                    box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+                    border-radius: 0.45rem;
+                    z-index: -1;
+                }
+
+                &:is(:hover, :focus-visible) {
+                    color: var(--sl-color-accent-high);
+                }
+            }
+
+            &:not([aria-current='true']):is(:hover, :focus-visible) {
+                border-color: transparent;
+                font-weight: 600;
+                transition: none;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: -1px;
+                    top: 0;                    
+                    bottom: 0;
+                    width: 3px;
+                    height: 25px;
+                    background-color: var(--sl-color-accent-high);
+                    border-radius: 0 0.5rem 0.5rem 0;
+                }
+            }
         }
-      }
-
-      &:hover {
-        font-weight: 600;
-        border-radius: 0;
-        transition: none;
-      }
-  }
-  
-  /* Add special border styling for top-level items only */
-  & > ul > li[class^=astro-] a {
-    &[aria-current='true'] {
-      margin-left: -1px;
-      border-left: 2px solid var(--sl-color-accent);
     }
-    
-    &:not([aria-current='true']):hover {
-      margin-left: -1px;
-      border-left: 2px solid var(--fb-toc-color-border);
-    }
-  }
-  
-  /* Fix positioning for nested items (H3, H4, H5) */
-  & ul ul li[class^=astro-] a {
-    &::before {
-      left: -0.5rem; /* Adjust for the different indentation */
-    }
-  }
-  
-  /* Fix positioning for H4 items */
-  & ul ul ul li[class^=astro-] a {
-    &::before {
-      left: -1rem; /* Adjust for H4's deeper indentation */
-    }
-    
-    /* Fix glow positioning for H4 active items - use pseudo-element for background */
-    &[aria-current='true'] {
-      position: relative;
-      
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -1rem; /* Align with the ::before border */
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(90deg, 
-          color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%, 
-          transparent 100%);
-        box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
-        border-radius: 0.45rem;
-        z-index: -1; /* Behind the text */
-      }
-      
-      /* Remove the original background and glow */
-      background: none;
-      box-shadow: none;
-    }
-  }
-  
-  /* Heading level styling */
-  & ul ul li[class^=astro-] a {
-    padding-left: 1.5rem;
-  }
-  
-  & ul ul ul li[class^=astro-] a {
-    padding-left: 2rem;
-    font-size: 0.85rem;
-  }
-  
-  & ul ul ul ul li[class^=astro-] a {
-    padding-left: 2.5rem;
-    font-size: 0.8rem;
-  }
 }
