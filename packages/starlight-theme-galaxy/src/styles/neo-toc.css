@@ -1,0 +1,61 @@
+/* ============================
+ * Table of Contents Styling
+ * ============================ */
+.right-sidebar {
+    border-inline-start: initial;
+
+    @media (min-width: 72rem) {
+        padding-top: calc(var(--sl-nav-height) + 1.75rem);
+    }
+
+    starlight-toc li {
+        &>a {
+            border-inline-start: 1px solid var(--sl-color-hairline-light);
+            border-radius: 0;
+            margin-inline-start: 0.35rem;
+            padding-inline-start: calc(1rem * var(--depth) + var(--pad-inline) + 0.35rem);
+            position: relative;
+            transition: all 0.3s ease;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 0;
+                width: 6px;
+                background-color: var(--sl-color-accent-high);
+                border-bottom-right-radius: 1.25rem;
+                border-top-right-radius: 1.25rem;
+                transition: height 0.3s ease-in-out;
+            }
+
+            &[aria-current='true'] {
+                border-color: var(--sl-color-accent-high);
+                color: var(--sl-color-accent-high);
+                background: linear-gradient(90deg,
+                        color-mix(in srgb, var(--sl-color-accent) 15%, transparent) 0%,
+                        transparent 100%);
+                box-shadow: 0 0 8px color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+                font-weight: 700;
+                border-bottom-right-radius: 0.45rem;
+                border-top-right-radius: 0.45rem;
+
+                &::before {
+                    height: 100%;
+                }
+
+                &:is(:hover, :focus-visible) {
+                    color: var(--sl-color-accent-high);
+                }
+            }
+
+            &:not([aria-current='true']):is(:hover, :focus-visible) {
+                border-color: var(--sl-color-accent-high);
+                border-left-width: 2px;
+                font-weight: 600;
+                transition: none;
+            }
+        }
+    }
+}
