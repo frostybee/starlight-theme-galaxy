@@ -43,7 +43,7 @@
                 &::before {
                     border-top-width: 12px;
                     border-bottom-width: 12px;
-                    border-left-width: 10px;
+                    border-left-width: 9px;
                 }
 
                 &::after {

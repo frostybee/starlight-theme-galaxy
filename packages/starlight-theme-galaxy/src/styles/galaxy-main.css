@@ -63,7 +63,7 @@
   --fb-steps-bg-color: var(--sl-color-accent-high);
   --fb-steps-text-color: #010319;
   --starlight-image-zoom-backdrop-bg: oklch(0 0 0);
-  --fb-table-header-bg-color: hsl(240, 91%, 5%);  
+  --fb-table-header-bg-color: hsl(240, 91%, 5%);
   --fb-toc-color-current-bg: #0085f230;
   --list-marker-color: var(--sl-color-gray-2);
   --divider-color: var(--sl-color-gray-3);
@@ -689,190 +689,6 @@ body {
  * Steps styling   
  * ============================ */
 
-/* Steps container */
-.sl-steps {
-  --bullet-size: calc(var(--sl-line-height) * 1rem);
-  --bullet-margin: .2rem !important;
-
-  /* Hide any original starlight connecting lines */
-  &::before,
-  &::after {
-    display: none !important;
-  }
-
-  position: relative;
-  padding: 1rem 0;
-  margin: 2rem 0;
-
-  /* Reset counter for each steps container */
-  counter-reset: step-counter !important;
-
-  li {
-    position: relative;
-    padding-left: 50px;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-  }
-
-  /* Clean step bullets */
-  >li:before {
-    --fb-steps-dimension: 32px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    counter-increment: step-counter;
-    content: counter(step-counter);
-
-    /* Slightly lighter accent color */
-    /* background: color-mix(in srgb, var(--sl-color-accent-high) 85%, white 15%); */
-    background: color-mix(in srgb, var(--sl-color-accent-high) 85%, #17025e41 25%);
-    color: var(--sl-color-black);
-
-    /* Clean styling */
-    width: var(--fb-steps-dimension);
-    height: var(--fb-steps-dimension);
-    border-radius: 50%;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-
-    /* Typography */
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: var(--fb-steps-dimension);
-    /* Perfect centering without border */
-
-    /* Simple transition */
-    transition: all 0.2s ease;
-  }
-
-  /* Step content styling */
-  >li {
-    color: var(--sl-color-gray-2);
-    line-height: 1.6;
-    position: relative;
-  }
-
-  /* Simple connecting lines between steps */
-  >li:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 32px;
-    bottom: -12px;
-    width: 1px;
-    /* background: var(--sl-color-gray-8); */
-    background: var(--sl-color-gray-6) !important;
-    border-radius: 1px;
-    z-index: -1;
-  }
-
-  /* Step titles */
-  >li> :first-child {
-    font-weight: 600;
-    color: var(--sl-color-gray-1);
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-  }
-
-  /* Nested list containers - apply to ALL nested lists */
-  ul, ol {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding-left: 1.25rem;
-    list-style-type: none;
-  }
-
-  /* Nested list items - compact spacing for all nested lists */
-  li li {
-    margin-bottom: 0.25rem;
-    padding-bottom: 0;
-    padding-left: 2rem;
-    line-height: 1.5;
-    position: relative;
-    counter-increment: none;
-  }
-  
-  /* But nested Steps should override this with step styling */
-  .sl-steps li {
-    padding-left: 50px;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    position: relative;
-  }
-  
-  /* Custom markers for nested unordered lists (bullets) - but NOT for nested Steps */
-  ul:not(.sl-steps) li:not(.sl-steps > li)::before {
-    content: "■" !important;
-    position: absolute !important;
-    left: 12px !important;
-    top: 1.25em !important;
-    color: var(--list-marker-color) !important;
-    font-weight: 700 !important;
-    font-size: 0.575rem !important;
-    line-height: 1 !important;
-    width: auto !important;
-    height: auto !important;
-    background: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-    counter-increment: none !important;
-    display: block !important;
-  }
-  
-  /* Custom markers for nested ordered lists (numbers) - but NOT for nested Steps */
-  ol:not(.sl-steps) {
-    counter-reset: listitem;
-  }
-  
-  ol:not(.sl-steps) li:not(.sl-steps > li)::before {
-    counter-increment: listitem !important;
-    content: counter(listitem) !important;
-    position: absolute !important;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    line-height: 1.2 !important;
-    text-align: center !important;
-    height: 22px !important;
-    width: 22px !important;
-    min-width: 20px !important;
-    left: 1px !important;
-    top: 2px !important;
-    border-radius: 4px !important;
-    color: var(--sl-color-white) !important;
-    font-family: var(--sl-font-mono) !important;
-    border: 1px solid var(--sl-color-hairline-light) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: none !important;
-  }
-  
-  /* Ensure step connecting lines are hidden for regular nested list items (but NOT nested Steps) */
-  li:not(.sl-steps > li) li:not(.sl-steps > li)::after {
-    content: none !important;
-    display: none !important;
-  }
-}
-
-/* ============================
- * Nested Steps Component Styling
- * ============================ */
-
-/* Nested Steps should be identical to outer Steps */
-.sl-steps .sl-steps {
-  /* Override the nested list styling for Steps components */
-  ol li::before {
-    /* Reset the custom ordered list styling for actual Steps */
-    display: none !important;
-  }
-  
-  /* Ensure nested Steps don't get the regular list markers */
-  ol {
-    list-style: none !important;
-  }
-}
 
 /* ============================
  * Banner styling     
@@ -1000,7 +816,8 @@ body {
   }
 
   /* Mobile nested list spacing */
-  .sl-steps ul, .sl-steps ol {
+  .sl-steps ul,
+  .sl-steps ol {
     margin-top: 0.375rem;
     margin-bottom: 0.375rem;
     padding-left: 1rem;
@@ -1010,13 +827,13 @@ body {
     margin-bottom: 0.2rem;
     line-height: 1.4;
   }
-  
+
   /* Override for mobile nested Steps */
   .sl-steps .sl-steps li {
     padding-left: 45px;
     margin-bottom: 0.625rem;
   }
-  
+
 }
 
 
@@ -1193,4 +1010,14 @@ starlight-file-tree {
   [data-page-title] {
     font-size: 2.5rem;
   }
+}
+
+/* Steps component - remove background for nested ordered lists */
+.sl-steps ol:not(.sl-steps) li:not(.sl-steps > li)::before {
+  background: var(--sl-color-gray-8) !important;
+}
+
+/* Clean step bullets */
+.sl-steps li:before {
+  background: var(--sl-color-gray-7);
 }

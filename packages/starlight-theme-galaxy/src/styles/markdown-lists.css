@@ -39,10 +39,10 @@
     content: "■";
     position: absolute;
     left: 12px;
-    top: 1.25em;
+    top: 1.1em;
     color: var(--sl-color-text);
     font-weight: 700;
-    font-size: 0.575rem;
+    font-size: 0.675rem;
     line-height: 1;
   }
   
@@ -66,7 +66,7 @@
     counter-increment: listitem;
     content: counter(listitem);
     position: absolute;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -78,7 +78,6 @@
     border-radius: 4px;
     color: var(--sl-color-white);
     font-family: var(--sl-font-mono);
-    /* background: var(--sl-color-accent-low); */
     border: 1px solid var(--sl-color-hairline-light);
     display: flex;
     align-items: center;
