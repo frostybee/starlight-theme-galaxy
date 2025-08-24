@@ -1,5 +1,12 @@
 # starlight-theme-galaxy-docs
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [[`9550083`](https://github.com/frostybee/starlight-theme-galaxy/commit/9550083548be49ab9754d5a8fb2cc46073b08936)]:
+  - starlight-theme-galaxy@0.3.0
+
 ## 0.1.2
 
 ### Patch Changes
