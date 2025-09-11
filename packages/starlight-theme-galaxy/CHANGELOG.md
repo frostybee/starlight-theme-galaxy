@@ -1,5 +1,11 @@
 # starlight-theme-galaxy
 
+## 0.4.0
+
+### Minor Changes
+
+- [`edff6ec`](https://github.com/frostybee/starlight-theme-galaxy/commit/edff6ece78c07edbf4a5b9ae84bac8cf5c13b960) Thanks [@frostybee](https://github.com/frostybee)! - - Refactored components' styling
+
 ## 0.3.0
 
 ### Minor Changes
