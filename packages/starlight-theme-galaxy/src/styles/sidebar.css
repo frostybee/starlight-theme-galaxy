@@ -29,7 +29,7 @@
   
       &:hover {        
         background: var(--sl-color-gray-7);
-        color: var(--sl-color-gray-3);
+        color: var(--sl-color-accent-high);
         font-weight: 600;
         transform: translateX(3px);
         /* border-bottom-right-radius: .25rem !important;
@@ -42,6 +42,60 @@
   
     details {
       margin-bottom: .5rem;
+    }
+
+    /* Group hover styles */
+    /* The following styles were taken from the Rapide theme:
+    https://github.com/HiDeoo/starlight-theme-rapide */
+    summary {
+      gap: 0.375rem;
+      justify-content: start;
+      padding: 0.2em var(--sl-sidebar-item-padding-inline);
+      padding-inline: calc(var(--sl-sidebar-item-padding-inline) / 2) var(--sl-sidebar-item-padding-inline);
+
+      &:is(:hover, :focus-visible) {
+        &,
+        & .large {
+          color: var(--sl-color-accent-high);
+        }
+      }
+
+      &:is(:hover, :focus-visible) + ul > li {
+        border-inline-start-color: var(--sl-color-accent);
+      }
+    }
+
+    ul ul li {
+      margin-inline-start: calc(var(--sl-sidebar-item-padding-inline) + (0.625rem / 2));
+
+      &:has(> a[aria-current='page']) {
+        border-inline-start-color: var(--sl-color-accent-high);
+      }
+
+      &:has(> a:not([aria-current='page']):is(:hover, :focus-visible)) {
+        border-inline-start-color: var(--sl-color-gray-2);
+      }
+    }
+
+    .top-level {
+      & > li + li {
+        margin-block: 0;
+      }
+
+      & > li + li:has(details),
+      & > li:has(details) + li:not(:has(details)) {
+        margin-top: 1rem;
+      }
+
+      & > li > .large {
+        color: var(--sl-color-gray-2);
+        font-size: var(--sl-text-sm);
+        font-weight: inherit;
+
+        &:is(:hover, :focus-visible) {
+          color: var(--sl-color-white);
+        }
+      }
     }
   }
   

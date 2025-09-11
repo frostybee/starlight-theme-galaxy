@@ -205,7 +205,6 @@
 
 /* LinkCard hover effects */
 .sl-link-card:hover {
-    transform: var(--galaxy-card-hover-transform);
     box-shadow: var(--galaxy-card-shadow-hover);
 }
 

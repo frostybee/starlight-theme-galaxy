@@ -17,7 +17,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Start Here',
-          items: ['getting-started', 'customization'],
+          items: ['getting-started', 'customization', 'components-override'],
         },
         { label: 'Examples', autogenerate: { directory: 'examples' } },
         { label: 'Custom Components', autogenerate: { directory: 'components' } },

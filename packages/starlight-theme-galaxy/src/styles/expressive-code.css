@@ -61,7 +61,7 @@ pre.astro-code {
 .expressive-code code {
   /* font-family: var(--sg-ec-font-family); */
   font-weight: 400;
-  font-feature-settings: "liga" 1, "calt" 1;  
+  font-feature-settings: "liga" 0, "calt" 0;  
   box-sizing: border-box;
   display: block;  
   width: 100%;

@@ -69,7 +69,7 @@
                 font-weight: 600;
                 transition: none;
                 position: relative;
-
+                color: var(--sl-color-accent-high);
                 &::after {
                     content: '';
                     position: absolute;

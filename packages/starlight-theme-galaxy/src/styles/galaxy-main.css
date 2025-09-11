@@ -1,8 +1,34 @@
 /* Font Imports */
-@import '@fontsource-variable/inter';
+@import '@fontsource-variable/inter'; 
 @import '@fontsource-variable/jetbrains-mono';
 
 @custom-media --motionSafe (prefers-reduced-motion: no-preference);
+
+
+html,
+body {
+  font-weight: 400;
+}
+
+/* Essential font smoothing for Inter */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ensure all text elements use proper smoothing */
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Optional: Fine-tune code block rendering */
+code, pre, kbd, samp {
+   /* Better for monospace */
+  text-rendering: optimizeSpeed;
+}
 
 /* Dark mode theme variables */
 :root,
@@ -74,9 +100,7 @@
   --fb-sidebar-color-current-hover: hsl(220, 12%, 17%);
 }
 
-body {
-  font-weight: 400;
-}
+
 
 /* Light mode theme variables */
 :root[data-theme='light'] {
@@ -154,7 +178,8 @@ body {
 ::backdrop {
   /* Typography */
   --sl-font: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --sl-font-mono: 'JetBrains Mono Variable', 'Fira Code', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
+  /* --sl-font:  'JetBrains Mono Variable', system-ui, sans-serif; */
+  --sl-font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'Fira Code', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
   font-weight: 400;
 
   /* Typography Scale */
@@ -188,8 +213,8 @@ body {
   --sl-border-radius-xl: 1rem;
 
   /* Layout */
-  --sl-content-width: 47rem;
-  --sl-sidebar-width: 20rem;
+  /* --sl-content-width: 47rem; */
+  /* --sl-sidebar-width: 20rem; */
   --sl-nav-height: 4rem;
   --space-xs: clamp(1rem, 0.75rem + 0vi, 0.75rem);
 
@@ -226,7 +251,8 @@ body {
 
 /* Markdown content */
 body {
-  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  /* Disable programming ligatures */
+  font-feature-settings: 'kern' 1, 'liga' 0, 'calt' 0;   
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -292,7 +318,6 @@ body {
   color: var(--sl-color-gray-2);
   margin-block: var(--sl-spacing-lg) var(--sl-spacing-sm);
 }
-
 
 /* Blockquote design tokens */
 :root {

@@ -1,0 +1,162 @@
+---
+title: Components Override
+---
+
+The Galaxy theme overrides the Starlight [Header](https://starlight.astro.build/reference/overrides/#header-1) component to provide enhanced styling and functionality.
+
+## ⚠️ Component Override Warning
+
+When you override the `Header` component in your project, you may see a warning like this during the build:
+
+```text wrap
+A `<Header>` component override is already defined in your Starlight configuration.
+To use `starlight-theme-galaxy`, either remove this override or manually render the content from `starlight-theme-galaxy/overrides/Header.astro`.
+```
+
+This warning appears because the Galaxy theme automatically overrides the Header component, and Starlight detects a potential conflict. **This is expected behavior** and you can safely ignore the warning or follow one of the customization approaches below to resolve it.
+
+## Overriding the Header Component
+
+If you need to customize the header further, you have two options:
+
+### Option 1: Copy and Customize the Full Component (Recommended)
+
+For maximum control, copy the Galaxy theme's header source code and customize it directly. This gives you access to all internal CSS styles and logic:
+
+```astro
+---
+// src/components/overrides/Header.astro
+import Search from "@astrojs/starlight/components/Search.astro";
+import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
+import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
+import ThemeSelect from "starlight-theme-galaxy/components/ThemeSelect.astro";
+import ProgressScroll from "starlight-theme-galaxy/components/ProgressScroll.astro";
+
+// Hide progress scroll on the home page only (works with any base URL)
+const baseUrl = import.meta.env.BASE_URL || "/";
+const normalizedPath = Astro.url.pathname.endsWith("/")
+  ? Astro.url.pathname
+  : Astro.url.pathname + "/";
+const normalizedBase = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+const displayProgressScroll = normalizedPath !== normalizedBase;
+---
+
+<div class="header sl-flex">
+  <div class="title-wrapper sl-flex">
+    <SiteTitle />
+  </div>
+  <div class="sl-flex">
+    <Search />
+  </div>
+ 
+  <!-- Or customize it further -->
+  <!-- Add your custom header implementation here -->
+
+  <div class="sl-hidden md:sl-flex right-group">
+    <div class="sl-flex social-icons">
+      <SocialIcons />
+    </div>
+    <ThemeSelect />
+  </div>
+</div>
+{displayProgressScroll && <ProgressScroll />}
+
+<style>
+  .header {
+    gap: var(--sl-nav-gap);
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* Add your custom styles here */
+  }
+
+  .title-wrapper {
+    overflow: hidden;
+  }
+
+  .right-group,
+  .social-icons {
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .header > .right-group {
+    justify-content: flex-end;
+  }
+
+  .header > .sl-flex:nth-child(2) {
+    justify-content: center;
+  }
+  
+  .social-icons::after {
+    content: "";
+    height: 2rem;
+    border-inline-end: 1px solid var(--sl-color-gray-5);
+  }
+
+  @media (min-width: 50rem) {
+    /* Responsive grid styles - customize as needed */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr minmax(300px, 600px) 1fr;
+      align-content: center;
+    }
+  }
+</style>
+```
+
+**Benefits of this approach:**
+- Full control over CSS styles and layout
+- Can modify the grid system and responsive behavior  
+- Access to all internal logic and conditional rendering
+- Easy to add/remove elements or change structure
+- No dependency on Galaxy theme component imports
+
+### Option 2: Extending the Galaxy Header
+
+You can import and extend the Galaxy theme's header component:
+
+```astro
+---
+// Your custom component
+import GalaxyHeader from 'starlight-theme-galaxy/components/Header.astro'
+---
+
+<div class="custom-header-wrapper">
+  <GalaxyHeader {...Astro.props} />
+  <!-- Add your custom elements -->
+  <div class="custom-banner">
+    Your custom content here
+  </div>
+</div>
+
+<style>
+  .custom-header-wrapper {
+    /* Your custom styles */
+  }
+</style>
+```
+
+## Available Components
+
+The Galaxy theme exports the following components that you can import and customize:
+
+- `Header.astro` - The main header component with Galaxy styling (located in `src/overrides/`)
+- `ThemeSelect.astro` - Custom theme selector with Galaxy styling
+- `ProgressScroll.astro` - Animated progress bar that shows reading progress
+- `HeaderButton.astro` - Styled button component used in the header
+
+All components can be imported using:
+```astro
+import ComponentName from 'starlight-theme-galaxy/components/ComponentName.astro'
+```
+
+## Customization Tips
+
+1. **Preserve functionality**: When overriding, make sure to pass through the required props.
+2. **Maintain accessibility**: Keep ARIA labels and keyboard navigation intact.
+3. **Responsive design**: Ensure your customizations work on all screen sizes.
+4. **Theme consistency**: Use Galaxy theme's CSS variables for consistent styling.
+
+For more information about Starlight's component override system, see the [official documentation](https://starlight.astro.build/reference/overrides/).
+
