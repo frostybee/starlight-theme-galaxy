@@ -9,6 +9,17 @@ export default defineConfig({
     starlight({
       title: 'Starlight Galaxy',
       favicon: '/favicon.svg',   
+      defaultLocale: 'en',
+      locales: {
+        en: {
+          label: 'English',
+          lang: 'en',
+        },  
+        fr: {
+          label: 'French',
+          lang: 'fr',
+        },
+      },
       editLink: {
         baseUrl: 'https://github.com/frostybee/starlight-theme-galaxy/edit/main/docs/',
       },

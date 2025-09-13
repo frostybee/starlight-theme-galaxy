@@ -8,7 +8,8 @@ import { join, dirname } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const componentOverrides = {
-  Header: 'starlight-theme-galaxy/overrides/Header.astro',
+  Header: 'starlight-theme-galaxy/overrides/GalaxyHeader.astro',
+  ThemeSelect: 'starlight-theme-galaxy/overrides/ThemeSelect.astro',
 } as const
 
 function checkComponentOverrides(

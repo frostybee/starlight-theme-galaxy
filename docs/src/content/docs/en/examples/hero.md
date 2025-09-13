@@ -6,7 +6,7 @@ hero:
   title: Hero title
   tagline: A tagline for the hero section.
   image:
-    file: ../../../assets/hero.webp
+    file: ../../../../assets/hero.webp
   actions:
     - text: Primary action
       link: '#_'
