@@ -1,5 +1,11 @@
 # starlight-theme-galaxy
 
+## 0.5.0
+
+### Minor Changes
+
+- [`0b34c20`](https://github.com/frostybee/starlight-theme-galaxy/commit/0b34c202b5e312364b924e5270274645dab54f68) Thanks [@frostybee](https://github.com/frostybee)! - - Resolved missing language select component in header override, as reported in #9
+
 ## 0.4.0
 
 ### Minor Changes
