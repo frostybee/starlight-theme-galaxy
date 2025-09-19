@@ -1,5 +1,11 @@
 # starlight-theme-galaxy
 
+## 0.5.1
+
+### Patch Changes
+
+- [`4797e3a`](https://github.com/frostybee/starlight-theme-galaxy/commit/4797e3a32d71c98bd53df77eb8f628b170863106) Thanks [@frostybee](https://github.com/frostybee)! - Fixed the issue with the sidebar item's left border not spanning multiple lines
+
 ## 0.5.0
 
 ### Minor Changes
