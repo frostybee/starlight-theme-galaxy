@@ -15,7 +15,7 @@
         top: 0;
         left: -10px;
         width: 5px;
-        height: 33px;
+        height: 100%;
         content: "";
         background-color: var(--sl-color-text-accent);
         border-bottom-right-radius: .25rem !important;
@@ -31,7 +31,7 @@
         background: var(--sl-color-gray-7);
         color: var(--sl-color-accent-high);
         font-weight: 600;
-        transform: translateX(3px);
+        transform: translateX(1px);
         /* border-bottom-right-radius: .25rem !important;
         border-top-right-radius: .25rem !important; */
       }

@@ -74,10 +74,10 @@
                     content: '';
                     position: absolute;
                     left: -1px;
-                    top: 0;                    
+                    top: 0;
                     bottom: 0;
                     width: 3px;
-                    height: 25px;
+                    height: 100%;
                     background-color: var(--sl-color-accent-high);
                     border-radius: 0 0.5rem 0.5rem 0;
                 }
