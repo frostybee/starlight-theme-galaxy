@@ -6,7 +6,7 @@ A customized Astro Starlight theme for publishing docs and educational content.
 
 Want to get started immediately?
 
-Check out the `starlight-theme-galaxy` getting started guide.
+Check out the `starlight-theme-galaxy` [getting started guide](https://frostybee.github.io/starlight-theme-galaxy/getting-started/).
 
 ## License
 

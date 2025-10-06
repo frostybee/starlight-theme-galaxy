@@ -260,7 +260,7 @@ body {
 
 /* Enhanced Content Typography */
 .sl-markdown-content {
-  font-size: var(--sl-text-lg);
+  /* font-size: var(--sl-text-lg); */
   line-height: 1.7;
   letter-spacing: -0.01em;
 }
