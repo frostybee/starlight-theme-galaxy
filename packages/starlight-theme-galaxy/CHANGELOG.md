@@ -1,5 +1,11 @@
 # starlight-theme-galaxy
 
+## 0.5.2
+
+### Patch Changes
+
+- [`c6f433d`](https://github.com/frostybee/starlight-theme-galaxy/commit/c6f433d86d248a8cf1dc6eb14ed7887a3c28f147) Thanks [@frostybee](https://github.com/frostybee)! - Fix: Add aria-label to theme switcher for screen reader accessibility
+
 ## 0.5.1
 
 ### Patch Changes
