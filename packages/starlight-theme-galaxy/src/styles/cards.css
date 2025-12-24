@@ -238,6 +238,21 @@
     transition: var(--galaxy-icon-transition);
 }
 
+/* Links inside card body content should be visible */
+.card .body a,
+.card p a {
+    display: inline;
+    color: var(--sl-color-accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--sl-color-accent), 0.4);
+    text-underline-offset: 0.15em;
+}
+
+.card .body a:hover,
+.card p a:hover {
+    text-decoration-color: var(--sl-color-accent);
+}
+
 
 /* Card Grid styling */
 .card-grid {

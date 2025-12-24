@@ -23,17 +23,16 @@
     "@fontsource-variable/jetbrains-mono": "^5.2.6"
   },
   "devDependencies": {
-    "@astrojs/starlight": "^0.34.8",
-    "astro": "^5.13.7",
-    "typescript": "^5.9.2"
+    "@astrojs/starlight": "^0.37.1",
+    "astro": "^5.16.6",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.34"
   },
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-  },
-  "packageManager": "pnpm@10.10.0",
+  },  
   "publishConfig": {
     "access": "public",
     "provenance": true

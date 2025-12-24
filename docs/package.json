@@ -14,17 +14,16 @@
     "lint": "eslint . --cache --max-warnings=0"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.35.2",
-    "@expressive-code/core": "^0.41.3",
-    "@expressive-code/plugin-line-numbers": "^0.41.3",
-    "astro": "^5.13.2",
-    "sharp": "^0.34.3",
+    "@astrojs/starlight": "^0.37.1",
+    "@expressive-code/core": "^0.41.5",
+    "@expressive-code/plugin-line-numbers": "^0.41.5",
+    "astro": "^5.16.6",
+    "sharp": "^0.34.5",
     "starlight-theme-galaxy": "workspace:*"
   },
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
-  },
-  "packageManager": "pnpm@10.10.0",
+  },  
   "keywords": [
     "starlight",
     "theme",
