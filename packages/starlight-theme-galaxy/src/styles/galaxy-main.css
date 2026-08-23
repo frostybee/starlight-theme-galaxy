@@ -2,7 +2,6 @@
 @import '@fontsource-variable/inter'; 
 @import '@fontsource-variable/jetbrains-mono';
 
-@custom-media --motionSafe (prefers-reduced-motion: no-preference);
 
 
 html,
@@ -746,7 +745,7 @@ body {
 }
 
 /* Banner links styling */
-.sl-banner :global(a) {
+.sl-banner a {
   color: var(--sl-color-black) !important;
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -755,19 +754,19 @@ body {
   transition: all 0.2s ease;
 }
 
-.sl-banner :global(a:hover) {
+.sl-banner a:hover {
   text-decoration-color: color-mix(in srgb, var(--sl-color-black) 70%, transparent);
   transform: translateY(-1px);
 }
 
 /* Banner typography */
-.sl-banner :global(p) {
+.sl-banner p {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.5;
 }
 
-.sl-banner :global(strong) {
+.sl-banner strong {
   font-weight: 700;
 }
 
@@ -785,7 +784,7 @@ body {
     font-size: 0.875rem;
   }
 
-  .sl-banner :global(p) {
+  .sl-banner p {
     font-size: 0.875rem;
   }
 }
@@ -801,11 +800,11 @@ body {
     transform: none;
   }
 
-  .sl-banner :global(a) {
+  .sl-banner a {
     transition: none;
   }
 
-  .sl-banner :global(a:hover) {
+  .sl-banner a:hover {
     transform: none;
   }
 }

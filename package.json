@@ -16,7 +16,7 @@
     "documentation",
     "astro"
   ],
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.26.1",
   "private": true,
   "sideEffects": false,
   "scripts": {
@@ -29,10 +29,11 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
     "@changesets/changelog-github": "^0.6.0",
-    "@changesets/cli": "^2.30.0",
+    "@changesets/cli": "^3.0.1",
     "@types/node": "^25.5.0",
-    "astro": "^6.0.8",
-    "eslint": "^10.1.0"
+    "astro": "^7.2.4",
+    "eslint": "^10.1.0",
+    "prettier": "^3.5.3"
   },
   "homepage": "https://github.com/frostybee/starlight-theme-galaxy",
   "repository": {
