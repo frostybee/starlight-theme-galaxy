@@ -1,5 +1,11 @@
 # starlight-theme-galaxy
 
+## 1.0.0
+
+### Major Changes
+
+- [`ffc2a62`](https://github.com/frostybee/starlight-theme-galaxy/commit/ffc2a621972c6b996db30f4d022d2d44a018a786) Thanks [@frostybee](https://github.com/frostybee)! - Upgrade to Astro v7 and Starlight 0.41. Drops support for Astro v6 and Starlight versions below 0.41.
+
 ## 0.8.0
 
 ### Minor Changes
